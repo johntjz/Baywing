@@ -3,21 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aero-Marine GBA | Zero-Emission Electric Hydrofoil Networks</title>
+    <title>AERO-MARINE | Autonomous Zero-Emission Electric Hydrofoil Networks</title>
+    
+    <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Noto+Sans+TC:wght@400;500;700;900&family=Noto+Sans+SC:wght@400;500;700;900&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
+    
     <script>
         tailwind.config = {
             theme: {
                 extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'Noto Sans TC', 'Noto Sans SC', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace']
+                    },
                     colors: {
                         navy: {
-                            950: '#070b14',
-                            900: '#0f172a',
-                            850: '#131e36',
-                            800: '#1e293b',
-                            700: '#334155'
+                            950: '#050914',
+                            900: '#0a1024',
+                            850: '#0f1836',
+                            800: '#162248',
+                            700: '#203061'
                         },
                         cyan: {
+                            300: '#67e8f9',
                             400: '#22d3ee',
                             500: '#06b6d4',
                             600: '#0891b2'
@@ -29,93 +42,109 @@
                     },
                     backgroundImage: {
                         'grid-pattern': 'linear-gradient(to right, rgba(255,255,255,0.03) 1px, transparent 1px), linear-gradient(to bottom, rgba(255,255,255,0.03) 1px, transparent 1px)',
-                        'cyber-grid': 'radial-gradient(circle at 50% 50%, rgba(34, 211, 238, 0.08) 0%, transparent 60%)'
+                        'cyber-glow': 'radial-gradient(circle at 50% 30%, rgba(34, 211, 238, 0.12) 0%, rgba(16, 185, 129, 0.05) 50%, transparent 80%)'
                     }
                 }
             }
         }
     </script>
+    
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Noto+Sans+TC:wght@400;500;700&family=Noto+Sans+SC:wght@400;500;700&display=swap');
-
         body {
             font-family: 'Inter', 'Noto Sans TC', 'Noto Sans SC', sans-serif;
-            background-color: #070b14;
+            background-color: #050914;
+            color: #cbd5e1;
         }
 
-        /* Multi-language view switching css */
+        /* Tri-Lingual Language Visibility System */
         body[data-lang="en"] .lang-tc, body[data-lang="en"] .lang-sc { display: none !important; }
         body[data-lang="tc"] .lang-en, body[data-lang="tc"] .lang-sc { display: none !important; }
         body[data-lang="sc"] .lang-en, body[data-lang="sc"] .lang-tc { display: none !important; }
 
         .glass-panel {
-            background: rgba(15, 23, 42, 0.75);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
+            background: rgba(10, 16, 36, 0.75);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
             border: 1px solid rgba(255, 255, 255, 0.08);
         }
 
         .glass-card {
-            background: rgba(30, 41, 59, 0.4);
-            backdrop-filter: blur(8px);
+            background: rgba(22, 34, 72, 0.4);
+            backdrop-filter: blur(10px);
             border: 1px solid rgba(255, 255, 255, 0.06);
         }
 
         .glow-cyan {
-            box-shadow: 0 0 25px -5px rgba(34, 211, 238, 0.3);
+            box-shadow: 0 0 30px -5px rgba(34, 211, 238, 0.25);
         }
 
         .glow-emerald {
-            box-shadow: 0 0 25px -5px rgba(16, 185, 129, 0.3);
+            box-shadow: 0 0 30px -5px rgba(16, 185, 129, 0.25);
         }
 
-        /* Pulse wave animation */
-        @keyframes wavePulse {
-            0%, 100% { transform: translateY(0px) scaleY(1); opacity: 0.8; }
-            50% { transform: translateY(-4px) scaleY(1.05); opacity: 1; }
+        /* Smooth Hydrofoil Motion Animation */
+        @keyframes foilWave {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-6px) rotate(-0.5deg); }
         }
 
         .animate-foil-wave {
-            animation: wavePulse 3s ease-in-out infinite;
+            animation: foilWave 3.5s ease-in-out infinite;
         }
 
-        /* Range Slider Styling */
+        /* Radar Scanning Line Animation */
+        @keyframes radarSweep {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .animate-radar-sweep {
+            animation: radarSweep 4s linear infinite;
+            transform-origin: center center;
+        }
+
+        /* Pulse Ping Animation */
+        @keyframes pingPulse {
+            0% { transform: scale(0.8); opacity: 0.8; }
+            50% { transform: scale(1.3); opacity: 0.2; }
+            100% { transform: scale(0.8); opacity: 0.8; }
+        }
+
+        .animate-ping-pulse {
+            animation: pingPulse 2s ease-in-out infinite;
+        }
+
+        /* Custom Scrollbar Styling */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #050914;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #162248;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #06b6d4;
+        }
+
+        /* Range Slider Custom Styling */
         input[type=range] {
             accent-color: #22d3ee;
         }
     </style>
-    <script>
-        function setLanguage(lang) {
-            document.body.setAttribute('data-lang', lang);
-            document.querySelectorAll('.lang-btn').forEach(btn => {
-                if (btn.dataset.langTarget === lang) {
-                    btn.classList.add('text-cyan-400', 'font-bold', 'border-b-2', 'border-cyan-400');
-                    btn.classList.remove('text-slate-400', 'font-normal');
-                } else {
-                    btn.classList.remove('text-cyan-400', 'font-bold', 'border-b-2', 'border-cyan-400');
-                    btn.classList.add('text-slate-400', 'font-normal');
-                }
-            });
-            // Save preference
-            try { localStorage.setItem('aeromarine_lang', lang); } catch(e){}
-        }
-
-        window.addEventListener('DOMContentLoaded', () => {
-            const savedLang = localStorage.getItem('aeromarine_lang') || 'en';
-            setLanguage(savedLang);
-            initSimulator();
-        });
-    </script>
 </head>
-<body data-lang="en" class="text-slate-300 antialiased selection:bg-cyan-500 selection:text-slate-950 min-h-screen flex flex-col">
+<body data-lang="en" class="text-slate-300 antialiased selection:bg-cyan-500 selection:text-slate-950 min-h-screen flex flex-col relative overflow-x-hidden">
 
-    <!-- Sticky Navigation Bar -->
-    <nav class="fixed top-0 w-full glass-panel z-50 border-b border-slate-800/80">
+    <!-- Fixed Re-Architected Sleek Navigation Bar -->
+    <header class="fixed top-0 w-full glass-panel z-50 border-b border-slate-800/80 transition-all duration-300">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-20">
-                <!-- Brand Logo -->
+                
+                <!-- Brand Logo & Pill Badge -->
                 <a href="#" class="flex items-center space-x-3 group">
-                    <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-cyan-500 to-emerald-400 p-0.5 flex items-center justify-center shadow-lg shadow-cyan-500/20 group-hover:scale-105 transition-transform">
+                    <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-cyan-500 via-teal-400 to-emerald-400 p-0.5 flex items-center justify-center shadow-lg shadow-cyan-500/20 group-hover:scale-105 transition-transform">
                         <div class="w-full h-full bg-navy-950 rounded-[10px] flex items-center justify-center">
                             <svg class="w-6 h-6 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
@@ -123,209 +152,309 @@
                         </div>
                     </div>
                     <div class="flex flex-col">
-                        <span class="text-xl font-extrabold tracking-tight text-white flex items-center gap-1.5">
-                            AERO-MARINE <span class="text-xs px-2 py-0.5 rounded bg-cyan-500/20 text-cyan-300 font-mono border border-cyan-500/30">GBA</span>
-                        </span>
-                        <span class="text-[10px] text-slate-400 tracking-widest uppercase">Maritime Decarbonization</span>
+                        <div class="flex items-center gap-2">
+                            <span class="text-lg font-black tracking-tight text-white">AERO-MARINE</span>
+                            <span class="text-[10px] px-2 py-0.5 rounded-full bg-cyan-500/15 text-cyan-300 font-mono border border-cyan-500/30 uppercase tracking-widest font-bold">GBA TECH</span>
+                        </div>
+                        <span class="text-[10px] text-slate-400 tracking-wider uppercase font-medium">Zero-Emission Hydrofoil Systems</span>
                     </div>
                 </a>
 
-                <!-- Desktop Navigation Links -->
-                <div class="hidden lg:flex items-center space-x-8 text-sm font-medium">
-                    <a href="#vision" class="text-slate-300 hover:text-cyan-400 transition">
-                        <span class="lang-en">Vision & Routes</span>
-                        <span class="lang-tc">願景與航線</span>
-                        <span class="lang-sc">愿景与航线</span>
+                <!-- Clean Desktop Navigation Links with Dropdown Menu -->
+                <nav class="hidden lg:flex items-center space-x-8 text-sm font-medium">
+                    <a href="#fleet" class="text-slate-300 hover:text-cyan-400 transition flex items-center gap-1">
+                        <span class="lang-en">Fleet & Vessels</span>
+                        <span class="lang-tc">旗艦船隊</span>
+                        <span class="lang-sc">旗舰舰队</span>
                     </a>
-                    <a href="#technology" class="text-slate-300 hover:text-cyan-400 transition">
-                        <span class="lang-en">Technology</span>
-                        <span class="lang-tc">核心技術</span>
-                        <span class="lang-sc">核心技术</span>
+
+                    <!-- Technology Dropdown -->
+                    <div class="relative group">
+                        <button class="text-slate-300 hover:text-cyan-400 transition flex items-center gap-1.5 py-2">
+                            <span class="lang-en">Technology</span>
+                            <span class="lang-tc">核心技術</span>
+                            <span class="lang-sc">核心技术</span>
+                            <svg class="w-3.5 h-3.5 text-slate-400 group-hover:text-cyan-400 transition-transform group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                        </button>
+                        <div class="absolute top-full left-0 w-64 glass-panel rounded-2xl p-2 border border-slate-800 shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 translate-y-2 group-hover:translate-y-0">
+                            <a href="#autonomous" class="flex items-start gap-3 p-2.5 rounded-xl hover:bg-slate-800/60 transition">
+                                <div class="p-2 rounded-lg bg-cyan-500/10 text-cyan-400"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg></div>
+                                <div>
+                                    <div class="text-xs font-bold text-white">
+                                        <span class="lang-en">Autonomous AI Suite</span>
+                                        <span class="lang-tc">LiDAR 智駕系統</span>
+                                        <span class="lang-sc">LiDAR 智驾系统</span>
+                                    </div>
+                                    <div class="text-[11px] text-slate-400">LiDAR + Optical AI Cameras</div>
+                                </div>
+                            </a>
+                            <a href="#technology" class="flex items-start gap-3 p-2.5 rounded-xl hover:bg-slate-800/60 transition">
+                                <div class="p-2 rounded-lg bg-emerald-500/10 text-emerald-400"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg></div>
+                                <div>
+                                    <div class="text-xs font-bold text-white">
+                                        <span class="lang-en">eFoiler Propulsion</span>
+                                        <span class="lang-tc">直驅水翼推進器</span>
+                                        <span class="lang-sc">直驱水翼推进器</span>
+                                    </div>
+                                    <div class="text-[11px] text-slate-400">80% Hydrodynamic Drag Cut</div>
+                                </div>
+                            </a>
+                            <a href="#technology" class="flex items-start gap-3 p-2.5 rounded-xl hover:bg-slate-800/60 transition">
+                                <div class="p-2 rounded-lg bg-cyan-500/10 text-cyan-400"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"/></svg></div>
+                                <div>
+                                    <div class="text-xs font-bold text-white">
+                                        <span class="lang-en">Battery & MCS Charging</span>
+                                        <span class="lang-tc">兆瓦級快速充電</span>
+                                        <span class="lang-sc">兆瓦级快速充电</span>
+                                    </div>
+                                    <div class="text-[11px] text-slate-400">800V Marine Solid-State & MCS</div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+                    <a href="#routes" class="text-slate-300 hover:text-cyan-400 transition">
+                        <span class="lang-en">Routes & Network</span>
+                        <span class="lang-tc">航線網絡</span>
+                        <span class="lang-sc">航线网络</span>
                     </a>
                     <a href="#simulator" class="text-slate-300 hover:text-cyan-400 transition">
                         <span class="lang-en">Simulator</span>
                         <span class="lang-tc">效益模擬器</span>
                         <span class="lang-sc">效益模拟器</span>
                     </a>
-                    <a href="#vessels" class="text-slate-300 hover:text-cyan-400 transition">
-                        <span class="lang-en">The Fleet</span>
-                        <span class="lang-tc">旗艦船隊</span>
-                        <span class="lang-sc">旗舰舰队</span>
-                    </a>
                     <a href="#specs" class="text-slate-300 hover:text-cyan-400 transition">
-                        <span class="lang-en">Specifications</span>
-                        <span class="lang-tc">技術規格</span>
-                        <span class="lang-sc">技术规格</span>
+                        <span class="lang-en">Specs & Insights</span>
+                        <span class="lang-tc">規格矩陣</span>
+                        <span class="lang-sc">规格矩阵</span>
                     </a>
-                    <a href="#milestones" class="text-slate-300 hover:text-cyan-400 transition">
-                        <span class="lang-en">Milestones</span>
-                        <span class="lang-tc">發展里程碑</span>
-                        <span class="lang-sc">发展里程碑</span>
-                    </a>
-                </div>
+                </nav>
 
-                <!-- Language Switcher & Action CTA -->
-                <div class="flex items-center space-x-4">
-                    <!-- Tri-lingual Switcher -->
-                    <div class="flex items-center space-x-1 bg-navy-900/80 p-1 rounded-lg border border-slate-700/60 text-xs font-mono">
-                        <button data-lang-target="en" onclick="setLanguage('en')" class="lang-btn px-2.5 py-1 rounded transition text-cyan-400 font-bold border-b-2 border-cyan-400">EN</button>
-                        <span class="text-slate-600">|</span>
-                        <button data-lang-target="tc" onclick="setLanguage('tc')" class="lang-btn px-2.5 py-1 rounded transition text-slate-400">繁體</button>
-                        <span class="text-slate-600">|</span>
-                        <button data-lang-target="sc" onclick="setLanguage('sc')" class="lang-btn px-2.5 py-1 rounded transition text-slate-400">简体</button>
+                <!-- Compact Language Selector & Action CTA -->
+                <div class="hidden sm:flex items-center space-x-3">
+                    
+                    <!-- Compact Dropdown / Toggle for Language -->
+                    <div class="relative inline-block text-left">
+                        <div class="flex items-center bg-navy-900/90 border border-slate-700/80 rounded-xl p-1 text-xs font-mono">
+                            <button onclick="setLanguage('en')" id="lang-btn-en" class="px-2.5 py-1 rounded-lg transition font-bold text-cyan-400 bg-navy-800">EN</button>
+                            <button onclick="setLanguage('tc')" id="lang-btn-tc" class="px-2.5 py-1 rounded-lg transition text-slate-400 hover:text-white">繁</button>
+                            <button onclick="setLanguage('sc')" id="lang-btn-sc" class="px-2.5 py-1 rounded-lg transition text-slate-400 hover:text-white">简</button>
+                        </div>
                     </div>
 
-                    <a href="#contact" class="hidden sm:inline-flex items-center justify-center px-4 py-2 text-xs font-bold uppercase tracking-wider rounded-lg bg-gradient-to-r from-cyan-500 to-emerald-400 text-slate-950 hover:opacity-90 transition shadow-md shadow-cyan-500/20">
-                        <span class="lang-en">Partner With Us</span>
+                    <!-- Enquire Now / Partner Action CTA -->
+                    <a href="#contact" class="inline-flex items-center justify-center px-4 py-2.5 text-xs font-bold uppercase tracking-wider rounded-xl bg-gradient-to-r from-cyan-500 to-emerald-400 text-slate-950 hover:shadow-lg hover:shadow-cyan-500/20 transition-all transform hover:-translate-y-0.5">
+                        <span class="lang-en">Enquire Now</span>
                         <span class="lang-tc">洽談合作</span>
                         <span class="lang-sc">洽谈合作</span>
                     </a>
                 </div>
+
+                <!-- Mobile Hamburger Button -->
+                <div class="lg:hidden flex items-center space-x-2">
+                    <button onclick="toggleMobileMenu()" class="p-2 rounded-xl glass-card text-slate-300 hover:text-white focus:outline-none border border-slate-700">
+                        <svg id="menu-icon-open" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+                        <svg id="menu-icon-close" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+                    </button>
+                </div>
+
             </div>
         </div>
-    </nav>
+
+        <!-- Mobile Drawer Navigation Overlay -->
+        <div id="mobile-menu" class="hidden lg:hidden glass-panel border-b border-slate-800 px-4 pt-2 pb-6 space-y-4">
+            <div class="flex flex-col space-y-3 pt-2">
+                <a href="#fleet" onclick="toggleMobileMenu()" class="px-3 py-2 rounded-lg text-slate-200 font-medium hover:bg-slate-800/50">
+                    <span class="lang-en">Fleet & Vessels</span><span class="lang-tc">旗艦船隊</span><span class="lang-sc">旗舰舰队</span>
+                </a>
+                <a href="#autonomous" onclick="toggleMobileMenu()" class="px-3 py-2 rounded-lg text-slate-200 font-medium hover:bg-slate-800/50">
+                    <span class="lang-en">Autonomous AI Suite</span><span class="lang-tc">LiDAR 智駕系統</span><span class="lang-sc">LiDAR 智驾系统</span>
+                </a>
+                <a href="#technology" onclick="toggleMobileMenu()" class="px-3 py-2 rounded-lg text-slate-200 font-medium hover:bg-slate-800/50">
+                    <span class="lang-en">Propulsion & Charging</span><span class="lang-tc">水翼與兆瓦充電</span><span class="lang-sc">水翼与兆瓦充电</span>
+                </a>
+                <a href="#routes" onclick="toggleMobileMenu()" class="px-3 py-2 rounded-lg text-slate-200 font-medium hover:bg-slate-800/50">
+                    <span class="lang-en">Routes & Network</span><span class="lang-tc">航線網絡</span><span class="lang-sc">航线网络</span>
+                </a>
+                <a href="#simulator" onclick="toggleMobileMenu()" class="px-3 py-2 rounded-lg text-slate-200 font-medium hover:bg-slate-800/50">
+                    <span class="lang-en">Simulator</span><span class="lang-tc">效益模擬器</span><span class="lang-sc">效益模拟器</span>
+                </a>
+                <a href="#specs" onclick="toggleMobileMenu()" class="px-3 py-2 rounded-lg text-slate-200 font-medium hover:bg-slate-800/50">
+                    <span class="lang-en">Specs & Insights</span><span class="lang-tc">規格矩陣</span><span class="lang-sc">规格矩阵</span>
+                </a>
+            </div>
+
+            <div class="pt-4 border-t border-slate-800 flex flex-col gap-3">
+                <div class="flex items-center justify-between">
+                    <span class="text-xs text-slate-400 font-mono">Language / 語言:</span>
+                    <div class="flex items-center bg-navy-900 border border-slate-700 rounded-xl p-1 text-xs font-mono">
+                        <button onclick="setLanguage('en')" class="px-3 py-1 rounded-lg text-cyan-400 font-bold">EN</button>
+                        <button onclick="setLanguage('tc')" class="px-3 py-1 rounded-lg text-slate-400">繁體</button>
+                        <button onclick="setLanguage('sc')" class="px-3 py-1 rounded-lg text-slate-400">简体</button>
+                    </div>
+                </div>
+                <a href="#contact" onclick="toggleMobileMenu()" class="w-full py-3 text-center text-xs font-bold uppercase tracking-wider rounded-xl bg-gradient-to-r from-cyan-500 to-emerald-400 text-slate-950 shadow-md">
+                    <span class="lang-en">Enquire Now / Partner</span>
+                    <span class="lang-tc">洽談合作</span>
+                    <span class="lang-sc">洽谈合作</span>
+                </a>
+            </div>
+        </div>
+    </header>
 
     <!-- Hero Section -->
-    <section class="relative pt-32 pb-24 md:pt-40 md:pb-32 overflow-hidden bg-navy-950 bg-grid-pattern">
-        <!-- Glowing Ambient Lighting -->
-        <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[350px] bg-cyber-grid pointer-events-none rounded-full blur-3xl opacity-60"></div>
-        
+    <section class="relative pt-32 pb-20 md:pt-40 md:pb-28 overflow-hidden bg-navy-950 bg-grid-pattern bg-cyber-glow">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div class="grid lg:grid-cols-12 gap-12 items-center">
                 
-                <!-- Hero Copy & Call To Actions -->
+                <!-- Hero Left Copy -->
                 <div class="lg:col-span-7 text-left space-y-6">
                     
-                    <!-- Top Tag -->
-                    <div class="inline-flex items-center space-x-2 px-3 py-1.5 rounded-full bg-cyan-950/80 border border-cyan-500/30 text-cyan-300 text-xs font-semibold">
-                        <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-                        <span class="lang-en">Hong Kong & GBA Green Ferry Initiative</span>
-                        <span class="lang-tc">香港及大灣區綠色渡輪倡議項目</span>
-                        <span class="lang-sc">香港及大湾区绿色渡轮倡议项目</span>
+                    <!-- Tag Pill -->
+                    <div class="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-cyan-950/80 border border-cyan-500/30 text-cyan-300 text-xs font-mono">
+                        <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
+                        <span class="lang-en">Hong Kong & GBA Green & Autonomous Maritime Initiative</span>
+                        <span class="lang-tc">香港及大灣區綠色智駕水上客運計畫</span>
+                        <span class="lang-sc">香港及大湾区绿色智驾水上客运计划</span>
                     </div>
 
-                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white tracking-tight leading-[1.15]">
-                        <span class="lang-en">The Future of Clean Maritime Transport in the Greater Bay Area</span>
-                        <span class="lang-tc">粵港澳大灣區 零碳零波浪 高水上交通新紀元</span>
-                        <span class="lang-sc">粤港澳大湾区 零碳零波浪 高水上交通新纪元</span>
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black text-white tracking-tight leading-[1.12]">
+                        <span class="lang-en">The Future of Clean & Autonomous Maritime Transport in the Greater Bay Area</span>
+                        <span class="lang-tc">粵港澳大灣區 零碳零波浪 自主駕駛高速水上客運新紀元</span>
+                        <span class="lang-sc">粤港澳大湾区 零碳零波浪 自主驾驶高速水上客运新纪元</span>
                     </h1>
 
-                    <p class="text-xl sm:text-2xl text-cyan-300/90 font-light tracking-wide">
-                        <span class="lang-en">Elevating high-speed transit. Zero emissions. Zero wake.</span>
-                        <span class="lang-tc">提升高速水上客運。零碳排放。零水波浪。</span>
-                        <span class="lang-sc">提升高速水上客运。零碳排放。零水波浪。</span>
+                    <p class="text-lg sm:text-xl text-cyan-300/90 font-light tracking-wide">
+                        <span class="lang-en">Elevating GBA transit with eFoiler direct-drive pods, 360° LiDAR optical AI navigation, and Megawatt shore charging.</span>
+                        <span class="lang-tc">以純電直驅水翼推進器、360° LiDAR 光學 AI 智駕與兆瓦級岸電，賦能大灣區綠色水上交通。</span>
+                        <span class="lang-sc">以纯电直驱水翼推进器、360° LiDAR 光学 AI 智驾与兆瓦级岸电，赋能大湾区绿色水上交通。</span>
                     </p>
 
-                    <p class="text-base text-slate-400 max-w-2xl leading-relaxed">
-                        <span class="lang-en">Building on cutting-edge aerospace and maritime engineering, we deliver transformative electric hydrofoil vessels and direct-drive pod propulsion tailored specifically for Victoria Harbour, Lantau Island, and cross-boundary Pearl River Delta routes.</span>
-                        <span class="lang-tc">憑藉前沿航空航天與海洋工程技術，我們專為維多利亞港、大嶼山及珠江口跨境航線研發水翼電動推進系統與無浪高速客船，全面消除海洋污染。</span>
-                        <span class="lang-sc">凭借前沿航空航天与海洋工程技术，我们专为维多利亚港、大屿山及珠江口跨境航线研发水翼电动推进系统与无浪高速客船，全面消除海洋污染。</span>
+                    <p class="text-sm text-slate-400 max-w-2xl leading-relaxed">
+                        <span class="lang-en">By lifting vessel hulls clear out of the water, Aero-Marine eliminates 80% of hydrodynamic drag and cuts wake height to under 15cm. Powered by automated flight control and 360° LiDAR AI collision avoidance for Victoria Harbour's high-density maritime traffic.</span>
+                        <span class="lang-tc">水翼系統將船體升離水面，將流體阻力降低 80%，並將船浪高度壓至 15cm 以下。結合 360° LiDAR AI 避障與自動航行控制，輕鬆應對維多利亞港繁忙航道。</span>
+                        <span class="lang-sc">水翼系统将船体升离水面，将流体阻力降低 80%，并将船浪高度压至 15cm 以下。结合 360° LiDAR AI 避障与自动航行控制，轻松应对维多利亚港繁忙航道。</span>
                     </p>
 
-                    <!-- Key Target Route Pills -->
-                    <div class="pt-2">
-                        <div class="text-xs uppercase font-mono tracking-wider text-slate-500 mb-2">
-                            <span class="lang-en">Priority Operational Networks</span>
-                            <span class="lang-tc">首期重點營運路線</span>
-                            <span class="lang-sc">首期重点运营路线</span>
+                    <!-- Key Metrics Ticker Banner -->
+                    <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-2">
+                        <div class="p-3 rounded-xl glass-card border border-slate-800">
+                            <div class="text-[10px] uppercase font-mono text-slate-400">Cruising Speed</div>
+                            <div class="text-lg font-black text-cyan-400">35 Knots</div>
                         </div>
-                        <div class="flex flex-wrap gap-2">
-                            <span class="px-3 py-1.5 rounded-lg glass-card border border-slate-700/80 text-xs font-medium text-slate-300 flex items-center gap-1.5">
-                                <span class="text-cyan-400">⚓</span> Central ↔ Tsim Sha Tsui
-                            </span>
-                            <span class="px-3 py-1.5 rounded-lg glass-card border border-slate-700/80 text-xs font-medium text-slate-300 flex items-center gap-1.5">
-                                <span class="text-cyan-400">⚓</span> Central ↔ Mui Wo
-                            </span>
-                            <span class="px-3 py-1.5 rounded-lg glass-card border border-slate-700/80 text-xs font-medium text-slate-300 flex items-center gap-1.5">
-                                <span class="text-cyan-400">🌐</span> HK ↔ Macau / Shenzhen / Zhuhai
-                            </span>
+                        <div class="p-3 rounded-xl glass-card border border-slate-800">
+                            <div class="text-[10px] uppercase font-mono text-slate-400">Foiling Range</div>
+                            <div class="text-lg font-black text-white">80 NM / Chg</div>
+                        </div>
+                        <div class="p-3 rounded-xl glass-card border border-slate-800">
+                            <div class="text-[10px] uppercase font-mono text-slate-400">Wake Height</div>
+                            <div class="text-lg font-black text-emerald-400">&lt; 15 cm</div>
+                        </div>
+                        <div class="p-3 rounded-xl glass-card border border-slate-800">
+                            <div class="text-[10px] uppercase font-mono text-slate-400">AI Autonomy</div>
+                            <div class="text-lg font-black text-cyan-300">Level 3 Single-Pilot</div>
                         </div>
                     </div>
 
                     <!-- Action Buttons -->
-                    <div class="pt-4 flex flex-col sm:flex-row gap-4">
-                        <a href="#technology" class="px-8 py-3.5 rounded-xl bg-gradient-to-r from-cyan-500 to-emerald-400 text-slate-950 font-bold text-sm tracking-wide hover:shadow-lg hover:shadow-cyan-500/25 transition text-center flex items-center justify-center gap-2">
-                            <span class="lang-en">Explore Technology</span>
-                            <span class="lang-tc">探索水翼技術</span>
-                            <span class="lang-sc">探索水翼技术</span>
+                    <div class="pt-2 flex flex-col sm:flex-row gap-4">
+                        <a href="#autonomous" class="px-8 py-3.5 rounded-xl bg-gradient-to-r from-cyan-500 to-emerald-400 text-slate-950 font-bold text-sm tracking-wide hover:shadow-lg hover:shadow-cyan-500/25 transition text-center flex items-center justify-center gap-2">
+                            <span class="lang-en">Explore AI & eFoiler Tech</span>
+                            <span class="lang-tc">探索智駕與水翼技術</span>
+                            <span class="lang-sc">探索智驾与水翼技术</span>
                             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
                         </a>
-                        <a href="#contact" class="px-8 py-3.5 rounded-xl glass-panel text-white font-semibold text-sm border border-slate-700 hover:border-cyan-400 transition text-center">
-                            <span class="lang-en">Partner With Us</span>
-                            <span class="lang-tc">政府與營運商合作</span>
-                            <span class="lang-sc">政府与运营商合作</span>
+                        <a href="#simulator" class="px-8 py-3.5 rounded-xl glass-panel text-white font-semibold text-sm border border-slate-700 hover:border-cyan-400 transition text-center">
+                            <span class="lang-en">Calculate ROI Savings</span>
+                            <span class="lang-tc">營運成本試算</span>
+                            <span class="lang-sc">运营成本试算</span>
                         </a>
                     </div>
+
                 </div>
 
-                <!-- Hero Visual Render Card -->
+                <!-- Hero Right Interactive CAD Preview Card -->
                 <div class="lg:col-span-5 relative">
-                    <div class="relative rounded-2xl p-1 bg-gradient-to-b from-cyan-500/30 via-slate-700/20 to-emerald-500/20 shadow-2xl glow-cyan">
-                        <div class="bg-navy-900 rounded-[14px] overflow-hidden p-6 relative">
-                            <!-- Vector Skyline / Hydrofoil Render Canvas Mockup -->
-                            <div class="relative h-72 sm:h-80 w-full rounded-xl overflow-hidden bg-slate-950 flex flex-col items-center justify-between p-4 border border-slate-800">
+                    <div class="relative rounded-3xl p-1 bg-gradient-to-b from-cyan-500/30 via-slate-700/20 to-emerald-500/20 shadow-2xl glow-cyan">
+                        <div class="bg-navy-900 rounded-[22px] overflow-hidden p-6 relative">
+                            
+                            <!-- CAD Header Status -->
+                            <div class="flex items-center justify-between text-xs font-mono mb-4 text-slate-400">
+                                <span class="flex items-center gap-1.5"><span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span> FOILING MODE ACTIVE</span>
+                                <span class="text-cyan-400">EF-150 GBA COMMUTER</span>
+                            </div>
+
+                            <!-- Vessel Render Graphic in Victoria Harbour -->
+                            <div class="relative h-72 sm:h-80 w-full rounded-2xl overflow-hidden bg-navy-950 flex flex-col items-center justify-between p-4 border border-slate-800">
                                 
-                                <!-- Sunset Skyline Silhouette backdrop -->
-                                <div class="absolute inset-0 bg-gradient-to-b from-indigo-950 via-slate-900 to-navy-950 opacity-90"></div>
+                                <!-- Background Gradient Sky -->
+                                <div class="absolute inset-0 bg-gradient-to-b from-navy-900 via-navy-950 to-slate-950 opacity-90"></div>
                                 
-                                <!-- HK Skyline Vector Graphic -->
-                                <svg class="absolute bottom-16 w-full h-24 text-slate-800 opacity-60" preserveAspectRatio="none" viewBox="0 0 500 150">
-                                    <path fill="currentColor" d="M10,150 L10,90 L25,90 L25,150 L40,150 L40,60 L65,60 L65,150 L80,150 L80,100 L95,100 L95,150 L120,150 L120,30 L135,30 L135,150 L160,150 L160,80 L180,80 L180,150 L200,150 L200,45 L225,45 L225,150 L260,150 L260,20 L285,20 L285,150 L310,150 L310,75 L335,75 L335,150 L370,150 L370,50 L395,50 L395,150 L430,150 L430,85 L460,85 L460,150 Z" />
+                                <!-- Victoria Harbour Vector Skyline -->
+                                <svg class="absolute bottom-16 w-full h-28 text-slate-800/80 opacity-70" preserveAspectRatio="none" viewBox="0 0 500 150">
+                                    <path fill="currentColor" d="M10,150 L10,80 L25,80 L25,150 L40,150 L40,50 L65,50 L65,150 L80,150 L80,95 L95,95 L95,150 L120,150 L120,20 L140,20 L140,150 L160,150 L160,70 L180,70 L180,150 L200,150 L200,35 L225,35 L225,150 L260,150 L260,15 L285,15 L285,150 L310,150 L310,65 L335,65 L335,150 L370,150 L370,40 L395,40 L395,150 L430,150 L430,75 L460,75 L460,150 Z" />
                                 </svg>
 
-                                <!-- Victoria Harbour Water Surface -->
-                                <div class="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-cyan-950/80 to-slate-900 border-t border-cyan-500/20"></div>
+                                <!-- Water Surface -->
+                                <div class="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-cyan-950/90 to-navy-950 border-t border-cyan-500/20"></div>
 
-                                <!-- Foiling Electric Vessel Floating Above Water -->
+                                <!-- LiDAR Beam Field Overlay -->
+                                <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-32 border border-cyan-400/20 rounded-full animate-ping-pulse pointer-events-none"></div>
+
+                                <!-- Hydrofoil Vessel Hovering -->
                                 <div class="relative z-10 my-auto flex flex-col items-center animate-foil-wave">
-                                    <!-- Vessel Hull -->
-                                    <div class="w-52 h-10 bg-gradient-to-r from-slate-200 via-cyan-100 to-slate-300 rounded-t-full rounded-b-md shadow-lg relative flex items-center justify-between px-4 border border-cyan-400/40">
-                                        <span class="text-[10px] font-mono font-bold text-navy-950 tracking-wider">AERO-FOIL GBA-150</span>
-                                        <div class="flex space-x-1">
-                                            <span class="w-2 h-2 rounded-full bg-cyan-400 animate-ping"></span>
-                                            <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
+                                    
+                                    <!-- Hull Shell -->
+                                    <div class="w-56 h-12 bg-gradient-to-r from-slate-200 via-cyan-100 to-slate-300 rounded-t-full rounded-b-lg shadow-xl relative flex items-center justify-between px-4 border border-cyan-300/50">
+                                        <span class="text-[10px] font-mono font-bold text-navy-950 tracking-wider">AERO-FOIL EF-150</span>
+                                        <div class="flex items-center space-x-1 bg-navy-950/80 px-2 py-0.5 rounded text-[9px] font-mono text-cyan-300">
+                                            <span>LiDAR AI</span>
                                         </div>
                                     </div>
-                                    <!-- Submerged Hydrofoil Struts (Elevated) -->
-                                    <div class="flex justify-between w-40 -mt-0.5">
-                                        <div class="w-1.5 h-10 bg-slate-400 mx-auto"></div>
-                                        <div class="w-1.5 h-10 bg-slate-400 mx-auto"></div>
+                                    
+                                    <!-- Hydrofoil Struts -->
+                                    <div class="flex justify-between w-44 -mt-0.5">
+                                        <div class="w-2 h-12 bg-slate-400"></div>
+                                        <div class="w-2 h-12 bg-slate-400"></div>
                                     </div>
-                                    <!-- Submerged Foiling Wing & Electric Pod Motor -->
-                                    <div class="w-48 h-2 bg-gradient-to-r from-cyan-400 via-emerald-400 to-cyan-400 rounded-full shadow-md shadow-cyan-400/50 -mt-1 flex justify-between items-center px-6">
-                                        <div class="w-3 h-3 rounded-full bg-emerald-300 border border-slate-950 -ml-1"></div>
-                                        <div class="w-3 h-3 rounded-full bg-emerald-300 border border-slate-950 -mr-1"></div>
+
+                                    <!-- Submerged Direct Drive Pods & Wing -->
+                                    <div class="w-52 h-2.5 bg-gradient-to-r from-cyan-400 via-emerald-400 to-cyan-400 rounded-full shadow-lg shadow-cyan-400/50 -mt-1 flex justify-between items-center px-4">
+                                        <div class="w-3.5 h-3.5 rounded-full bg-emerald-300 border border-slate-950 -ml-1"></div>
+                                        <div class="w-3.5 h-3.5 rounded-full bg-emerald-300 border border-slate-950 -mr-1"></div>
                                     </div>
-                                    <!-- Minimal Foil Line Wake Indicator (<15cm) -->
-                                    <div class="w-60 h-0.5 bg-cyan-400/30 mt-2 rounded-full blur-[1px]"></div>
+
+                                    <!-- Ultra-low Wake Wave Displacement (<15cm) -->
+                                    <div class="w-64 h-0.5 bg-cyan-400/30 mt-2 rounded-full blur-[1px]"></div>
                                 </div>
 
-                                <!-- Overlay Specs Badge -->
-                                <div class="absolute top-3 left-3 bg-navy-950/90 backdrop-blur-md px-3 py-1.5 rounded-lg border border-cyan-500/30 text-[11px] font-mono text-cyan-300 flex items-center space-x-2">
+                                <!-- Floating Telemetry Overlay Badges -->
+                                <div class="absolute top-3 left-3 bg-navy-950/90 backdrop-blur-md px-3 py-1.5 rounded-xl border border-cyan-500/30 text-[11px] font-mono text-cyan-300 flex items-center gap-2">
                                     <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
-                                    <span>FOILING MODE: 32 KNOTS</span>
+                                    <span>AI AUTOPILOT: DOCKING READY</span>
                                 </div>
 
                                 <div class="absolute bottom-2 right-3 text-[10px] font-mono text-slate-400">
-                                    WAKE HEIGHT &lt; 15CM
+                                    VICTORIA HARBOUR TEST ZONE 1
                                 </div>
                             </div>
 
-                            <!-- Live Telemetry Grid Metrics -->
+                            <!-- Real-Time Metrics Footbar -->
                             <div class="grid grid-cols-3 gap-3 mt-4 text-center">
-                                <div class="p-2.5 rounded-lg bg-navy-950/80 border border-slate-800">
-                                    <div class="text-[10px] text-slate-400 uppercase font-mono">Drag Reduction</div>
-                                    <div class="text-base font-bold text-cyan-400">80%</div>
+                                <div class="p-2.5 rounded-xl bg-navy-950/80 border border-slate-800">
+                                    <div class="text-[10px] text-slate-400 uppercase font-mono">Hydro Dynamic Drag</div>
+                                    <div class="text-base font-black text-cyan-400">-80%</div>
                                 </div>
-                                <div class="p-2.5 rounded-lg bg-navy-950/80 border border-slate-800">
-                                    <div class="text-[10px] text-slate-400 uppercase font-mono">Speed</div>
-                                    <div class="text-base font-bold text-white">35 Knots</div>
+                                <div class="p-2.5 rounded-xl bg-navy-950/80 border border-slate-800">
+                                    <div class="text-[10px] text-slate-400 uppercase font-mono">Labor Savings</div>
+                                    <div class="text-base font-black text-emerald-400">Up to 60%</div>
                                 </div>
-                                <div class="p-2.5 rounded-lg bg-navy-950/80 border border-slate-800">
+                                <div class="p-2.5 rounded-xl bg-navy-950/80 border border-slate-800">
                                     <div class="text-[10px] text-slate-400 uppercase font-mono">Turnaround</div>
-                                    <div class="text-base font-bold text-emerald-400">45 Mins</div>
+                                    <div class="text-base font-black text-white">45 Mins MCS</div>
                                 </div>
                             </div>
+
                         </div>
                     </div>
                 </div>
@@ -334,333 +463,377 @@
         </div>
     </section>
 
-    <!-- Vision & Strategic Routes Section -->
-    <section id="vision" class="py-24 bg-navy-900 border-t border-slate-800/80 relative">
+    <!-- Autonomous Navigation & AI Safety Suite -->
+    <section id="autonomous" class="py-24 bg-navy-900 border-t border-slate-800/80 relative">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             
             <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
-                <h2 class="text-xs uppercase font-mono tracking-widest text-cyan-400">
-                    <span class="lang-en">Brand Vision & Strategic Purpose</span>
-                    <span class="lang-tc">品牌願景與核心使命</span>
-                    <span class="lang-sc">品牌愿景与核心使命</span>
+                <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-cyan-500/10 text-cyan-400 text-xs font-mono border border-cyan-500/20">
+                    <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg>
+                    <span class="lang-en">Autonomous AI Marine Navigation</span>
+                    <span class="lang-tc">LiDAR 及光學 AI 智能水上導航</span>
+                    <span class="lang-sc">LiDAR 及光学 AI 智能水上导航</span>
+                </div>
+
+                <h2 class="text-3xl sm:text-4xl font-black text-white tracking-tight">
+                    <span class="lang-en">360° Solid-State LiDAR & Multi-Spectral Vision</span>
+                    <span class="lang-tc">360度固態雷達與多光學 AI 全域感測避障</span>
+                    <span class="lang-sc">360度固态雷达与多光学 AI 全域感测避障</span>
                 </h2>
-                <h3 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
-                    <span class="lang-en">Harmonizing High-Speed Transit With Coastal Ecosystems</span>
-                    <span class="lang-tc">融合高速水上交通與水域生態保育</span>
-                    <span class="lang-sc">融合高速水上交通与水域生态保育</span>
-                </h3>
-                <p class="text-slate-400 leading-relaxed text-base">
-                    <span class="lang-en">Our purpose is to pioneer the complete decarbonization of the Greater Bay Area maritime industry. By lifting vessel hulls out of the water with computer-controlled hydrofoils, we eliminate water turbulence, shore erosion, and diesel tailpipe pollutants.</span>
-                    <span class="lang-tc">我們的目標是引領大灣區海洋交通產業全面脫碳。透過電腦控制的水翼系統將船體升離水面，澈底消除水波浪衝擊、海岸侵蝕以及柴油廢氣污染。</span>
-                    <span class="lang-sc">我们的目标是引领大湾区海洋交通产业全面脱碳。通过电脑控制的水翼系统将船体升离水面，澈底消除水波浪冲击、海岸侵蚀以及柴油废气污染。</span>
+
+                <p class="text-slate-400 text-base leading-relaxed">
+                    <span class="lang-en">Victoria Harbour is one of the world's most densely trafficked waterways. Aero-Marine integrates cutting-edge solid-state LiDAR, infrared optical cameras, and automated flight control to deliver unprecedented collision avoidance, precision harbour docking, and up to 60% operational labor cost reduction.</span>
+                    <span class="lang-tc">維多利亞港是全球最繁忙的水域之一。Aero-Marine 整合固態 LiDAR、紅外線光學相機與自動飛行控制，提供無與倫比的防撞保護、精準泊岸，並降低高達 60% 的船務人力成本。</span>
+                    <span class="lang-sc">维多利亚港是全球最繁忙的水域之一。Aero-Marine 整合固态 LiDAR、红外线光学相机与自动飞行控制，提供无与伦比的防撞保护、精准泊岸，并降低高达 60% 的船务人力成本。</span>
                 </p>
             </div>
 
-            <!-- Strategic Route Cards Grid -->
-            <div class="grid md:grid-cols-3 gap-8">
+            <!-- Radar Sensor View & Tech Breakdown Grid -->
+            <div class="grid lg:grid-cols-12 gap-12 items-center">
                 
-                <!-- Route 1 -->
-                <div class="glass-panel p-8 rounded-2xl border border-slate-800 hover:border-cyan-500/50 transition group flex flex-col justify-between">
-                    <div>
-                        <div class="flex items-center justify-between mb-4">
-                            <span class="px-3 py-1 rounded-full bg-cyan-500/10 text-cyan-300 text-xs font-mono border border-cyan-500/20">HARBOUR COMMUTER</span>
-                            <span class="text-xs font-mono text-emerald-400">10 MIN TRANSIT</span>
-                        </div>
-                        <h4 class="text-xl font-bold text-white mb-2 group-hover:text-cyan-400 transition">Central ↔ Tsim Sha Tsui</h4>
-                        <p class="text-sm text-slate-400 mb-6 leading-relaxed">
-                            <span class="lang-en">High-frequency Victoria Harbour shuttle designed for zero-wake transit through Hong Kong's busiest maritime fairway.</span>
-                            <span class="lang-tc">高頻率維多利亞港客運班次，專為香港繁重的維港航道設計，行駛無水波浪，不干擾其他船隻。</span>
-                            <span class="lang-sc">高频率维多利亚港客运班次，专为香港繁重的维港航道设计，行驶无水波浪，不干扰其他船只。</span>
-                        </p>
+                <!-- Interactive Radar Scope Graphic -->
+                <div class="lg:col-span-6 bg-navy-950 p-6 sm:p-8 rounded-3xl border border-slate-800 glow-cyan relative overflow-hidden flex flex-col items-center">
+                    
+                    <div class="w-full flex items-center justify-between text-xs font-mono text-cyan-400 mb-4">
+                        <span class="flex items-center gap-1.5"><span class="w-2 h-2 rounded-full bg-cyan-400 animate-ping"></span> VICTORIA HARBOUR SCAN</span>
+                        <span class="text-slate-400">RANGE: 500M RADIAL</span>
                     </div>
-                    <ul class="text-xs font-mono space-y-2 border-t border-slate-800/80 pt-4 text-slate-400">
-                        <li class="flex justify-between"><span>Capacity:</span> <strong class="text-slate-200">150 Passengers</strong></li>
-                        <li class="flex justify-between"><span>Wake Height:</span> <strong class="text-emerald-400">&lt; 15 cm</strong></li>
-                    </ul>
+
+                    <!-- Radar Circular Screen -->
+                    <div class="relative w-72 h-72 sm:w-80 sm:h-80 rounded-full border border-cyan-500/30 bg-navy-900/90 flex items-center justify-center overflow-hidden my-4 shadow-inner">
+                        
+                        <!-- Concentric Radar Rings -->
+                        <div class="absolute w-56 h-56 rounded-full border border-cyan-500/20"></div>
+                        <div class="absolute w-36 h-36 rounded-full border border-cyan-500/20"></div>
+                        <div class="absolute w-16 h-16 rounded-full border border-cyan-500/20"></div>
+                        
+                        <!-- Axis Lines -->
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <div class="w-full h-[1px] bg-cyan-500/20"></div>
+                            <div class="h-full w-[1px] bg-cyan-500/20"></div>
+                        </div>
+
+                        <!-- Sweeping Radar Line -->
+                        <div class="absolute inset-0 animate-radar-sweep">
+                            <div class="w-1/2 h-1/2 bg-gradient-to-tr from-cyan-500/30 to-transparent origin-bottom-right rounded-tl-full"></div>
+                        </div>
+
+                        <!-- Detected Vessel Radar Targets -->
+                        <div class="absolute top-16 right-20 flex items-center space-x-1 group cursor-pointer">
+                            <span class="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-ping"></span>
+                            <span class="text-[9px] font-mono text-emerald-300 bg-navy-950/80 px-1 rounded">FERRY #104 [SAFE]</span>
+                        </div>
+
+                        <div class="absolute bottom-20 left-16 flex items-center space-x-1 group cursor-pointer">
+                            <span class="w-2.5 h-2.5 rounded-full bg-amber-400 animate-ping"></span>
+                            <span class="text-[9px] font-mono text-amber-300 bg-navy-950/80 px-1 rounded">BARGE #22 [TRACKING]</span>
+                        </div>
+
+                        <!-- Self Ship Center Icon -->
+                        <div class="relative z-10 w-4 h-4 rounded-full bg-cyan-400 border-2 border-white shadow-lg shadow-cyan-400"></div>
+                    </div>
+
+                    <!-- Sensor Status Indicators -->
+                    <div class="grid grid-cols-2 gap-3 w-full mt-2 text-xs font-mono">
+                        <div class="p-2.5 rounded-xl bg-navy-900 border border-slate-800 text-center">
+                            <span class="text-slate-400">360° LiDAR:</span>
+                            <span class="text-emerald-400 font-bold block mt-0.5">32 Beams Active</span>
+                        </div>
+                        <div class="p-2.5 rounded-xl bg-navy-900 border border-slate-800 text-center">
+                            <span class="text-slate-400">AI Flight Desk:</span>
+                            <span class="text-cyan-400 font-bold block mt-0.5">Single-Pilot AI</span>
+                        </div>
+                    </div>
+
                 </div>
 
-                <!-- Route 2 -->
-                <div class="glass-panel p-8 rounded-2xl border border-slate-800 hover:border-cyan-500/50 transition group flex flex-col justify-between">
-                    <div>
-                        <div class="flex items-center justify-between mb-4">
-                            <span class="px-3 py-1 rounded-full bg-cyan-500/10 text-cyan-300 text-xs font-mono border border-cyan-500/20">OUTLYING ISLANDS</span>
-                            <span class="text-xs font-mono text-cyan-400">25 MIN TRANSIT</span>
+                <!-- AI Feature Cards Column -->
+                <div class="lg:col-span-6 space-y-6">
+                    
+                    <div class="glass-panel p-6 rounded-2xl border border-slate-800 hover:border-cyan-500/40 transition">
+                        <div class="flex items-start space-x-4">
+                            <div class="p-3 rounded-xl bg-cyan-500/10 text-cyan-400 border border-cyan-500/20">
+                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+                            </div>
+                            <div>
+                                <h3 class="text-lg font-bold text-white mb-1">Real-Time AI Collision Avoidance</h3>
+                                <p class="text-xs text-slate-400 leading-relaxed">
+                                    Multi-spectral optical AI cameras fused with 360° solid-state LiDAR continuously analyze surface traffic up to 1,000 meters away, automatically adjusting flight hydrofoil trim angle and course in high-density marine channels.
+                                </p>
+                            </div>
                         </div>
-                        <h4 class="text-xl font-bold text-white mb-2 group-hover:text-cyan-400 transition">Central ↔ Mui Wo (Lantau)</h4>
-                        <p class="text-sm text-slate-400 mb-6 leading-relaxed">
-                            <span class="lang-en">Smooth, flight-like passenger comfort crossing Southern waters with complete immunity to sea choppy waves and swells.</span>
-                            <span class="lang-tc">連接中環與大嶼山梅窩，水翼飛行模式有效平抑海浪顛簸，提供如航空飛行般的舒適乘搭體驗。</span>
-                            <span class="lang-sc">连接中环与大屿山梅窝，水翼飞行模式有效平抑海浪颠簸，提供如航空飞行般的舒适乘坐体验。</span>
-                        </p>
                     </div>
-                    <ul class="text-xs font-mono space-y-2 border-t border-slate-800/80 pt-4 text-slate-400">
-                        <li class="flex justify-between"><span>Cruising Speed:</span> <strong class="text-slate-200">30 Knots</strong></li>
-                        <li class="flex justify-between"><span>Energy Saved:</span> <strong class="text-cyan-400">80% Drag Cut</strong></li>
-                    </ul>
-                </div>
 
-                <!-- Route 3 -->
-                <div class="glass-panel p-8 rounded-2xl border border-slate-800 hover:border-cyan-500/50 transition group flex flex-col justify-between">
-                    <div>
-                        <div class="flex items-center justify-between mb-4">
-                            <span class="px-3 py-1 rounded-full bg-emerald-500/10 text-emerald-300 text-xs font-mono border border-emerald-500/20">REGIONAL GBA</span>
-                            <span class="text-xs font-mono text-emerald-400">45-60 MIN TRANSIT</span>
+                    <div class="glass-panel p-6 rounded-2xl border border-slate-800 hover:border-emerald-500/40 transition">
+                        <div class="flex items-start space-x-4">
+                            <div class="p-3 rounded-xl bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
+                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/></svg>
+                            </div>
+                            <div>
+                                <h3 class="text-lg font-bold text-white mb-1">Single-Pilot AI Flight Desk & Labor Cost Reduction</h3>
+                                <p class="text-xs text-slate-400 leading-relaxed">
+                                    Transitions traditional multi-crew operational models to a streamlined AI-assisted single-pilot flight bridge—reducing ship operator labor expenditure by up to 60% while elevating safety standards.
+                                </p>
+                            </div>
                         </div>
-                        <h4 class="text-xl font-bold text-white mb-2 group-hover:text-cyan-400 transition">HK ↔ Macau / Shenzhen / Zhuhai</h4>
-                        <p class="text-sm text-slate-400 mb-6 leading-relaxed">
-                            <span class="lang-en">Long-range cross-boundary fast hydrofoil connectivity across the Pearl River Delta with rapid megawatt charging turns.</span>
-                            <span class="lang-tc">跨境 Pearl River Delta 區域高速網絡，覆蓋澳門、深圳蛇口/福永及珠海九州港，具備兆瓦級快速充電能力。</span>
-                            <span class="lang-sc">跨境 Pearl River Delta 区域高速网络，覆盖澳门、深圳蛇口/福永及珠海九州港，具备兆瓦级快速充电能力。</span>
-                        </p>
                     </div>
-                    <ul class="text-xs font-mono space-y-2 border-t border-slate-800/80 pt-4 text-slate-400">
-                        <li class="flex justify-between"><span>Range per charge:</span> <strong class="text-slate-200">80 NM</strong></li>
-                        <li class="flex justify-between"><span>Capacity:</span> <strong class="text-slate-200">300 Passengers</strong></li>
-                    </ul>
+
+                    <div class="glass-panel p-6 rounded-2xl border border-slate-800 hover:border-cyan-500/40 transition">
+                        <div class="flex items-start space-x-4">
+                            <div class="p-3 rounded-xl bg-cyan-500/10 text-cyan-400 border border-cyan-500/20">
+                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5m0 0h4m-4 0V11m0 0h4m-4 0V7m0 4h4"/></svg>
+                            </div>
+                            <div>
+                                <h3 class="text-lg font-bold text-white mb-1">Automated Victoria Harbour Docking</h3>
+                                <p class="text-xs text-slate-400 leading-relaxed">
+                                    Millimeter-precision ultrasonic proximity positioning and automated thruster vectoring allow effortless docking at Hong Kong public piers (Central, TST, Wan Chai) even under heavy tidal currents.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
 
             </div>
         </div>
     </section>
 
-    <!-- Technology Section -->
+    <!-- Aero-Marine Core Technology Section -->
     <section id="technology" class="py-24 bg-navy-950 relative border-t border-slate-800/80">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             
             <div class="flex flex-col md:flex-row md:items-end justify-between mb-16">
                 <div>
-                    <span class="text-xs uppercase font-mono text-cyan-400 tracking-wider">Engineering Precision</span>
-                    <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-2">The Aero-Marine System</h2>
+                    <span class="text-xs uppercase font-mono text-cyan-400 tracking-wider">Artemis-Inspired Hardware Engineering</span>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-2">Core Drivetrain & Megawatt Charging</h2>
                 </div>
-                <p class="text-slate-400 text-sm max-w-md mt-4 md:mt-0">
-                    Combining aerospace aerodynamics with deep-water hydrodynamics for low-drag, high-efficiency maritime operation.
+                <p class="text-slate-400 text-sm max-w-md mt-4 md:mt-0 leading-relaxed">
+                    Merging aerospace hydrodynamics with high-voltage solid-state marine batteries and shore-to-ship megawatt infrastructure.
                 </p>
             </div>
 
-            <div class="grid lg:grid-cols-2 gap-12 items-center">
+            <!-- 3 Tech Interactive Cards Grid -->
+            <div class="grid md:grid-cols-3 gap-8">
                 
-                <!-- Tech Feature Breakdown Cards -->
-                <div class="space-y-6">
-                    
-                    <div class="p-6 rounded-2xl glass-panel border border-slate-800 hover:border-cyan-500/40 transition">
-                        <div class="flex items-start space-x-4">
-                            <div class="p-3 rounded-xl bg-cyan-500/10 text-cyan-400 border border-cyan-500/20">
-                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
-                            </div>
-                            <div>
-                                <h3 class="text-lg font-bold text-white mb-2">Submerged Electric Foiling Pods</h3>
-                                <p class="text-sm text-slate-400 leading-relaxed">
-                                    Submerged direct-drive electric motor pods lift the ship hull completely clear of the surface at cruising speeds. This slashes hydrodynamic friction drag by up to 80%, reducing energy demands while generating zero wake turbulence.
-                                </p>
-                            </div>
+                <!-- Tech Card 1: Pod Propulsion -->
+                <div class="glass-panel p-8 rounded-3xl border border-slate-800 hover:border-cyan-500/40 transition group flex flex-col justify-between">
+                    <div>
+                        <div class="w-12 h-12 rounded-2xl bg-cyan-500/10 text-cyan-400 flex items-center justify-center mb-6 border border-cyan-500/20 group-hover:scale-110 transition-transform">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
                         </div>
+                        <h3 class="text-xl font-bold text-white mb-3 group-hover:text-cyan-400 transition">Submerged Direct-Drive Pods</h3>
+                        <p class="text-xs text-slate-400 leading-relaxed mb-6">
+                            Submerged electric pod units elevate the vessel hull above water, cutting friction drag by 80%. Produces less than 15cm wake height at 35 knots, completely eliminating shore erosion and protecting sea habitats.
+                        </p>
                     </div>
-
-                    <div class="p-6 rounded-2xl glass-panel border border-slate-800 hover:border-emerald-500/40 transition">
-                        <div class="flex items-start space-x-4">
-                            <div class="p-3 rounded-xl bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
-                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"/></svg>
-                            </div>
-                            <div>
-                                <h3 class="text-lg font-bold text-white mb-2">Solid-State Marine Battery System</h3>
-                                <p class="text-sm text-slate-400 leading-relaxed">
-                                    High energy density solid-state marine-grade lithium-ion battery packs (up to 2.5 MWh capacity) configured with redundant thermal liquid isolation, designed for high charge acceptance and thousands of marine operational cycles.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="p-6 rounded-2xl glass-panel border border-slate-800 hover:border-cyan-500/40 transition">
-                        <div class="flex items-start space-x-4">
-                            <div class="p-3 rounded-xl bg-cyan-500/10 text-cyan-400 border border-cyan-500/20">
-                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg>
-                            </div>
-                            <div>
-                                <h3 class="text-lg font-bold text-white mb-2">Shore-to-Ship Megawatt Charging (MCS)</h3>
-                                <p class="text-sm text-slate-400 leading-relaxed">
-                                    Designed specifically for integration with Hong Kong public piers and GBA ferry terminals. Floating pontoon rapid-charging units replenish batteries during standard 45-minute passenger turnaround windows without grid strain.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-
+                    <ul class="text-xs font-mono space-y-2.5 border-t border-slate-800/80 pt-4 text-slate-400">
+                        <li class="flex justify-between"><span>Drag Reduction:</span> <strong class="text-cyan-400">80% Less Friction</strong></li>
+                        <li class="flex justify-between"><span>Wake Height:</span> <strong class="text-emerald-400">&lt; 15 cm @ 35 kts</strong></li>
+                        <li class="flex justify-between"><span>Vibration:</span> <strong class="text-slate-200">6x Smoother Flight</strong></li>
+                    </ul>
                 </div>
 
-                <!-- 3D Component Dark Grid Visualization Card -->
-                <div class="bg-navy-900 border border-slate-800 rounded-2xl p-8 relative overflow-hidden bg-grid-pattern glow-cyan">
-                    <div class="text-xs font-mono text-cyan-400 mb-4 flex items-center justify-between">
-                        <span>COMPONENT CAD SCHEMATIC</span>
-                        <span class="px-2 py-0.5 rounded bg-cyan-500/20 text-cyan-300">DIRECT DRIVE POD</span>
-                    </div>
-
-                    <!-- Schematic Visual Diagram -->
-                    <div class="relative py-12 flex flex-col items-center justify-center border border-slate-800/80 rounded-xl bg-navy-950/80">
-                        <svg class="w-64 h-48 text-cyan-400" viewBox="0 0 300 200" fill="none" stroke="currentColor">
-                            <!-- Foil Strut -->
-                            <path d="M150 20 L150 110" stroke-width="4" stroke-dasharray="4 2" class="opacity-60" />
-                            <rect x="142" y="20" width="16" height="90" rx="4" fill="#0f172a" stroke="#22d3ee" stroke-width="2"/>
-                            <!-- Submerged Motor Pod -->
-                            <ellipse cx="150" cy="130" rx="80" ry="22" fill="#1e293b" stroke="#34d399" stroke-width="2" />
-                            <!-- Propeller Blades -->
-                            <path d="M70 130 L40 105 L45 155 Z" fill="#06b6d4" stroke="#22d3ee" />
-                            <path d="M230 130 L260 105 L255 155 Z" fill="#06b6d4" stroke="#22d3ee" />
-                            <!-- Internal Rotor Grid -->
-                            <line x1="110" y1="130" x2="190" y2="130" stroke="#22d3ee" stroke-width="3" stroke-dasharray="2 2"/>
-                            <!-- Dimension lines -->
-                            <line x1="150" y1="170" x2="230" y2="170" stroke="#64748b" stroke-width="1" />
-                            <text x="170" y="185" fill="#94a3b8" font-size="10" font-family="monospace">DIRECT DRIVE ROTOR</text>
-                        </svg>
-
-                        <!-- Dynamic Component Badges -->
-                        <div class="absolute top-4 left-4 bg-navy-900/90 border border-slate-700 px-3 py-1 rounded text-[11px] font-mono text-slate-300">
-                            IP68 Submersible Seal
+                <!-- Tech Card 2: 800V Solid-State Battery -->
+                <div class="glass-panel p-8 rounded-3xl border border-slate-800 hover:border-emerald-500/40 transition group flex flex-col justify-between">
+                    <div>
+                        <div class="w-12 h-12 rounded-2xl bg-emerald-500/10 text-emerald-400 flex items-center justify-center mb-6 border border-emerald-500/20 group-hover:scale-110 transition-transform">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"/></svg>
                         </div>
-                        <div class="absolute bottom-4 right-4 bg-navy-900/90 border border-emerald-500/40 px-3 py-1 rounded text-[11px] font-mono text-emerald-400">
-                            Efficiency: 96.4%
-                        </div>
+                        <h3 class="text-xl font-bold text-white mb-3 group-hover:text-cyan-400 transition">800V Marinised Battery & BMS</h3>
+                        <p class="text-xs text-slate-400 leading-relaxed mb-6">
+                            High energy density marinised solid-state & LiFePO4 packs with liquid isolation cooling, multi-stage off-gas early warning detection, and compliance with IEC 62619/62620 & UN38.3 standards.
+                        </p>
                     </div>
+                    <ul class="text-xs font-mono space-y-2.5 border-t border-slate-800/80 pt-4 text-slate-400">
+                        <li class="flex justify-between"><span>System Voltage:</span> <strong class="text-white">800V Architecture</strong></li>
+                        <li class="flex justify-between"><span>Safety Standard:</span> <strong class="text-emerald-400">IEC 62619 / UN38.3</strong></li>
+                        <li class="flex justify-between"><span>Safety BMS:</span> <strong class="text-cyan-400">Off-gas Detection</strong></li>
+                    </ul>
+                </div>
 
-                    <div class="mt-6 text-xs text-slate-400 font-mono flex items-center justify-between">
-                        <span>ACOUSTIC EMISSION: &lt; 62 dB</span>
-                        <span class="text-cyan-400">WAKE DISPLACEMENT: MINIMAL</span>
+                <!-- Tech Card 3: Megawatt MCS Charging -->
+                <div class="glass-panel p-8 rounded-3xl border border-slate-800 hover:border-cyan-500/40 transition group flex flex-col justify-between">
+                    <div>
+                        <div class="w-12 h-12 rounded-2xl bg-cyan-500/10 text-cyan-400 flex items-center justify-center mb-6 border border-cyan-500/20 group-hover:scale-110 transition-transform">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-3 group-hover:text-cyan-400 transition">Megawatt Charging System (MCS)</h3>
+                        <p class="text-xs text-slate-400 leading-relaxed mb-6">
+                            Dockside Megawatt Charging System (MCS) with battery-buffered Booster Box. Delivers up to 1MW ultra-fast charging to fully top-up batteries in 45-60 minutes without overloading local pier power grids.
+                        </p>
                     </div>
+                    <ul class="text-xs font-mono space-y-2.5 border-t border-slate-800/80 pt-4 text-slate-400">
+                        <li class="flex justify-between"><span>Charging Output:</span> <strong class="text-cyan-400">Up to 1.2 MW</strong></li>
+                        <li class="flex justify-between"><span>Turnaround Time:</span> <strong class="text-emerald-400">45-60 Mins Full</strong></li>
+                        <li class="flex justify-between"><span>Grid Buffer:</span> <strong class="text-slate-200">Dockside Booster Box</strong></li>
+                    </ul>
                 </div>
 
             </div>
         </div>
     </section>
 
-    <!-- Interactive Hydrofoil Efficiency Simulator -->
+    <!-- Interactive Hydrofoil & Operational Economics Simulator -->
     <section id="simulator" class="py-24 bg-navy-900 border-t border-slate-800/80">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             
             <div class="text-center max-w-3xl mx-auto mb-12">
-                <span class="text-xs font-mono uppercase text-cyan-400 tracking-widest">Interactive Comparison Tool</span>
-                <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-2">Hydrofoil Efficiency Simulator</h2>
-                <p class="text-slate-400 text-sm mt-3">
-                    Compare operational metrics between conventional diesel fast ferries and the Aero-Marine Electric Hydrofoil across GBA routes.
+                <span class="text-xs font-mono uppercase text-cyan-400 tracking-widest">Interactive Calculator</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-2">Fleet Operational ROI Simulator</h2>
+                <p class="text-slate-400 text-sm mt-3 leading-relaxed">
+                    Simulate annual fuel, labor, and carbon emissions savings when transitioning a traditional GBA ferry route to the Aero-Marine Autonomous Hydrofoil.
                 </p>
             </div>
 
-            <!-- Simulator Control & Results Glass Panel -->
-            <div class="glass-panel p-8 rounded-3xl border border-slate-800 max-w-4xl mx-auto">
-                <div class="grid md:grid-cols-2 gap-8 items-center mb-8 border-b border-slate-800 pb-8">
+            <!-- Calculator Glass Panel -->
+            <div class="glass-panel p-8 sm:p-12 rounded-3xl border border-slate-800 max-w-5xl mx-auto glow-cyan">
+                
+                <div class="grid md:grid-cols-2 gap-8 items-center mb-10 border-b border-slate-800 pb-10">
                     
-                    <!-- Slider Control 1: Daily Distance -->
+                    <!-- Control 1: Active Fleet Size -->
                     <div>
                         <div class="flex justify-between items-center mb-2">
-                            <label for="distance-slider" class="text-sm font-semibold text-slate-200">Daily Fleet Distance</label>
-                            <span id="distance-val" class="text-sm font-mono text-cyan-400 font-bold">180 NM / day</span>
+                            <label for="sim-fleet" class="text-xs font-mono uppercase text-slate-300">Active Vessel Fleet Size</label>
+                            <span id="sim-fleet-val" class="text-sm font-mono text-cyan-400 font-bold">4 Ferries</span>
                         </div>
-                        <input id="distance-slider" type="range" min="40" max="500" value="180" step="10" oninput="updateSimulator()" class="w-full h-2 bg-slate-800 rounded-lg appearance-none cursor-pointer">
-                        <span class="text-[11px] text-slate-500">Includes round-trips for Central-TST & Outlying Islands</span>
+                        <input id="sim-fleet" type="range" min="1" max="15" value="4" step="1" oninput="calculateSimulator()" class="w-full h-2 bg-slate-800 rounded-lg appearance-none cursor-pointer">
+                        <div class="flex justify-between text-[10px] text-slate-500 font-mono mt-1"><span>1 Vessel</span><span>15 Vessels</span></div>
                     </div>
 
-                    <!-- Slider Control 2: Operating Days -->
+                    <!-- Control 2: Daily Round-Trips per Vessel -->
                     <div>
                         <div class="flex justify-between items-center mb-2">
-                            <label for="vessels-slider" class="text-sm font-semibold text-slate-200">Active Vessels in Fleet</label>
-                            <span id="vessels-val" class="text-sm font-mono text-cyan-400 font-bold">4 Ferries</span>
+                            <label for="sim-trips" class="text-xs font-mono uppercase text-slate-300">Daily Round Trips / Ferry</label>
+                            <span id="sim-trips-val" class="text-sm font-mono text-cyan-400 font-bold">12 Round Trips</span>
                         </div>
-                        <input id="vessels-slider" type="range" min="1" max="12" value="4" step="1" oninput="updateSimulator()" class="w-full h-2 bg-slate-800 rounded-lg appearance-none cursor-pointer">
-                        <span class="text-[11px] text-slate-500">Fleet operational sizing for GBA transit lines</span>
+                        <input id="sim-trips" type="range" min="2" max="24" value="12" step="1" oninput="calculateSimulator()" class="w-full h-2 bg-slate-800 rounded-lg appearance-none cursor-pointer">
+                        <div class="flex justify-between text-[10px] text-slate-500 font-mono mt-1"><span>2 Trips</span><span>24 Trips</span></div>
+                    </div>
+
+                    <!-- Control 3: Route Distance per Trip -->
+                    <div>
+                        <div class="flex justify-between items-center mb-2">
+                            <label for="sim-distance" class="text-xs font-mono uppercase text-slate-300">One-Way Route Distance</label>
+                            <span id="sim-distance-val" class="text-sm font-mono text-cyan-400 font-bold">15 Nautical Miles</span>
+                        </div>
+                        <input id="sim-distance" type="range" min="3" max="50" value="15" step="1" oninput="calculateSimulator()" class="w-full h-2 bg-slate-800 rounded-lg appearance-none cursor-pointer">
+                        <div class="flex justify-between text-[10px] text-slate-500 font-mono mt-1"><span>3 NM (Harbour)</span><span>50 NM (GBA Regional)</span></div>
+                    </div>
+
+                    <!-- Control 4: Pilot Automation Mode -->
+                    <div>
+                        <div class="flex justify-between items-center mb-2">
+                            <label class="text-xs font-mono uppercase text-slate-300">Crew Operational Mode</label>
+                            <span id="sim-crew-val" class="text-sm font-mono text-emerald-400 font-bold">AI Single-Pilot Bridge</span>
+                        </div>
+                        <select id="sim-crew-select" onchange="calculateSimulator()" class="w-full bg-navy-950 border border-slate-700 rounded-xl px-4 py-2.5 text-xs font-mono text-white focus:outline-none focus:border-cyan-400">
+                            <option value="0.6">AI Single-Pilot Desk (60% Labor Reduction)</option>
+                            <option value="0.3">Dual-Crew Hybrid (30% Labor Reduction)</option>
+                            <option value="0.0">Traditional 4-Crew Manual (0% Labor Savings)</option>
+                        </select>
                     </div>
 
                 </div>
 
-                <!-- Live Dynamic Output Metrics -->
-                <div class="grid sm:grid-cols-3 gap-6 text-center">
+                <!-- Live Calculated Metrics Dashboard -->
+                <div class="grid sm:grid-cols-4 gap-6 text-center">
                     
-                    <!-- Energy Cost Savings -->
-                    <div class="p-5 rounded-2xl bg-navy-950/80 border border-slate-800">
-                        <div class="text-xs uppercase font-mono text-slate-400 mb-1">Annual Energy Cost</div>
-                        <div class="text-2xl font-extrabold text-emerald-400" id="sim-cost-saved">-$1.42M USD</div>
-                        <div class="text-[11px] text-emerald-500/80 mt-1 font-mono">75% Lower Operational Cost</div>
+                    <div class="p-5 rounded-2xl bg-navy-950/90 border border-slate-800">
+                        <div class="text-[11px] uppercase font-mono text-slate-400 mb-1">Annual Fuel Savings</div>
+                        <div id="sim-out-fuel" class="text-2xl font-black text-cyan-400">-$2.18M USD</div>
+                        <div class="text-[10px] text-cyan-500 mt-1 font-mono">80% Energy Cost Cut</div>
                     </div>
 
-                    <!-- CO2 Reduced -->
-                    <div class="p-5 rounded-2xl bg-navy-950/80 border border-slate-800">
-                        <div class="text-xs uppercase font-mono text-slate-400 mb-1">Direct CO₂ Cut</div>
-                        <div class="text-2xl font-extrabold text-cyan-400" id="sim-co2-reduced">4,280 Tons</div>
-                        <div class="text-[11px] text-cyan-500/80 mt-1 font-mono">Zero Direct Tailpipe Exhaust</div>
+                    <div class="p-5 rounded-2xl bg-navy-950/90 border border-slate-800">
+                        <div class="text-[11px] uppercase font-mono text-slate-400 mb-1">Annual Labor Savings</div>
+                        <div id="sim-out-labor" class="text-2xl font-black text-emerald-400">-$720,000 USD</div>
+                        <div class="text-[10px] text-emerald-500 mt-1 font-mono">AI Single-Pilot Efficiency</div>
                     </div>
 
-                    <!-- Wake Height Comparison -->
-                    <div class="p-5 rounded-2xl bg-navy-950/80 border border-slate-800">
-                        <div class="text-xs uppercase font-mono text-slate-400 mb-1">Max Wake Displacement</div>
-                        <div class="text-2xl font-extrabold text-white" id="sim-wake">&lt; 15 cm</div>
-                        <div class="text-[11px] text-slate-400 mt-1 font-mono">vs 120cm Diesel Catamaran</div>
+                    <div class="p-5 rounded-2xl bg-navy-950/90 border border-slate-800">
+                        <div class="text-[11px] uppercase font-mono text-slate-400 mb-1">CO₂ Eliminated</div>
+                        <div id="sim-out-co2" class="text-2xl font-black text-white">5,840 Tons</div>
+                        <div class="text-[10px] text-slate-400 mt-1 font-mono">Zero Direct Emissions</div>
+                    </div>
+
+                    <div class="p-5 rounded-2xl bg-navy-950/90 border border-slate-800">
+                        <div class="text-[11px] uppercase font-mono text-slate-400 mb-1">Estimated ROI Payback</div>
+                        <div id="sim-out-roi" class="text-2xl font-black text-cyan-300">2.8 Years</div>
+                        <div class="text-[10px] text-cyan-500 mt-1 font-mono">Capex Amortization</div>
                     </div>
 
                 </div>
+
             </div>
 
         </div>
     </section>
 
-    <!-- Vessels Section ("The GBA Fleet") -->
-    <section id="vessels" class="py-24 bg-navy-950 border-t border-slate-800/80">
+    <!-- The GBA Fleet & Technical Specifications Matrix -->
+    <section id="fleet" class="py-24 bg-navy-950 border-t border-slate-800/80">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             
             <div class="text-center max-w-3xl mx-auto mb-12">
                 <span class="text-xs uppercase font-mono text-cyan-400 tracking-wider">Tailored Marine Platforms</span>
-                <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-2">The GBA Fleet</h2>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-2">The GBA Fleet Lineup</h2>
                 <p class="text-slate-400 text-sm mt-2">
-                    Engineered for high-frequency passenger transit, harbor pilotage, and port operations across Hong Kong waters.
+                    Engineered specifically for high-frequency Victoria Harbour ferries, outlying island shuttles, and cross-boundary Pearl River Delta express routes.
                 </p>
             </div>
 
-            <!-- Vessel Type Switcher Tabs -->
+            <!-- Vessel Switcher Tabs -->
             <div class="flex justify-center mb-10">
-                <div class="inline-flex p-1.5 rounded-xl bg-navy-900 border border-slate-800 text-sm font-medium">
-                    <button id="vessel-tab-commuter" onclick="switchVessel('commuter')" class="px-5 py-2 rounded-lg bg-cyan-500 text-slate-950 font-bold transition">
-                        Commuter Ferries
+                <div class="inline-flex p-1.5 rounded-2xl bg-navy-900 border border-slate-800 text-xs sm:text-sm font-medium">
+                    <button id="tab-ef150" onclick="switchVesselTab('ef150')" class="px-5 py-2.5 rounded-xl bg-cyan-500 text-slate-950 font-bold transition">
+                        EF-150 Commuter
                     </button>
-                    <button id="vessel-tab-pilot" onclick="switchVessel('pilot')" class="px-5 py-2 rounded-lg text-slate-400 hover:text-white transition">
-                        Commercial & Pilot Boats
+                    <button id="tab-ef300" onclick="switchVesselTab('ef300')" class="px-5 py-2.5 rounded-xl text-slate-400 hover:text-white transition">
+                        EF-300 Regional Express
+                    </button>
+                    <button id="tab-pilot" onclick="switchVesselTab('pilot')" class="px-5 py-2.5 rounded-xl text-slate-400 hover:text-white transition">
+                        EF-Pilot Harbor Workboat
                     </button>
                 </div>
             </div>
 
-            <!-- Vessel Display Panel -->
-            <div id="vessel-content" class="glass-panel p-8 sm:p-12 rounded-3xl border border-slate-800">
-                <!-- Content dynamically managed by switchVessel() script -->
+            <!-- Vessel Details Showcase Container -->
+            <div class="glass-panel p-8 sm:p-12 rounded-3xl border border-slate-800 mb-16">
                 <div class="grid lg:grid-cols-12 gap-8 items-center">
                     
-                    <div class="lg:col-span-6 space-y-6">
+                    <div class="lg:col-span-6 space-y-5">
                         <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-cyan-500/10 text-cyan-400 text-xs font-mono border border-cyan-500/20">
-                            <span>SERIES GBA-150 / 300</span>
+                            <span id="vessel-badge">SERIES EF-150 HARBOUR SHUTTLE</span>
                         </div>
-                        <h3 id="vessel-title" class="text-3xl font-extrabold text-white">High-Speed Commuter Hydrofoil</h3>
+                        <h3 id="vessel-title" class="text-3xl font-extrabold text-white">EF-150 Commuter Hydrofoil</h3>
                         <p id="vessel-desc" class="text-slate-400 text-sm leading-relaxed">
-                            High-capacity passenger vessels built with light-weight marine grade aluminum alloys and composite hydrofoils. Designed specifically for Victoria Harbour shuttles and outlying island routes like Central to Mui Wo with rapid boarding access.
+                            Designed for high-frequency urban ferry lines such as Central ↔ Tsim Sha Tsui and Central ↔ Mui Wo. Features rapid dual-door passenger loading and complete zero-wake design.
                         </p>
 
-                        <div class="grid grid-cols-2 gap-4 pt-4 border-t border-slate-800">
+                        <div class="grid grid-cols-2 gap-4 pt-4 border-t border-slate-800 font-mono text-xs">
                             <div>
-                                <span class="text-xs text-slate-500 uppercase font-mono">Passenger Capacity</span>
-                                <div id="vessel-cap" class="text-lg font-bold text-white">150 – 300 Passengers</div>
+                                <span class="text-slate-500 uppercase">Passenger Capacity</span>
+                                <div id="vessel-cap" class="text-base font-bold text-white mt-0.5">150 Passengers</div>
                             </div>
                             <div>
-                                <span class="text-xs text-slate-500 uppercase font-mono">Operating Speed</span>
-                                <div id="vessel-speed" class="text-lg font-bold text-cyan-400">28 – 35 Knots</div>
+                                <span class="text-slate-500 uppercase">Cruising Speed</span>
+                                <div id="vessel-speed" class="text-base font-bold text-cyan-400 mt-0.5">30 – 35 Knots</div>
                             </div>
                             <div>
-                                <span class="text-xs text-slate-500 uppercase font-mono">Primary Use</span>
-                                <div id="vessel-use" class="text-sm font-medium text-slate-300">Victoria Harbour & Island Routes</div>
+                                <span class="text-slate-500 uppercase">Battery Capacity</span>
+                                <div id="vessel-battery" class="text-base font-bold text-slate-200 mt-0.5">1.2 MWh 800V</div>
                             </div>
                             <div>
-                                <span class="text-xs text-slate-500 uppercase font-mono">Turnaround Standard</span>
-                                <div id="vessel-turn" class="text-sm font-medium text-emerald-400">45 Min MCS Charge</div>
+                                <span class="text-slate-500 uppercase">Autonomy Rating</span>
+                                <div id="vessel-auto" class="text-base font-bold text-emerald-400 mt-0.5">Level 3 Single-Pilot AI</div>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Visual Blueprint Render -->
+                    <!-- CAD Vessel Silhouette Preview -->
                     <div class="lg:col-span-6 bg-navy-950 p-6 rounded-2xl border border-slate-800 flex flex-col items-center justify-center relative min-h-[260px]">
-                        <svg id="vessel-svg" class="w-full h-48 text-cyan-400" viewBox="0 0 400 180" fill="none" stroke="currentColor">
+                        <svg id="vessel-svg-blueprint" class="w-full h-48 text-cyan-400" viewBox="0 0 400 180" fill="none" stroke="currentColor">
                             <!-- Hull Profile -->
-                            <path d="M40 90 L320 90 L360 60 L380 90 L340 120 L40 120 Z" stroke-width="2" fill="#0f172a" stroke="#22d3ee" />
+                            <path d="M40 90 L320 90 L360 60 L380 90 L340 120 L40 120 Z" stroke-width="2" fill="#0f1836" stroke="#22d3ee" />
                             <!-- Cabin Windows -->
                             <rect x="100" y="70" width="180" height="15" rx="3" fill="#06b6d4" opacity="0.6" />
                             <!-- Hydrofoils Extended -->
@@ -671,76 +844,76 @@
                             <!-- Water line -->
                             <line x1="20" y1="168" x2="380" y2="168" stroke="#0284c7" stroke-width="1" stroke-dasharray="6 3" />
                         </svg>
-                        <div class="absolute bottom-3 left-4 text-[10px] font-mono text-slate-500">SCALE 1:200 CAD DRAFT</div>
+                        <div class="absolute bottom-3 left-4 text-[10px] font-mono text-slate-500">SCALE 1:200 CAD SCHEMATIC</div>
                     </div>
 
                 </div>
             </div>
 
-        </div>
-    </section>
-
-    <!-- Technical Specifications Section -->
-    <section id="specs" class="py-24 bg-navy-900 border-t border-slate-800/80">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            
-            <div class="text-center max-w-3xl mx-auto mb-16">
-                <span class="text-xs uppercase font-mono text-cyan-400 tracking-wider">Engineering Specs</span>
-                <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-2">Technical Key Details Matrix</h2>
-                <p class="text-slate-400 text-sm mt-2">Target metrics for Greater Bay Area fast-ferry passenger network deployment.</p>
-            </div>
-
-            <div class="glass-panel rounded-2xl overflow-hidden border border-slate-800">
+            <!-- Technical Specifications Matrix Table -->
+            <div id="specs" class="glass-panel rounded-3xl overflow-hidden border border-slate-800">
+                <div class="px-6 py-5 bg-navy-950 border-b border-slate-800 flex items-center justify-between">
+                    <h3 class="text-sm font-bold text-white uppercase tracking-wider font-mono">Complete Fleet Target Specifications Matrix</h3>
+                    <span class="text-xs text-cyan-400 font-mono">GBA DEPLOYMENT READY</span>
+                </div>
                 <div class="overflow-x-auto">
-                    <table class="w-full text-left border-collapse">
+                    <table class="w-full text-left border-collapse text-xs font-mono">
                         <thead>
-                            <tr class="border-b border-slate-800 bg-navy-950/80 text-xs font-mono uppercase text-slate-400">
-                                <th class="p-4 sm:p-5">Specification</th>
-                                <th class="p-4 sm:p-5 text-cyan-400">Target Metric / Technical Detail</th>
+                            <tr class="border-b border-slate-800 bg-navy-900/80 text-slate-400 uppercase">
+                                <th class="p-4 sm:p-5">Specification Metric</th>
+                                <th class="p-4 sm:p-5 text-cyan-400">EF-150 Commuter</th>
+                                <th class="p-4 sm:p-5 text-emerald-400">EF-300 Regional Express</th>
+                                <th class="p-4 sm:p-5 text-cyan-300">EF-Pilot Workboat</th>
                             </tr>
                         </thead>
-                        <tbody class="divide-y divide-slate-800/60 text-sm">
+                        <tbody class="divide-y divide-slate-800/60 text-slate-300">
                             <tr class="hover:bg-slate-800/30 transition">
-                                <td class="p-4 sm:p-5 font-bold text-white flex items-center gap-2">
-                                    <span class="w-2 h-2 rounded-full bg-cyan-400"></span> Propulsion
-                                </td>
-                                <td class="p-4 sm:p-5 text-slate-300 font-mono">Twin Electric Foiling Pods (Direct Drive)</td>
+                                <td class="p-4 sm:p-5 font-bold text-white">Passenger Capacity</td>
+                                <td class="p-4 sm:p-5">150 Passengers</td>
+                                <td class="p-4 sm:p-5">300 Passengers</td>
+                                <td class="p-4 sm:p-5">12 Crew / Pilots</td>
                             </tr>
                             <tr class="hover:bg-slate-800/30 transition">
-                                <td class="p-4 sm:p-5 font-bold text-white flex items-center gap-2">
-                                    <span class="w-2 h-2 rounded-full bg-cyan-400"></span> Energy Storage
-                                </td>
-                                <td class="p-4 sm:p-5 text-slate-300 font-mono">Solid-state marine-grade lithium-ion (up to 2.5 MWh)</td>
+                                <td class="p-4 sm:p-5 font-bold text-white">Cruising Foiling Speed</td>
+                                <td class="p-4 sm:p-5">32 Knots</td>
+                                <td class="p-4 sm:p-5">38 Knots</td>
+                                <td class="p-4 sm:p-5">35 Knots</td>
                             </tr>
                             <tr class="hover:bg-slate-800/30 transition">
-                                <td class="p-4 sm:p-5 font-bold text-white flex items-center gap-2">
-                                    <span class="w-2 h-2 rounded-full bg-cyan-400"></span> Cruising Speed
-                                </td>
-                                <td class="p-4 sm:p-5 text-emerald-400 font-mono font-bold">25 - 35 knots (optimised for GBA fast-ferry schedules)</td>
+                                <td class="p-4 sm:p-5 font-bold text-white">Propulsion Drivetrain</td>
+                                <td class="p-4 sm:p-5">Twin Direct-Drive Pods</td>
+                                <td class="p-4 sm:p-5">Quad Direct-Drive Pods</td>
+                                <td class="p-4 sm:p-5">Twin Direct-Drive Pods</td>
                             </tr>
                             <tr class="hover:bg-slate-800/30 transition">
-                                <td class="p-4 sm:p-5 font-bold text-white flex items-center gap-2">
-                                    <span class="w-2 h-2 rounded-full bg-cyan-400"></span> Operational Range
-                                </td>
-                                <td class="p-4 sm:p-5 text-slate-300 font-mono">60 - 80 nautical miles per charge</td>
+                                <td class="p-4 sm:p-5 font-bold text-white">Battery System Capacity</td>
+                                <td class="p-4 sm:p-5">1.2 MWh 800V Solid-State</td>
+                                <td class="p-4 sm:p-5">2.5 MWh 800V Solid-State</td>
+                                <td class="p-4 sm:p-5">600 kWh Swappable</td>
                             </tr>
                             <tr class="hover:bg-slate-800/30 transition">
-                                <td class="p-4 sm:p-5 font-bold text-white flex items-center gap-2">
-                                    <span class="w-2 h-2 rounded-full bg-cyan-400"></span> Passenger Capacity
-                                </td>
-                                <td class="p-4 sm:p-5 text-slate-300 font-mono">150 (Commuter Configuration) / 300 (Regional GBA Configuration)</td>
+                                <td class="p-4 sm:p-5 font-bold text-white">Megawatt MCS Charge Time</td>
+                                <td class="p-4 sm:p-5 text-emerald-400 font-bold">45 Mins (10-80%)</td>
+                                <td class="p-4 sm:p-5 text-emerald-400 font-bold">60 Mins (10-80%)</td>
+                                <td class="p-4 sm:p-5 text-emerald-400 font-bold">25 Mins Rapid Swappable</td>
                             </tr>
                             <tr class="hover:bg-slate-800/30 transition">
-                                <td class="p-4 sm:p-5 font-bold text-white flex items-center gap-2">
-                                    <span class="w-2 h-2 rounded-full bg-emerald-400"></span> Wake Reduction
-                                </td>
-                                <td class="p-4 sm:p-5 text-emerald-400 font-mono font-bold">&lt; 15cm at cruising speed (minimising coastal erosion)</td>
+                                <td class="p-4 sm:p-5 font-bold text-white">Operational Range per Charge</td>
+                                <td class="p-4 sm:p-5">65 Nautical Miles</td>
+                                <td class="p-4 sm:p-5">90 Nautical Miles</td>
+                                <td class="p-4 sm:p-5">80 Nautical Miles</td>
                             </tr>
                             <tr class="hover:bg-slate-800/30 transition">
-                                <td class="p-4 sm:p-5 font-bold text-white flex items-center gap-2">
-                                    <span class="w-2 h-2 rounded-full bg-cyan-400"></span> Charging Standard
-                                </td>
-                                <td class="p-4 sm:p-5 text-slate-300 font-mono">Shore-to-ship Megawatt Charging System (MCS), 45-minute turnaround</td>
+                                <td class="p-4 sm:p-5 font-bold text-white">Wake Displacement Height</td>
+                                <td class="p-4 sm:p-5 text-cyan-400 font-bold">&lt; 12 cm</td>
+                                <td class="p-4 sm:p-5 text-cyan-400 font-bold">&lt; 15 cm</td>
+                                <td class="p-4 sm:p-5 text-cyan-400 font-bold">&lt; 10 cm</td>
+                            </tr>
+                            <tr class="hover:bg-slate-800/30 transition">
+                                <td class="p-4 sm:p-5 font-bold text-white">AI Autonomous Level</td>
+                                <td class="p-4 sm:p-5">Level 3 Single-Pilot Desk</td>
+                                <td class="p-4 sm:p-5">Level 3 Single-Pilot Desk</td>
+                                <td class="p-4 sm:p-5">Level 4 Fully Autonomous</td>
                             </tr>
                         </tbody>
                     </table>
@@ -750,152 +923,160 @@
         </div>
     </section>
 
-    <!-- News & Milestones Section -->
-    <section id="milestones" class="py-24 bg-navy-950 border-t border-slate-800/80">
+    <!-- Strategic Routes & Milestones Network -->
+    <section id="routes" class="py-24 bg-navy-900 border-t border-slate-800/80">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             
             <div class="text-center max-w-3xl mx-auto mb-16">
-                <span class="text-xs uppercase font-mono text-cyan-400 tracking-wider">Progress & Roadmaps</span>
-                <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-2">News & Project Milestones</h2>
-                <p class="text-slate-400 text-sm mt-2">Key developments in deploying zero-emission vessels across Hong Kong and the Pearl River Delta.</p>
+                <span class="text-xs uppercase font-mono text-cyan-400 tracking-wider">Greater Bay Area Route Footprint</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-2">Target Priority Routes</h2>
+                <p class="text-slate-400 text-sm mt-2">Connecting Hong Kong urban piers with outlying islands and Pearl River Delta hubs.</p>
             </div>
 
-            <!-- 3-Column Editorial Grid -->
-            <div class="grid md:grid-cols-3 gap-8">
+            <!-- Route Cards Grid -->
+            <div class="grid md:grid-cols-3 gap-8 mb-20">
                 
-                <!-- Milestone 1 -->
-                <div class="glass-panel rounded-2xl overflow-hidden border border-slate-800 flex flex-col justify-between group hover:border-cyan-500/40 transition">
-                    <div>
-                        <div class="h-44 bg-navy-900 relative overflow-hidden flex items-center justify-center border-b border-slate-800">
-                            <!-- Visual Graphic -->
-                            <div class="text-4xl">🌊</div>
-                            <span class="absolute top-3 left-3 px-2.5 py-1 rounded bg-navy-950/90 text-cyan-400 font-mono text-xs border border-slate-700">Q2 TEST PHASE</span>
-                        </div>
-                        <div class="p-6">
-                            <div class="text-xs font-mono text-slate-500 mb-2">SOUTH CHINA SEA</div>
-                            <h3 class="text-lg font-bold text-white mb-3 group-hover:text-cyan-400 transition">
-                                Prototype Testing Commences in the South China Sea
-                            </h3>
-                            <p class="text-sm text-slate-400 leading-relaxed">
-                                Full-scale hydrofoil elevation trials and direct-drive thermal endurance tests begin off Lantau Island waters to validate stability in sea states.
-                            </p>
-                        </div>
+                <div class="glass-panel p-8 rounded-3xl border border-slate-800 hover:border-cyan-500/50 transition group">
+                    <div class="flex items-center justify-between mb-4">
+                        <span class="px-3 py-1 rounded-full bg-cyan-500/10 text-cyan-300 text-xs font-mono border border-cyan-500/20">HARBOUR COMMUTER</span>
+                        <span class="text-xs font-mono text-emerald-400">10 MIN TRANSIT</span>
                     </div>
-                    <div class="px-6 pb-6 text-xs text-cyan-400 font-mono flex items-center gap-1">
-                        <span>Read Press Release</span> &rarr;
+                    <h3 class="text-xl font-bold text-white mb-2 group-hover:text-cyan-400 transition">Central ↔ Tsim Sha Tsui</h3>
+                    <p class="text-xs text-slate-400 leading-relaxed mb-6">
+                        High-frequency Victoria Harbour shuttle operating with zero wake turbulence and zero diesel tailpipe emissions in Hong Kong's downtown fairway.
+                    </p>
+                    <div class="border-t border-slate-800 pt-4 text-xs font-mono text-slate-400 flex justify-between">
+                        <span>Daily Departures:</span> <strong class="text-white">60+ Round Trips</strong>
                     </div>
                 </div>
 
-                <!-- Milestone 2 -->
-                <div class="glass-panel rounded-2xl overflow-hidden border border-slate-800 flex flex-col justify-between group hover:border-cyan-500/40 transition">
-                    <div>
-                        <div class="h-44 bg-navy-900 relative overflow-hidden flex items-center justify-center border-b border-slate-800">
-                            <!-- Visual Graphic -->
-                            <div class="text-4xl">⚡</div>
-                            <span class="absolute top-3 left-3 px-2.5 py-1 rounded bg-navy-950/90 text-emerald-400 font-mono text-xs border border-slate-700">INFRASTRUCTURE</span>
-                        </div>
-                        <div class="p-6">
-                            <div class="text-xs font-mono text-slate-500 mb-2">HONG KONG PIERS</div>
-                            <h3 class="text-lg font-bold text-white mb-3 group-hover:text-cyan-400 transition">
-                                Rapid-Charging Pontoon Introduced for Public Piers
-                            </h3>
-                            <p class="text-sm text-slate-400 leading-relaxed">
-                                Unveiling the floating Megawatt Charging System (MCS) pontoon prototype engineered to interface directly with Hong Kong public piers without grid disruption.
-                            </p>
-                        </div>
+                <div class="glass-panel p-8 rounded-3xl border border-slate-800 hover:border-cyan-500/50 transition group">
+                    <div class="flex items-center justify-between mb-4">
+                        <span class="px-3 py-1 rounded-full bg-cyan-500/10 text-cyan-300 text-xs font-mono border border-cyan-500/20">OUTLYING ISLANDS</span>
+                        <span class="text-xs font-mono text-cyan-400">25 MIN TRANSIT</span>
                     </div>
-                    <div class="px-6 pb-6 text-xs text-cyan-400 font-mono flex items-center gap-1">
-                        <span>Read Technical Briefing</span> &rarr;
+                    <h3 class="text-xl font-bold text-white mb-2 group-hover:text-cyan-400 transition">Central ↔ Mui Wo (Lantau)</h3>
+                    <p class="text-xs text-slate-400 leading-relaxed mb-6">
+                        Ultra-smooth flight stabilization crossing Southern Hong Kong choppy sea swells with 6x fewer vibrations for total passenger comfort.
+                    </p>
+                    <div class="border-t border-slate-800 pt-4 text-xs font-mono text-slate-400 flex justify-between">
+                        <span>Vessel Assigned:</span> <strong class="text-white">EF-150 Commuter</strong>
                     </div>
                 </div>
 
-                <!-- Milestone 3 -->
-                <div class="glass-panel rounded-2xl overflow-hidden border border-slate-800 flex flex-col justify-between group hover:border-cyan-500/40 transition">
-                    <div>
-                        <div class="h-44 bg-navy-900 relative overflow-hidden flex items-center justify-center border-b border-slate-800">
-                            <!-- Visual Graphic -->
-                            <div class="text-4xl">🇭🇰</div>
-                            <span class="absolute top-3 left-3 px-2.5 py-1 rounded bg-navy-950/90 text-cyan-400 font-mono text-xs border border-slate-700">GREEN FERRY INITIATIVE</span>
-                        </div>
-                        <div class="p-6">
-                            <div class="text-xs font-mono text-slate-500 mb-2">VICTORIA HARBOUR</div>
-                            <h3 class="text-lg font-bold text-white mb-3 group-hover:text-cyan-400 transition">
-                                Selection for Flagship Electric Hydrofoil Pilot
-                            </h3>
-                            <p class="text-sm text-slate-400 leading-relaxed">
-                                Preparing the Central to Tsim Sha Tsui green ferry pilot deployment under government maritime decarbonization programs.
-                            </p>
-                        </div>
+                <div class="glass-panel p-8 rounded-3xl border border-slate-800 hover:border-emerald-500/50 transition group">
+                    <div class="flex items-center justify-between mb-4">
+                        <span class="px-3 py-1 rounded-full bg-emerald-500/10 text-emerald-300 text-xs font-mono border border-emerald-500/20">REGIONAL GBA</span>
+                        <span class="text-xs font-mono text-emerald-400">45-60 MIN TRANSIT</span>
                     </div>
-                    <div class="px-6 pb-6 text-xs text-cyan-400 font-mono flex items-center gap-1">
-                        <span>View Project Roadmap</span> &rarr;
+                    <h3 class="text-xl font-bold text-white mb-2 group-hover:text-cyan-400 transition">HK ↔ Macau / Shenzhen / Zhuhai</h3>
+                    <p class="text-xs text-slate-400 leading-relaxed mb-6">
+                        High-speed cross-boundary hydrofoil express lines connecting Pearl River Delta ports with dockside Megawatt Charger turnaround replenishment.
+                    </p>
+                    <div class="border-t border-slate-800 pt-4 text-xs font-mono text-slate-400 flex justify-between">
+                        <span>Cruising Speed:</span> <strong class="text-emerald-400">38 Knots</strong>
                     </div>
                 </div>
 
             </div>
+
+            <!-- Milestones Grid -->
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <span class="text-xs uppercase font-mono text-cyan-400 tracking-wider">Project Timeline</span>
+                <h2 class="text-2xl font-bold text-white mt-1">GBA Deployment Roadmap</h2>
+            </div>
+
+            <div class="grid md:grid-cols-4 gap-6">
+                <div class="p-6 rounded-2xl bg-navy-950 border border-slate-800 relative">
+                    <div class="text-xs font-mono text-cyan-400 mb-2">Q1 2025</div>
+                    <h4 class="text-sm font-bold text-white mb-2">South China Sea Flight Trials</h4>
+                    <p class="text-xs text-slate-400">Full-scale hydrofoil elevation and endurance trials off Lantau Island waters.</p>
+                </div>
+                <div class="p-6 rounded-2xl bg-navy-950 border border-slate-800 relative">
+                    <div class="text-xs font-mono text-emerald-400 mb-2">Q3 2025</div>
+                    <h4 class="text-sm font-bold text-white mb-2">MCS Charging Pontoon Trial</h4>
+                    <p class="text-xs text-slate-400">Installation of floating Megawatt Charging Booster Box at Hong Kong Central Pier 9.</p>
+                </div>
+                <div class="p-6 rounded-2xl bg-navy-950 border border-slate-800 relative">
+                    <div class="text-xs font-mono text-cyan-400 mb-2">Q1 2026</div>
+                    <h4 class="text-sm font-bold text-white mb-2">Autonomous Pilot Cert</h4>
+                    <p class="text-xs text-slate-400">LiDAR AI collision avoidance and single-pilot desk certification with HK Marine Dept.</p>
+                </div>
+                <div class="p-6 rounded-2xl bg-navy-950 border border-slate-800 relative">
+                    <div class="text-xs font-mono text-emerald-400 mb-2">Q4 2026</div>
+                    <h4 class="text-sm font-bold text-white mb-2">Commercial GBA Rollout</h4>
+                    <p class="text-xs text-slate-400">Commercial passenger service launch across Victoria Harbour & Outlying Island lines.</p>
+                </div>
+            </div>
+
         </div>
     </section>
 
-    <!-- Secure Contact Form Section -->
-    <section id="contact" class="py-24 bg-navy-900 border-t border-slate-800 relative">
+    <!-- Secure Stakeholder Inquiry Form Section -->
+    <section id="contact" class="py-24 bg-navy-950 border-t border-slate-800 relative">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             
             <div class="text-center mb-12">
-                <span class="text-xs uppercase font-mono text-cyan-400 tracking-wider">Stakeholder Engagement</span>
-                <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-2">Partner With Us</h2>
+                <span class="text-xs uppercase font-mono text-cyan-400 tracking-wider">Partnership & Procurement</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-2">Partner With Aero-Marine</h2>
                 <p class="text-slate-400 text-sm mt-2 max-w-xl mx-auto">
-                    We invite ferry operators, port authorities, technology partners, and government agencies to connect for pilot vessel deployments.
+                    Connecting ferry operators, port authorities, government procurement teams, and infrastructure investors.
                 </p>
             </div>
 
-            <!-- Form Card with Web3Forms Endpoint Integration -->
-            <div class="glass-panel p-8 sm:p-12 rounded-3xl border border-slate-800 relative">
+            <!-- Form Card -->
+            <div class="glass-panel p-8 sm:p-12 rounded-3xl border border-slate-800 relative glow-cyan">
                 
-                <form action="https://api.web3forms.com/submit" method="POST" class="space-y-6">
-                    <!-- Web3Forms Access Key & Title -->
-                    <input type="hidden" name="access_key" value="YOUR_WEB3FORMS_ACCESS_KEY_HERE">
-                    <input type="hidden" name="subject" value="Aero-Marine GBA: New Stakeholder Query">
-                    <!-- Anti-spam Honeypot -->
-                    <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
-
+                <form id="stakeholder-form" onsubmit="handleFormSubmit(event)" class="space-y-6">
+                    
                     <div class="grid sm:grid-cols-2 gap-6">
                         <div>
                             <label class="block text-xs font-mono uppercase text-slate-400 mb-2">Full Name *</label>
-                            <input type="text" name="name" required placeholder="Dr. Alex Chan" class="w-full bg-navy-950 border border-slate-800 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-cyan-400 transition">
+                            <input type="text" required placeholder="Dr. Alex Chan" class="w-full bg-navy-900 border border-slate-800 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-cyan-400 transition">
                         </div>
                         <div>
-                            <label class="block text-xs font-mono uppercase text-slate-400 mb-2">Work Email Address *</label>
-                            <input type="email" name="email" required placeholder="a.chan@ferryoperator.hk" class="w-full bg-navy-950 border border-slate-800 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-cyan-400 transition">
+                            <label class="block text-xs font-mono uppercase text-slate-400 mb-2">Work Email *</label>
+                            <input type="email" required placeholder="a.chan@ferryoperator.hk" class="w-full bg-navy-900 border border-slate-800 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-cyan-400 transition">
                         </div>
                     </div>
 
                     <div class="grid sm:grid-cols-2 gap-6">
                         <div>
                             <label class="block text-xs font-mono uppercase text-slate-400 mb-2">Organization / Company *</label>
-                            <input type="text" name="organization" required placeholder="Hong Kong Ferry Operations Ltd" class="w-full bg-navy-950 border border-slate-800 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-cyan-400 transition">
+                            <input type="text" required placeholder="Hong Kong Maritime Operator Ltd" class="w-full bg-navy-900 border border-slate-800 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-cyan-400 transition">
                         </div>
                         <div>
-                            <label class="block text-xs font-mono uppercase text-slate-400 mb-2">Stakeholder Role *</label>
-                            <select name="role" class="w-full bg-navy-950 border border-slate-800 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-cyan-400 transition">
-                                <option value="Government/Operator">Ferry Operator / Government Agency</option>
-                                <option value="Builder/Engineer">Aerospace / Marine Engineering Partner</option>
-                                <option value="ESG/Investor">ESG Infrastructure Investor</option>
-                                <option value="Port/Pilotage">Port Authority / Pilotage Operator</option>
+                            <label class="block text-xs font-mono uppercase text-slate-400 mb-2">Stakeholder Category *</label>
+                            <select class="w-full bg-navy-900 border border-slate-800 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-cyan-400 transition">
+                                <option value="Operator">Ferry Operator / Maritime Fleet</option>
+                                <option value="Government">Government Agency / Port Authority</option>
+                                <option value="Technology">Tech / Engineering Partner</option>
+                                <option value="Investor">ESG / Infrastructure Investor</option>
                             </select>
                         </div>
                     </div>
 
                     <div>
-                        <label class="block text-xs font-mono uppercase text-slate-400 mb-2">Project Query or Route Proposal</label>
-                        <textarea name="message" rows="4" placeholder="Detail your interest regarding Victoria Harbour, Outlying Islands, or Pearl River Delta routes..." class="w-full bg-navy-950 border border-slate-800 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-cyan-400 transition"></textarea>
+                        <label class="block text-xs font-mono uppercase text-slate-400 mb-2">Vessel / Project Interest</label>
+                        <select class="w-full bg-navy-900 border border-slate-800 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-cyan-400 transition">
+                            <option value="EF-150">EF-150 Commuter (150 Passengers)</option>
+                            <option value="EF-300">EF-300 Regional Express (300 Passengers)</option>
+                            <option value="EF-Pilot">EF-Pilot Autonomous Harbor Boat</option>
+                            <option value="MCS">Megawatt MCS Shore Charging Infrastructure</option>
+                        </select>
                     </div>
 
-                    <button type="submit" class="w-full py-4 rounded-xl bg-gradient-to-r from-cyan-500 to-emerald-400 text-slate-950 font-bold text-sm uppercase tracking-wider hover:shadow-lg hover:shadow-cyan-500/25 transition">
-                        Submit Stakeholder Inquiry
+                    <div>
+                        <label class="block text-xs font-mono uppercase text-slate-400 mb-2">Project Scope or Query Details</label>
+                        <textarea rows="4" placeholder="Describe route requirement, timeline, or fleet electrification goals..." class="w-full bg-navy-900 border border-slate-800 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-cyan-400 transition"></textarea>
+                    </div>
+
+                    <button type="submit" class="w-full py-4 rounded-xl bg-gradient-to-r from-cyan-500 to-emerald-400 text-slate-950 font-black text-sm uppercase tracking-wider hover:shadow-lg hover:shadow-cyan-500/25 transition">
+                        Submit Inquiry
                     </button>
                     
-                    <div class="text-center text-[11px] text-slate-500 font-mono">
-                        🔒 Confidential communication routed strictly to engineering & business development teams.
+                    <div id="form-status" class="hidden p-4 rounded-xl bg-emerald-500/20 border border-emerald-500/40 text-center text-xs font-mono text-emerald-300">
+                        ✓ Inquiry submitted successfully. Our engineering and BD teams will reach out shortly.
                     </div>
                 </form>
 
@@ -905,87 +1086,163 @@
     </section>
 
     <!-- Footer -->
-    <footer class="bg-navy-950 border-t border-slate-800/80 py-12 text-slate-500 text-xs font-mono">
+    <footer class="bg-navy-950 border-t border-slate-800 py-12 text-slate-500 text-xs font-mono">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-6">
             <div class="flex items-center space-x-3">
-                <span class="text-white font-extrabold tracking-tight">AERO-MARINE GBA</span>
-                <span>• Zero-Emission Hydrofoil Systems</span>
+                <span class="text-white font-extrabold tracking-tight">AERO-MARINE</span>
+                <span class="px-2 py-0.5 rounded bg-cyan-500/20 text-cyan-400">GBA TECH</span>
             </div>
-            <div>
-                Hong Kong & Greater Bay Area Decarbonization Initiative
-            </div>
-            <div>
-                &copy; 2026 Aero-Marine Technology Ltd. All rights reserved.
-            </div>
+            <div>Hong Kong & Greater Bay Area Decarbonization Initiative</div>
+            <div>&copy; 2026 Aero-Marine Technology Ltd. All rights reserved.</div>
         </div>
     </footer>
 
-    <!-- Interactive Logic Scripts -->
     <script>
         
-        // 1. Hydrofoil Efficiency Simulator Logic
-        function initSimulator() {
-            updateSimulator();
+        // 1. Tri-Lingual Language Toggle Handler
+        function setLanguage(lang) {
+            document.body.setAttribute('data-lang', lang);
+
+            // Update Desktop Buttons
+            const btnEn = document.getElementById('lang-btn-en');
+            const btnTc = document.getElementById('lang-btn-tc');
+            const btnSc = document.getElementById('lang-btn-sc');
+
+            if (btnEn && btnTc && btnSc) {
+                btnEn.className = lang === 'en' ? 'px-2.5 py-1 rounded-lg transition font-bold text-cyan-400 bg-navy-800' : 'px-2.5 py-1 rounded-lg transition text-slate-400 hover:text-white';
+                btnTc.className = lang === 'tc' ? 'px-2.5 py-1 rounded-lg transition font-bold text-cyan-400 bg-navy-800' : 'px-2.5 py-1 rounded-lg transition text-slate-400 hover:text-white';
+                btnSc.className = lang === 'sc' ? 'px-2.5 py-1 rounded-lg transition font-bold text-cyan-400 bg-navy-800' : 'px-2.5 py-1 rounded-lg transition text-slate-400 hover:text-white';
+            }
+
+            try { localStorage.setItem('aeromarine_lang', lang); } catch(e){}
         }
 
-        function updateSimulator() {
-            const distance = parseInt(document.getElementById('distance-slider').value);
-            const vessels = parseInt(document.getElementById('vessels-slider').value);
+        // 2. Mobile Drawer Toggle Handler
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            const iconOpen = document.getElementById('menu-icon-open');
+            const iconClose = document.getElementById('menu-icon-close');
 
-            document.getElementById('distance-val').innerText = distance + ' NM / day';
-            document.getElementById('vessels-val').innerText = vessels + (vessels === 1 ? ' Ferry' : ' Ferries');
-
-            // Calculations based on fast ferry baseline metrics
-            // Diesel ferry consumes ~12 Liters per NM vs Hydrofoil ~3 kWh per NM
-            const totalDailyNM = distance * vessels;
-            const annualNM = totalDailyNM * 365;
-
-            // Fuel/Electricity cost savings ($ USD)
-            const dieselCostAnnual = annualNM * 4.2; // ~$4.2 USD diesel fuel per NM
-            const electricCostAnnual = annualNM * 0.95; // ~$0.95 USD electric power per NM
-            const costSaved = Math.round(dieselCostAnnual - electricCostAnnual);
-
-            // CO2 reduction (3.1 kg CO2 per liter diesel)
-            const co2TonsReduced = Math.round((annualNM * 12 * 3.1) / 1000);
-
-            document.getElementById('sim-cost-saved').innerText = '-$' + (costSaved / 1000000).toFixed(2) + 'M USD';
-            document.getElementById('sim-co2-reduced').innerText = co2TonsReduced.toLocaleString() + ' Tons';
+            if (menu.classList.contains('hidden')) {
+                menu.classList.remove('hidden');
+                iconOpen.classList.add('hidden');
+                iconClose.classList.remove('hidden');
+            } else {
+                menu.classList.add('hidden');
+                iconOpen.classList.remove('hidden');
+                iconClose.classList.add('hidden');
+            }
         }
 
-        // 2. Vessel Fleet Tab Switcher
-        function switchVessel(type) {
-            const tabCommuter = document.getElementById('vessel-tab-commuter');
-            const tabPilot = document.getElementById('vessel-tab-pilot');
+        // 3. Operational Economics Simulator Calculation Logic
+        function calculateSimulator() {
+            const fleet = parseInt(document.getElementById('sim-fleet').value);
+            const trips = parseInt(document.getElementById('sim-trips').value);
+            const distance = parseInt(document.getElementById('sim-distance').value);
+            const crewFactor = parseFloat(document.getElementById('sim-crew-select').value);
 
+            // Update Labels
+            document.getElementById('sim-fleet-val').innerText = fleet + (fleet === 1 ? ' Ferry' : ' Ferries');
+            document.getElementById('sim-trips-val').innerText = trips + ' Round Trips';
+            document.getElementById('sim-distance-val').innerText = distance + ' NM / Trip';
+
+            // Calculations
+            const totalAnnualNM = fleet * trips * 2 * distance * 365;
+
+            // Fuel Savings Calculation (~14 Liters Diesel/NM vs ~3.2 kWh Electricity/NM)
+            const dieselCostAnnual = totalAnnualNM * 4.80; // $ USD
+            const electricCostAnnual = totalAnnualNM * 0.90; // $ USD
+            const fuelSaved = Math.round(dieselCostAnnual - electricCostAnnual);
+
+            // Labor Savings Calculation (Base crew expense ~$180k/year per vessel * crew reduction)
+            const baseLaborAnnual = fleet * 220000;
+            const laborSaved = Math.round(baseLaborAnnual * crewFactor);
+
+            // CO2 Reduction (3.1 kg CO2 per Liter)
+            const co2Tons = Math.round((totalAnnualNM * 14 * 3.1) / 1000);
+
+            // ROI Payback
+            const capexExtra = fleet * 2200000;
+            const annualTotalSaved = fuelSaved + laborSaved;
+            const roiYears = (capexExtra / Math.max(annualTotalSaved, 1)).toFixed(1);
+
+            // Update UI Outputs
+            document.getElementById('sim-out-fuel').innerText = '-$' + (fuelSaved / 1000000).toFixed(2) + 'M USD';
+            document.getElementById('sim-out-labor').innerText = '-$' + (laborSaved / 1000).toFixed(0) + 'k USD';
+            document.getElementById('sim-out-co2').innerText = co2Tons.toLocaleString() + ' Tons';
+            document.getElementById('sim-out-roi').innerText = roiYears + ' Years';
+        }
+
+        // 4. Vessel Lineup Tab Switcher Logic
+        function switchVesselTab(vessel) {
+            const tab150 = document.getElementById('tab-ef150');
+            const tab300 = document.getElementById('tab-ef300');
+            const tabPilot = document.getElementById('tab-pilot');
+
+            const badge = document.getElementById('vessel-badge');
             const title = document.getElementById('vessel-title');
             const desc = document.getElementById('vessel-desc');
             const cap = document.getElementById('vessel-cap');
             const speed = document.getElementById('vessel-speed');
-            const use = document.getElementById('vessel-use');
-            const turn = document.getElementById('vessel-turn');
+            const battery = document.getElementById('vessel-battery');
+            const auto = document.getElementById('vessel-auto');
 
-            if (type === 'commuter') {
-                tabCommuter.className = "px-5 py-2 rounded-lg bg-cyan-500 text-slate-950 font-bold transition";
-                tabPilot.className = "px-5 py-2 rounded-lg text-slate-400 hover:text-white transition";
+            const activeClass = "px-5 py-2.5 rounded-xl bg-cyan-500 text-slate-950 font-bold transition";
+            const inactiveClass = "px-5 py-2.5 rounded-xl text-slate-400 hover:text-white transition";
 
-                title.innerText = "High-Speed Commuter Hydrofoil";
-                desc.innerText = "High-capacity passenger vessels built with light-weight marine grade aluminum alloys and composite hydrofoils. Designed specifically for Victoria Harbour shuttles and outlying island routes like Central to Mui Wo with rapid boarding access.";
-                cap.innerText = "150 – 300 Passengers";
-                speed.innerText = "28 – 35 Knots";
-                use.innerText = "Victoria Harbour & Island Routes";
-                turn.innerText = "45 Min MCS Charge";
+            if (vessel === 'ef150') {
+                tab150.className = activeClass;
+                tab300.className = inactiveClass;
+                tabPilot.className = inactiveClass;
+
+                badge.innerText = "SERIES EF-150 HARBOUR SHUTTLE";
+                title.innerText = "EF-150 Commuter Hydrofoil";
+                desc.innerText = "Designed for high-frequency urban ferry lines such as Central ↔ Tsim Sha Tsui and Central ↔ Mui Wo. Features rapid dual-door passenger loading and complete zero-wake design.";
+                cap.innerText = "150 Passengers";
+                speed.innerText = "30 – 35 Knots";
+                battery.innerText = "1.2 MWh 800V";
+                auto.innerText = "Level 3 Single-Pilot AI";
+            } else if (vessel === 'ef300') {
+                tab300.className = activeClass;
+                tab150.className = inactiveClass;
+                tabPilot.className = inactiveClass;
+
+                badge.innerText = "SERIES EF-300 REGIONAL EXPRESS";
+                title.innerText = "EF-300 Regional Hydrofoil";
+                desc.innerText = "High-speed cross-boundary hydrofoil passenger craft built for Hong Kong ↔ Macau and Shenzhen Shekou lines with 2.5 MWh solid-state batteries and quad direct-drive pods.";
+                cap.innerText = "300 Passengers";
+                speed.innerText = "35 – 38 Knots";
+                battery.innerText = "2.5 MWh 800V";
+                auto.innerText = "Level 3 Single-Pilot AI";
             } else {
-                tabPilot.className = "px-5 py-2 rounded-lg bg-cyan-500 text-slate-950 font-bold transition";
-                tabCommuter.className = "px-5 py-2 rounded-lg text-slate-400 hover:text-white transition";
+                tabPilot.className = activeClass;
+                tab150.className = inactiveClass;
+                tab300.className = inactiveClass;
 
-                title.innerText = "Commercial & Harbor Pilot Boat";
-                desc.innerText = "Agile, highly robust all-weather electric hydrofoil platforms tailored for Kwai Tsing Container Terminal pilotage, harbor patrol, and port operations demanding high endurance and zero wake in tight channels.";
-                cap.innerText = "12 Crew & Pilots";
-                speed.innerText = "30 – 38 Knots";
-                use.innerText = "Port Operations & Pilotage";
-                turn.innerText = "30 Min Rapid Swappable/MCS";
+                badge.innerText = "SERIES EF-PILOT WORKBOAT";
+                title.innerText = "EF-Pilot Autonomous Harbor Workboat";
+                desc.innerText = "Agile, high-endurance hydrofoil platform for Kwai Tsing Container Terminal pilotage, harbor patrol, and port operations with level 4 full autonomy.";
+                cap.innerText = "12 Crew / Pilots";
+                speed.innerText = "32 – 38 Knots";
+                battery.innerText = "600 kWh Swappable";
+                auto.innerText = "Level 4 Fully Autonomous";
             }
         }
+
+        // 5. Form Handler
+        function handleFormSubmit(event) {
+            event.preventDefault();
+            const status = document.getElementById('form-status');
+            status.classList.remove('hidden');
+            event.target.reset();
+        }
+
+        // Initialize on DOM load
+        window.addEventListener('DOMContentLoaded', () => {
+            const savedLang = localStorage.getItem('aeromarine_lang') || 'en';
+            setLanguage(savedLang);
+            calculateSimulator();
+        });
     </script>
 </body>
 </html>
