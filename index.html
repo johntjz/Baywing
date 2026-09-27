@@ -1,213 +1,282 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Baywing Dynamics | Next-Gen Marine Electrification</title>
-    <!-- Tailwind CSS CDN -->
+    <title>ShoreLoop Robotics | Pitch Deck</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Language Toggle Logic */
+        body[data-lang="en"] .lang-tc, body[data-lang="en"] .lang-sc { display: none !important; }
+        body[data-lang="tc"] .lang-en, body[data-lang="tc"] .lang-sc { display: none !important; }
+        body[data-lang="sc"] .lang-en, body[data-lang="sc"] .lang-tc { display: none !important; }
+        
+        /* Smooth scrolling */
+        html { scroll-behavior: smooth; }
+    </style>
     <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        brand: {
-                            900: '#0b132b',
-                            800: '#1c2541',
-                            500: '#3a506b',
-                            accent: '#00b4d8',
-                            bright: '#90e0ef'
-                        }
-                    }
+        function setLanguage(lang) {
+            document.body.setAttribute('data-lang', lang);
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                if(btn.dataset.langTarget === lang) {
+                    btn.classList.add('text-teal-400', 'font-bold');
+                    btn.classList.remove('text-slate-400', 'font-medium');
+                } else {
+                    btn.classList.remove('text-teal-400', 'font-bold');
+                    btn.classList.add('text-slate-400', 'font-medium');
                 }
-            }
+            });
         }
     </script>
-    <!-- Font Awesome Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
-<body class="bg-brand-900 text-slate-100 font-sans antialiased selection:bg-brand-accent selection:text-brand-900">
+<body data-lang="en" class="bg-slate-900 text-slate-300 font-sans antialiased selection:bg-teal-500 selection:text-white">
 
-    <!-- Navigation Bar -->
-    <nav class="fixed top-0 w-full z-50 bg-brand-900/90 backdrop-blur-md border-b border-slate-800">
-        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-            <div class="flex items-center space-x-3">
-                <div class="w-10 h-10 rounded-lg bg-gradient-to-br from-brand-accent to-blue-600 flex items-center justify-center font-black text-xl text-brand-900">B</div>
-                <span class="text-2xl font-bold tracking-tight text-white">BAYWING <span class="text-brand-accent font-normal text-sm uppercase tracking-widest ml-1">Dynamics</span></span>
+    <!-- Navigation -->
+    <nav class="fixed w-full bg-slate-900/90 backdrop-blur-md z-50 border-b border-slate-800">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8 flex items-center justify-between h-16">
+            <div class="text-xl font-bold text-white tracking-tight">
+                ShoreLoop <span class="text-teal-400">Robotics</span>
             </div>
-            <div class="hidden md:flex space-x-8 text-sm font-medium text-slate-300">
-                <a href="#vision" class="hover:text-brand-accent transition">Vision</a>
-                <a href="#specs" class="hover:text-brand-accent transition">Flagship Specs</a>
-                <a href="#economics" class="hover:text-brand-accent transition">Economics</a>
-                <a href="#roadmap" class="hover:text-brand-accent transition">Tech Tree</a>
+            <!-- Language Switcher -->
+            <div class="flex space-x-6 text-sm">
+                <button data-lang-target="en" onclick="setLanguage('en')" class="lang-btn text-teal-400 font-bold transition hover:text-teal-300">EN</button>
+                <button data-lang-target="tc" onclick="setLanguage('tc')" class="lang-btn text-slate-400 font-medium transition hover:text-teal-300">繁體</button>
+                <button data-lang-target="sc" onclick="setLanguage('sc')" class="lang-btn text-slate-400 font-medium transition hover:text-teal-300">简体</button>
             </div>
-            <a href="#contact" class="px-5 py-2.5 rounded-full bg-brand-accent text-brand-900 font-semibold text-sm hover:bg-brand-bright transition shadow-lg shadow-brand-accent/20">Technical Inquiry</a>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <section class="pt-36 pb-20 px-6 max-w-7xl mx-auto border-b border-slate-800/80">
-        <div class="inline-flex items-center space-x-2 px-3 py-1.5 rounded-full bg-brand-800 border border-brand-accent/30 text-brand-accent text-xs font-semibold uppercase tracking-wider mb-8">
-            <span class="w-2 h-2 rounded-full bg-brand-accent animate-pulse"></span>
-            <span>Zero-Emission Marine Hydrofoil Platform</span>
-        </div>
-        <h1 class="text-5xl md:text-7xl font-extrabold text-white tracking-tight leading-tight max-w-5xl">
-            Decarbonizing High-Speed Transit Across the <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-accent to-blue-400">Greater Bay Area</span>.
+    <section class="relative pt-32 pb-20 lg:pt-48 lg:pb-32 px-6 lg:px-8 max-w-7xl mx-auto flex flex-col items-center text-center">
+        <h1 class="text-4xl md:text-6xl font-extrabold text-white tracking-tight mb-6 max-w-4xl">
+            <span class="lang-en">Next-Generation Tidal Litter Recovery for Pui O Beach</span>
+            <span class="lang-tc">專為貝澳沙灘打造的次世代潮汐垃圾回收系統</span>
+            <span class="lang-sc">专为贝澳沙滩打造的次世代潮汐垃圾回收系统</span>
         </h1>
-        <p class="mt-6 text-xl text-slate-400 max-w-3xl leading-relaxed">
-            Replacing legacy gas-turbine ferries with next-generation electric hydrofoils. Engineered to achieve an 80% reduction in operating costs via 3.8 MW Megawatt Charging Systems (MCS).
+        <p class="text-lg md:text-xl text-slate-400 max-w-2xl mb-10">
+            <span class="lang-en">We are engineering a supervised electric rover that bridges the gap between environmental stewardship and advanced robotics.</span>
+            <span class="lang-tc">我們正在研發一款受控電動探測車，將環境保護與先進機器人技術完美結合。</span>
+            <span class="lang-sc">我们正在研发一款受控电动探测车，将环境保护与先进机器人技术完美结合。</span>
         </p>
-        <div class="mt-10 flex flex-wrap gap-4">
-            <a href="#specs" class="px-8 py-4 rounded-lg bg-brand-accent text-brand-900 font-bold text-base hover:bg-brand-bright transition">Explore Baywing X-1</a>
-            <a href="#economics" class="px-8 py-4 rounded-lg bg-brand-800 text-white font-semibold text-base border border-slate-700 hover:border-slate-500 transition">View OPEX Analysis</a>
+        <div class="flex space-x-4">
+            <a href="#architecture" class="px-8 py-3 bg-slate-800 text-white rounded-lg font-medium hover:bg-slate-700 transition border border-slate-700">
+                <span class="lang-en">System Architecture</span>
+                <span class="lang-tc">系統架構</span>
+                <span class="lang-sc">系统架构</span>
+            </a>
+            <a href="#contact" class="px-8 py-3 bg-teal-500 text-slate-950 rounded-lg font-medium hover:bg-teal-400 transition">
+                <span class="lang-en">Partner With Us</span>
+                <span class="lang-tc">與我們合作</span>
+                <span class="lang-sc">与我们合作</span>
+            </a>
         </div>
+    </section>
 
-        <!-- Key Metrics Strip -->
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mt-16 pt-12 border-t border-slate-800/60">
-            <div>
-                <p class="text-slate-400 text-xs uppercase tracking-wider font-semibold">Cruising Speed</p>
-                <p class="text-3xl font-bold text-white mt-1">35+ Knots</p>
-            </div>
-            <div>
-                <p class="text-slate-400 text-xs uppercase tracking-wider font-semibold">Per-Trip Energy Savings</p>
-                <p class="text-3xl font-bold text-brand-accent mt-1">~80% Lower</p>
-            </div>
-            <div>
-                <p class="text-slate-400 text-xs uppercase tracking-wider font-semibold">Fast Charging Power</p>
-                <p class="text-3xl font-bold text-white mt-1">3.8 MW MCS</p>
-            </div>
-            <div>
-                <p class="text-slate-400 text-xs uppercase tracking-wider font-semibold">Passenger Capacity</p>
-                <p class="text-3xl font-bold text-white mt-1">150 Pax</p>
+    <!-- Dual Value Proposition -->
+    <section class="py-20 bg-slate-800/50 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 gap-12">
+                <!-- For Buyers -->
+                <div class="bg-slate-900 p-8 rounded-2xl border border-slate-700">
+                    <h3 class="text-2xl font-bold text-white mb-4">
+                        <span class="lang-en">For Operators & Buyers</span>
+                        <span class="lang-tc">適用於營運方與採購方</span>
+                        <span class="lang-sc">适用于运营方与采购方</span>
+                    </h3>
+                    <p class="text-teal-400 text-sm font-semibold tracking-wide uppercase mb-4">
+                        <span class="lang-en">LCSD • EPD • EMSD InnoPortal</span>
+                        <span class="lang-tc">康文署 • 環保署 • 機電署創科平臺</span>
+                        <span class="lang-sc">康文署 • 环保署 • 机电署创科平台</span>
+                    </p>
+                    <p class="text-slate-400 leading-relaxed">
+                        <span class="lang-en">Achieve zero local emissions, massive reductions in manual labor hours, and a high-throughput mechanical collection system. Designed strictly for regulatory compliance, environmental sustainability, and robust public safety on municipal beaches.</span>
+                        <span class="lang-tc">實現本地零排放，大幅減少人力成本，並具備高吞吐量的機械收集系統。設計嚴格符合法規要求，確保市政沙灘的環境可持續性與公眾安全。</span>
+                        <span class="lang-sc">实现本地零排放，大幅减少人力成本，并具备高吞吐量的机械收集系统。设计严格符合法规要求，确保市政沙滩的环境可持续性与公众安全。</span>
+                    </p>
+                </div>
+                <!-- For Builders -->
+                <div class="bg-slate-900 p-8 rounded-2xl border border-slate-700">
+                    <h3 class="text-2xl font-bold text-white mb-4">
+                        <span class="lang-en">For Builders & Engineers</span>
+                        <span class="lang-tc">適用於研發與工程夥伴</span>
+                        <span class="lang-sc">适用于研发与工程伙伴</span>
+                    </h3>
+                    <p class="text-teal-400 text-sm font-semibold tracking-wide uppercase mb-4">
+                        <span class="lang-en">Contractors • Suppliers • Tech Partners</span>
+                        <span class="lang-tc">承包商 • 供應商 • 技術夥伴</span>
+                        <span class="lang-sc">承包商 • 供应商 • 技术伙伴</span>
+                    </p>
+                    <p class="text-slate-400 leading-relaxed">
+                        <span class="lang-en">Open modular architecture featuring marine-grade components, and a scalable 48V powertrain. We are actively seeking manufacturing, supply chain, and robotics partners to iterate, prototype, and scale this platform.</span>
+                        <span class="lang-tc">採用開放式模組化架構及船用級組件，搭載可擴展的 48V 動力系統。我們正積極尋求製造、供應鏈及機器人技術夥伴，共同進行原型開發、迭代與規模化。</span>
+                        <span class="lang-sc">采用开放式模块化架构及船用级组件，搭载可扩展的 48V 动力系统。我们正积极寻求制造、供应链及机器人技术伙伴，共同进行原型开发、迭代与规模化。</span>
+                    </p>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- The Vision / Industry Paradox Section -->
-    <section id="vision" class="py-20 px-6 max-w-7xl mx-auto border-b border-slate-800/80">
-        <div class="grid md:grid-cols-2 gap-12 items-center">
-            <div>
-                <h2 class="text-xs font-semibold text-brand-accent uppercase tracking-widest">Market Transformation</h2>
-                <h3 class="text-3xl md:text-4xl font-bold text-white mt-2 leading-snug">The 1970s Turbine Dilemma vs. Electric Hydrofoil Flight</h3>
-                <p class="mt-4 text-slate-300 leading-relaxed">
-                    While civil aviation continuously upgrades to ultra-efficient fleets, high-speed maritime routes in Hong Kong still rely on aging 1970s gas-turbine drivetrains burning ~450+ gallons of fuel per hour.
-                </p>
-                <p class="mt-4 text-slate-400 leading-relaxed">
-                    With rising marine gas oil (MGO) costs and fixed bridge-competition fares, traditional fleet models face severe structural losses. Baywing replaces thermal burn with hydrofoil aerodynamic lift and battery-electric efficiency.
+    <!-- System Architecture -->
+    <section id="architecture" class="py-24 px-6 lg:px-8 max-w-7xl mx-auto">
+        <div class="mb-16">
+            <h2 class="text-3xl font-bold text-white mb-4">
+                <span class="lang-en">System Architecture & Technical Specs</span>
+                <span class="lang-tc">系統架構與技術規格</span>
+                <span class="lang-sc">系统架构与技术规格</span>
+            </h2>
+            <div class="bg-yellow-900/20 border border-yellow-700/50 p-4 rounded-lg inline-block">
+                <p class="text-yellow-500 text-sm">
+                    <span class="lang-en"><strong>Disclaimer:</strong> All specifications and system architectures outlined below are preliminary. They are subject to change due to ongoing engineering iterations, component sourcing, and feasibility studies with our stakeholders.</span>
+                    <span class="lang-tc"><strong>免責聲明：</strong> 以下所有規格與系統架構均為初步方案。隨著工程迭代、組件採購及利益相關者的可行性研究，相關內容可能會有所更改。</span>
+                    <span class="lang-sc"><strong>免责声明：</strong> 以下所有规格与系统架构均为初步方案。随着工程迭代、组件采购及利益相关者的可行性研究，相关内容可能会有所更改。</span>
                 </p>
             </div>
-            <div class="bg-brand-800 p-8 rounded-2xl border border-slate-700">
-                <h4 class="text-lg font-bold text-white mb-4 flex items-center">
-                    <i class="fa-solid fa-chart-line text-brand-accent mr-3"></i> Operating Cost per HK–Macau Crossing
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-8">
+            <!-- Spec 1 -->
+            <div class="p-6 border border-slate-700 rounded-xl hover:border-teal-500/50 transition bg-slate-800/30">
+                <h4 class="text-xl font-bold text-white mb-3">
+                    <span class="lang-en">1. Chassis & Mobility</span>
+                    <span class="lang-tc">1. 底盤與機動性</span>
+                    <span class="lang-sc">1. 底盘与机动性</span>
                 </h4>
-                <div class="space-y-6">
+                <p class="text-slate-400">
+                    <span class="lang-en">Marine-grade aluminum frame with wide-track, sand-optimized treads to maintain low ground pressure on variable, wet terrain.</span>
+                    <span class="lang-tc">採用船用級鋁合金車架，配備專為沙地優化的寬履帶，確保在潮濕多變的地形上保持低接地壓。</span>
+                    <span class="lang-sc">采用船用级铝合金车架，配备专为沙地优化的宽履带，确保在潮湿多变的地形上保持低接地压。</span>
+                </p>
+            </div>
+            <!-- Spec 2 -->
+            <div class="p-6 border border-slate-700 rounded-xl hover:border-teal-500/50 transition bg-slate-800/30">
+                <h4 class="text-xl font-bold text-white mb-3">
+                    <span class="lang-en">2. Powertrain & Battery</span>
+                    <span class="lang-tc">2. 動力與電源管理</span>
+                    <span class="lang-sc">2. 动力与电源管理</span>
+                </h4>
+                <p class="text-slate-400">
+                    <span class="lang-en">48V LiFePO4 swappable battery ecosystem powering dual high-torque, fully sealed (IP68) electric motors for continuous tidal operation.</span>
+                    <span class="lang-tc">48V 磷酸鐵鋰可更換電池生態系統，驅動雙高扭矩、全密封 (IP68) 電動馬達，滿足潮汐環境下的連續作業。</span>
+                    <span class="lang-sc">48V 磷酸铁锂可更换电池生态系统，驱动双高扭矩、全密封 (IP68) 电动马达，满足潮汐环境下的连续作业。</span>
+                </p>
+            </div>
+            <!-- Spec 3 -->
+            <div class="p-6 border border-slate-700 rounded-xl hover:border-teal-500/50 transition bg-slate-800/30">
+                <h4 class="text-xl font-bold text-white mb-3">
+                    <span class="lang-en">3. Litter Recovery Mechanism</span>
+                    <span class="lang-tc">3. 垃圾回收機制</span>
+                    <span class="lang-sc">3. 垃圾回收机制</span>
+                </h4>
+                <p class="text-slate-400">
+                    <span class="lang-en">Variable-depth mechanical rake coupled with a porous conveyor belt. Filters native sand while efficiently capturing macro-plastics and tidal debris.</span>
+                    <span class="lang-tc">可變深度機械耙與多孔輸送帶相結合。有效過濾原生沙粒，同時高效捕捉大型塑料及潮汐碎屑。</span>
+                    <span class="lang-sc">可变深度机械耙与多孔输送带相结合。有效过滤原生沙粒，同时高效捕捉大型塑料及潮汐碎屑。</span>
+                </p>
+            </div>
+            <!-- Spec 4 -->
+            <div class="p-6 border border-slate-700 rounded-xl hover:border-teal-500/50 transition bg-slate-800/30">
+                <h4 class="text-xl font-bold text-white mb-3">
+                    <span class="lang-en">4. Control & Supervision Suite</span>
+                    <span class="lang-tc">4. 控制與監控套件</span>
+                    <span class="lang-sc">4. 控制与监控套件</span>
+                </h4>
+                <p class="text-slate-400">
+                    <span class="lang-en">5G/Wi-Fi mesh enabled teleoperation. Integrated 360° LIDAR and multi-spectral optical cameras for obstacle detection, geofencing, and paramount public safety.</span>
+                    <span class="lang-tc">支援 5G/Wi-Fi 網狀網絡的遠程遙控。整合 360° 激光雷達與多光譜光學相機，實現障礙物檢測、地理圍欄及最高級別的公眾安全。</span>
+                    <span class="lang-sc">支持 5G/Wi-Fi 网状网络的远程遥控。整合 360° 激光雷达与多光谱光学相机，实现障碍物检测、地理围栏及最高级别的公众安全。</span>
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Secure Contact Form -->
+    <section id="contact" class="py-24 bg-slate-950 border-t border-slate-800">
+        <div class="max-w-3xl mx-auto px-6 lg:px-8">
+            <div class="text-center mb-10">
+                <h2 class="text-3xl font-bold text-white mb-4">
+                    <span class="lang-en">Partner With Us (Stakeholders Only)</span>
+                    <span class="lang-tc">與我們合作 (僅限利益相關者)</span>
+                    <span class="lang-sc">与我们合作 (仅限利益相关者)</span>
+                </h2>
+                <p class="text-slate-400">
+                    <span class="lang-en">To ensure secure communication, we are sharing project updates strictly with relevant builders, buyers, and partners. Please leave your details below and our system will route them securely.</span>
+                    <span class="lang-tc">為確保通訊安全，我們僅與相關的建設者、採購方和合作夥伴分享項目更新。請在下方留下您的聯絡方式，系統會將其安全地發送給我們。</span>
+                    <span class="lang-sc">为确保通讯安全，我们仅与相关的建设者、采购方和合作伙伴分享项目更新。请在下方留下您的联系方式，系统会将其安全地发送给我们。</span>
+                </p>
+            </div>
+
+            <!-- Web3Forms Form (Keeps your email hidden) -->
+            <form action="https://api.web3forms.com/submit" method="POST" class="space-y-6 bg-slate-900 p-8 rounded-2xl border border-slate-700">
+                
+                <!-- REQUIRED: Replace value with your Web3Forms Access Key -->
+                <input type="hidden" name="access_key" value="YOUR_WEB3FORMS_ACCESS_KEY_HERE">
+                <input type="hidden" name="subject" value="New Stakeholder Submission - ShoreLoop Robotics">
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div>
-                        <div class="flex justify-between text-sm mb-1">
-                            <span class="text-slate-300">Legacy Boeing 929 Jetfoil (Gas Turbine)</span>
-                            <span class="font-bold text-red-400">~HK$10,000</span>
-                        </div>
-                        <div class="w-full bg-slate-900 rounded-full h-3">
-                            <div class="bg-red-500 h-3 rounded-full" style="width: 100%"></div>
-                        </div>
+                        <label class="block text-sm font-medium text-slate-400 mb-2">
+                            <span class="lang-en">Full Name</span>
+                            <span class="lang-tc">姓名</span>
+                            <span class="lang-sc">姓名</span>
+                        </label>
+                        <input type="text" name="name" required class="w-full bg-slate-800 border border-slate-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-teal-500 focus:ring-1 focus:ring-teal-500">
                     </div>
                     <div>
-                        <div class="flex justify-between text-sm mb-1">
-                            <span class="text-slate-300">Baywing X-1 Electric Hydrofoil</span>
-                            <span class="font-bold text-brand-accent">~HK$1,900</span>
-                        </div>
-                        <div class="w-full bg-slate-900 rounded-full h-3">
-                            <div class="bg-brand-accent h-3 rounded-full" style="width: 19%"></div>
-                        </div>
+                        <label class="block text-sm font-medium text-slate-400 mb-2">
+                            <span class="lang-en">Email Address</span>
+                            <span class="lang-tc">電郵地址</span>
+                            <span class="lang-sc">电邮地址</span>
+                        </label>
+                        <input type="email" name="email" required class="w-full bg-slate-800 border border-slate-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-teal-500 focus:ring-1 focus:ring-teal-500">
                     </div>
                 </div>
-                <p class="text-xs text-slate-400 mt-6 pt-4 border-t border-slate-700">
-                    *Estimated OPEX calculated at 3.8 MW MCS shore power charging vs. current MGO fuel pricing.
-                </p>
-            </div>
+
+                <div>
+                    <label class="block text-sm font-medium text-slate-400 mb-2">
+                        <span class="lang-en">Organization / Company</span>
+                        <span class="lang-tc">機構 / 公司</span>
+                        <span class="lang-sc">机构 / 公司</span>
+                    </label>
+                    <input type="text" name="organization" required class="w-full bg-slate-800 border border-slate-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-teal-500 focus:ring-1 focus:ring-teal-500">
+                </div>
+
+                <div>
+                    <label class="block text-sm font-medium text-slate-400 mb-2">
+                        <span class="lang-en">Stakeholder Role</span>
+                        <span class="lang-tc">您的角色</span>
+                        <span class="lang-sc">您的角色</span>
+                    </label>
+                    <select name="role" class="w-full bg-slate-800 border border-slate-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-teal-500 focus:ring-1 focus:ring-teal-500">
+                        <option value="Builder/Engineer">Builder / Engineer / Supplier</option>
+                        <option value="Buyer/Government">Buyer / Government / Operator</option>
+                        <option value="Partner/Investor">ESG Partner / Investor</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label class="block text-sm font-medium text-slate-400 mb-2">
+                        <span class="lang-en">Message (Optional)</span>
+                        <span class="lang-tc">訊息 (選填)</span>
+                        <span class="lang-sc">信息 (选填)</span>
+                    </label>
+                    <textarea name="message" rows="4" class="w-full bg-slate-800 border border-slate-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-teal-500 focus:ring-1 focus:ring-teal-500"></textarea>
+                </div>
+
+                <!-- Anti-spam Honeypot -->
+                <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+
+                <button type="submit" class="w-full bg-teal-500 text-slate-950 font-bold text-lg py-4 rounded-lg hover:bg-teal-400 transition">
+                    <span class="lang-en">Submit Details</span>
+                    <span class="lang-tc">提交資料</span>
+                    <span class="lang-sc">提交资料</span>
+                </button>
+            </form>
         </div>
     </section>
 
-    <!-- Vessel Technical Specifications Section -->
-    <section id="specs" class="py-20 px-6 max-w-7xl mx-auto border-b border-slate-800/80">
-        <h2 class="text-xs font-semibold text-brand-accent uppercase tracking-widest">Platform Architecture</h2>
-        <h3 class="text-3xl font-bold text-white mt-2">Baywing X-1 Technical Specifications</h3>
-        <p class="text-slate-400 mt-2 max-w-2xl">Purpose-built high-speed cross-boundary hydrofoil engineered for 25-minute terminal turnaround times.</p>
-
-        <div class="grid md:grid-cols-3 gap-8 mt-12">
-            <div class="bg-brand-800 p-6 rounded-xl border border-slate-700/80">
-                <div class="w-12 h-12 rounded-lg bg-brand-accent/10 text-brand-accent flex items-center justify-center text-xl font-bold mb-4">01</div>
-                <h4 class="text-xl font-bold text-white mb-2">Propulsion & Foil</h4>
-                <ul class="text-sm text-slate-300 space-y-2">
-                    <li>• <strong>System:</strong> Dual Permanent Magnet Electric Pods</li>
-                    <li>• <strong>Foil Type:</strong> Active Fully Submerged Hydrofoil</li>
-                    <li>• <strong>Flight Control:</strong> Fly-by-wire trim & wave compensation</li>
-                    <li>• <strong>Cruising Speed:</strong> 35+ Knots</li>
-                </ul>
-            </div>
-            <div class="bg-brand-800 p-6 rounded-xl border border-slate-700/80">
-                <div class="w-12 h-12 rounded-lg bg-brand-accent/10 text-brand-accent flex items-center justify-center text-xl font-bold mb-4">02</div>
-                <h4 class="text-xl font-bold text-white mb-2">Energy & Charging</h4>
-                <ul class="text-sm text-slate-300 space-y-2">
-                    <li>• <strong>Battery Chemistry:</strong> High C-Rate Marine LFP/NMC</li>
-                    <li>• <strong>Charging Standard:</strong> Megawatt Charging System (MCS)</li>
-                    <li>• <strong>Peak Input:</strong> 3.8 MW DC Fast Charge</li>
-                    <li>• <strong>Turnaround Time:</strong> 20–25 Minutes</li>
-                </ul>
-            </div>
-            <div class="bg-brand-800 p-6 rounded-xl border border-slate-700/80">
-                <div class="w-12 h-12 rounded-lg bg-brand-accent/10 text-brand-accent flex items-center justify-center text-xl font-bold mb-4">03</div>
-                <h4 class="text-xl font-bold text-white mb-2">Hull & Safety</h4>
-                <ul class="text-sm text-slate-300 space-y-2">
-                    <li>• <strong>Capacity:</strong> 150 Passengers + Crew</li>
-                    <li>• <strong>Redundancy:</strong> Isolated battery string architecture</li>
-                    <li>• <strong>Classification:</strong> CCS / HKMD Compliant</li>
-                    <li>• <strong>Wake Wash:</strong> Near-zero surface wake in flight</li>
-                </ul>
-            </div>
-        </div>
-    </section>
-
-    <!-- Tech Tree Roadmap Section -->
-    <section id="roadmap" class="py-20 px-6 max-w-7xl mx-auto border-b border-slate-800/80">
-        <h2 class="text-xs font-semibold text-brand-accent uppercase tracking-widest">Execution Strategy</h2>
-        <h3 class="text-3xl font-bold text-white mt-2">4-Stage Engineering Tech Tree</h3>
-        <p class="text-slate-400 mt-2 max-w-2xl">A disciplined hardware development tree designed to eliminate technical risk before scaling to high-capacity passenger routes.</p>
-
-        <div class="grid md:grid-cols-4 gap-6 mt-12">
-            <div class="bg-brand-800/50 p-6 rounded-xl border border-slate-800 relative">
-                <span class="text-xs font-bold text-brand-accent uppercase">Stage 0</span>
-                <h4 class="text-lg font-bold text-white mt-1">Virtual Flight Control</h4>
-                <p class="text-xs text-slate-400 mt-2">CFD hydrodynamic modeling, digital twin development, and dynamic simulation for Lingdingyang sea swells.</p>
-            </div>
-            <div class="bg-brand-800 p-6 rounded-xl border border-brand-accent/40 relative shadow-lg shadow-brand-accent/5">
-                <span class="text-xs font-bold text-brand-accent uppercase">Stage 1 (Current)</span>
-                <h4 class="text-lg font-bold text-white mt-1">The Mule Testbed</h4>
-                <p class="text-xs text-slate-300 mt-2">10–12m prototype demonstrator. Validates real-world active foil trim, ultrasonic wave-height sensors, and thermal management.</p>
-            </div>
-            <div class="bg-brand-800/50 p-6 rounded-xl border border-slate-800 relative">
-                <span class="text-xs font-bold text-brand-accent uppercase">Stage 2</span>
-                <h4 class="text-lg font-bold text-white mt-1">Domestic Pilot</h4>
-                <p class="text-xs text-slate-400 mt-2">Commercial pilot deployment on South Lantau / Outlying Island routes utilizing intermediate 1.5 MW charging infrastructure.</p>
-            </div>
-            <div class="bg-brand-800/50 p-6 rounded-xl border border-slate-800 relative">
-                <span class="text-xs font-bold text-brand-accent uppercase">Stage 3</span>
-                <h4 class="text-lg font-bold text-white mt-1">Flagship Baywing X-1</h4>
-                <p class="text-xs text-slate-400 mt-2">Full-scale 35+ knot 150-pax hydrofoil launch on the flagship HK–Macau cross-boundary corridor with 3.8 MW MCS.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer / Technical Contact Section -->
-    <footer id="contact" class="py-16 px-6 max-w-7xl mx-auto text-center">
-        <h3 class="text-2xl font-bold text-white">Partner with Baywing Dynamics</h3>
-        <p class="text-slate-400 mt-2 max-w-xl mx-auto text-sm">
-            Initiating technical pre-consultations with utility providers, classification societies, and Tier-1 maritime shipyards.
-        </p>
-        <div class="mt-8 flex justify-center space-x-4">
-            <a href="mailto:mail@hkelectric.com" class="px-6 py-3 rounded-lg bg-brand-800 border border-slate-700 text-slate-200 text-sm font-semibold hover:border-brand-accent transition">Utility Technical Desk</a>
-            <a href="mailto:contact@baywing.hk" class="px-6 py-3 rounded-lg bg-brand-accent text-brand-900 text-sm font-bold hover:bg-brand-bright transition">Direct Project Inquiry</a>
-        </div>
-        <p class="text-xs text-slate-500 mt-12">© 2026 Baywing Dynamics Initiative. Hong Kong SAR.</p>
+    <!-- Footer -->
+    <footer class="border-t border-slate-800 py-8 text-center text-slate-500 text-sm">
+        <p>&copy; 2026 ShoreLoop Robotics. All rights reserved.</p>
     </footer>
 
 </body>
