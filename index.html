@@ -124,13 +124,6 @@
                     <a href="#portal" class="hover:text-white transition-colors">5. Data Room</a>
                 </nav>
 
-                <!-- Primary CTA -->
-                <div class="hidden sm:flex items-center space-x-3">
-                    <button onclick="sendInquiry('General Inquiry')" class="px-3.5 py-1.5 bg-zinc-800 hover:bg-zinc-700 text-white border border-zinc-600 rounded text-[11px] font-mono uppercase tracking-wider transition-all flex items-center gap-2">
-                        Connect With Us
-                    </button>
-                </div>
-
                 <!-- Mobile Navigation Button -->
                 <div class="lg:hidden flex items-center">
                     <button onclick="toggleMobileMenu()" class="text-zinc-400 hover:text-white p-2 border border-zinc-800 rounded bg-zinc-900">
@@ -264,20 +257,21 @@
                     </div>
                 </div>
 
-                <!-- Pillar 3: Replaced with Contact Box as instructed -->
-                <div class="data-card p-6 rounded-lg relative overflow-hidden flex flex-col justify-center items-center text-center border-zinc-700 bg-zinc-900/50">
-                    <div class="w-12 h-12 bg-zinc-800 rounded-full border border-zinc-600 flex items-center justify-center text-white mb-4">
-                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
-                        </svg>
-                    </div>
-                    <h3 class="text-base font-mono font-bold text-white mb-2 uppercase tracking-wide">Connect With Us</h3>
-                    <p class="text-xs text-zinc-400 mb-5 font-sans leading-relaxed">
-                        Request detailed OPEX feasibility models, route analytics, or partnership discussions regarding the EF-150 platform.
+                <!-- Pillar 3: Emissions & Wake Control -->
+                <div class="data-card p-6 rounded-lg relative overflow-hidden">
+                    <div class="text-3xl font-mono font-bold text-white mb-2">0<span class="text-xl">kg</span></div>
+                    <h3 class="text-sm font-mono font-bold text-zinc-300 mb-2 uppercase">Zero Emission & Wake</h3>
+                    <p class="text-xs text-zinc-400 leading-relaxed font-sans">
+                        Total elimination of Scope 1 emissions (NOx, SOx, PM). Advanced hydrodynamics result in near-zero wake wash, potentially allowing higher speeds in restricted harbor zones.
                     </p>
-                    <button onclick="sendInquiry('Platform Inquiry')" class="px-5 py-2.5 bg-white hover:bg-zinc-200 text-zinc-950 font-mono text-[11px] font-bold rounded uppercase tracking-wider transition-colors w-full">
-                        Contact Project Lead
-                    </button>
+                    <div class="mt-4 pt-3 border-t border-zinc-800 text-[11px] font-mono text-zinc-500 flex justify-between">
+                        <span>Legacy MGO CO2/NM:</span>
+                        <span class="text-zinc-300 font-bold">~48.5 kg</span>
+                    </div>
+                    <div class="mt-1 text-[11px] font-mono text-zinc-500 flex justify-between">
+                        <span>EF-150 Direct Emissions:</span>
+                        <span class="text-white font-bold">0.0 kg</span>
+                    </div>
                 </div>
 
             </div>
@@ -322,10 +316,12 @@
                                 <option value="hk-macau" selected>HK Central ⟷ Macau Taipa (36 NM)</option>
                                 <option value="hk-airport">HK Central ⟷ HKG SkyPier Airport (17 NM)</option>
                                 <option value="hk-shenzhen">HK Central ⟷ Shenzhen Shekou (22 NM)</option>
+                                <option value="hk-zhuhai">HK Central ⟷ Zhuhai Jiuzhou (35 NM)</option>
                                 <option value="hk-nansha">HK Central ⟷ Nansha (40 NM)</option>
                                 <option value="hk-zhongshan">HK Central ⟷ Zhongshan (45 NM)</option>
+                                <option value="hkg-macau">HKG SkyPier ⟷ Macau Taipa (30 NM)</option>
+                                <option value="hkg-szx">HKG SkyPier ⟷ Shenzhen Airport (25 NM)</option>
                                 <option value="tm-macau">Tuen Mun ⟷ Macau (30 NM)</option>
-                                <option value="hkg-szx">HK Airport ⟷ Shenzhen Airport (25 NM)</option>
                             </select>
                         </div>
 
@@ -505,54 +501,102 @@
                     Institutional Feasibility Documents
                 </h2>
                 <p class="text-sm text-zinc-400 mt-2 font-sans">
-                    Detailed modeling and feasibility projections are available for institutional review. Request access via the links below.
+                    Detailed modeling and feasibility projections are summarized below for institutional review.
                 </p>
             </div>
 
             <div class="grid lg:grid-cols-2 gap-6">
                 
                 <!-- Document Item 1 -->
-                <div class="data-card p-5 rounded-lg flex items-center justify-between">
-                    <div>
-                        <div class="text-sm font-mono font-bold text-white mb-1">GBA Route Yield & Feasibility Model</div>
-                        <div class="text-xs font-mono text-zinc-500">Complete OPEX/CAPEX projections (XLSX).</div>
-                    </div>
-                    <button onclick="sendInquiry('Request: Yield Model')" class="px-4 py-2 bg-zinc-800 hover:bg-zinc-700 text-white font-mono text-[10px] font-bold rounded uppercase tracking-wider transition-colors shrink-0 ml-4 border border-zinc-700">
-                        Request
-                    </button>
+                <div class="data-card p-6 rounded-lg">
+                    <div class="text-sm font-mono font-bold text-white mb-4 border-b border-zinc-800 pb-2">GBA Route Yield & Feasibility Model</div>
+                    <table class="w-full text-left text-[11px] font-mono">
+                        <thead class="text-zinc-500">
+                            <tr>
+                                <th class="pb-2 font-normal">OPEX Category</th>
+                                <th class="pb-2 font-normal">Legacy Diesel</th>
+                                <th class="pb-2 font-normal">EF-150</th>
+                            </tr>
+                        </thead>
+                        <tbody class="text-zinc-300 divide-y divide-zinc-800/50">
+                            <tr>
+                                <td class="py-2 text-zinc-400">Energy/Fuel</td>
+                                <td class="py-2">~$22.50 / NM</td>
+                                <td class="py-2 text-tech-emerald">~$4.90 / NM</td>
+                            </tr>
+                            <tr>
+                                <td class="py-2 text-zinc-400">Maintenance</td>
+                                <td class="py-2">High (Turbines)</td>
+                                <td class="py-2 text-tech-emerald">Low (Direct Drive)</td>
+                            </tr>
+                            <tr>
+                                <td class="py-2 text-zinc-400">Crew Needed</td>
+                                <td class="py-2">Standard (8-10)</td>
+                                <td class="py-2 text-tech-emerald">Reduced (4)</td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
 
                 <!-- Document Item 2 -->
-                <div class="data-card p-5 rounded-lg flex items-center justify-between">
-                    <div>
-                        <div class="text-sm font-mono font-bold text-white mb-1">Regulatory & Classification Path</div>
-                        <div class="text-xs font-mono text-zinc-500">DNV structure & Maritime Admin strategy (PDF).</div>
-                    </div>
-                    <button onclick="sendInquiry('Request: Regulatory Path')" class="px-4 py-2 bg-zinc-800 hover:bg-zinc-700 text-white font-mono text-[10px] font-bold rounded uppercase tracking-wider transition-colors shrink-0 ml-4 border border-zinc-700">
-                        Request
-                    </button>
+                <div class="data-card p-6 rounded-lg">
+                    <div class="text-sm font-mono font-bold text-white mb-4 border-b border-zinc-800 pb-2">Regulatory & Classification Path</div>
+                    <ul class="space-y-3 text-[11px] font-mono text-zinc-300">
+                        <li class="flex items-start gap-2">
+                            <span class="text-tech-cyan">▸</span>
+                            <span><strong>DNV Classification:</strong> Adherence to High Speed Light Craft (HSLC) rules for novel composite structures.</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <span class="text-tech-cyan">▸</span>
+                            <span><strong>HKMD Certification:</strong> Pathway defined for Local Vessel operation within Hong Kong waters.</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <span class="text-tech-cyan">▸</span>
+                            <span><strong>Wake Exemption:</strong> Seeking clearance for elevated speeds in inner harbor limits due to &lt; 0.15m wake wash profile.</span>
+                        </li>
+                    </ul>
                 </div>
 
                 <!-- Document Item 3 -->
-                <div class="data-card p-5 rounded-lg flex items-center justify-between">
-                    <div>
-                        <div class="text-sm font-mono font-bold text-white mb-1">EF-150 Fleet Concept Term Sheet</div>
-                        <div class="text-xs font-mono text-zinc-500">Estimated acquisition and maintenance matrix (PDF).</div>
+                <div class="data-card p-6 rounded-lg">
+                    <div class="text-sm font-mono font-bold text-white mb-4 border-b border-zinc-800 pb-2">EF-150 Fleet Concept Term Sheet</div>
+                    <div class="grid grid-cols-2 gap-4 text-[11px] font-mono">
+                        <div>
+                            <div class="text-zinc-500 mb-1">Est. Unit Cost</div>
+                            <div class="text-zinc-200 font-bold">$8.5M - $9.2M USD</div>
+                        </div>
+                        <div>
+                            <div class="text-zinc-500 mb-1">Passenger Cap.</div>
+                            <div class="text-zinc-200 font-bold">150 PAX</div>
+                        </div>
+                        <div>
+                            <div class="text-zinc-500 mb-1">Hull Lifespan</div>
+                            <div class="text-zinc-200 font-bold">20+ Years</div>
+                        </div>
+                        <div>
+                            <div class="text-zinc-500 mb-1">Battery Cycle</div>
+                            <div class="text-zinc-200 font-bold">~5 Years (to 80% SOH)</div>
+                        </div>
                     </div>
-                    <button onclick="sendInquiry('Request: Term Sheet')" class="px-4 py-2 bg-zinc-800 hover:bg-zinc-700 text-white font-mono text-[10px] font-bold rounded uppercase tracking-wider transition-colors shrink-0 ml-4 border border-zinc-700">
-                        Request
-                    </button>
                 </div>
 
                 <!-- Document Item 4 -->
-                <div class="data-card p-5 rounded-lg flex items-center justify-between">
-                    <div>
-                        <div class="text-sm font-mono font-bold text-white mb-1">MCS Terminal Integration Specs</div>
-                        <div class="text-xs font-mono text-zinc-500">Turnaround power requirements for ports (PDF).</div>
-                    </div>
-                    <button onclick="sendInquiry('Request: Terminal Specs')" class="px-4 py-2 bg-zinc-800 hover:bg-zinc-700 text-white font-mono text-[10px] font-bold rounded uppercase tracking-wider transition-colors shrink-0 ml-4 border border-zinc-700">
-                        Request
-                    </button>
+                <div class="data-card p-6 rounded-lg">
+                    <div class="text-sm font-mono font-bold text-white mb-4 border-b border-zinc-800 pb-2">MCS Terminal Integration Specs</div>
+                    <ul class="space-y-3 text-[11px] font-mono text-zinc-300">
+                        <li class="flex items-start gap-2">
+                            <span class="text-tech-amber">⚡</span>
+                            <span><strong>Standard:</strong> 1.5 MW to 2.0 MW Direct Current (DC) shore charging integration.</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <span class="text-tech-amber">⚡</span>
+                            <span><strong>Interface:</strong> Compatible with upcoming marine CCS3 / Megawatt Charging System (MCS).</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <span class="text-tech-amber">⚡</span>
+                            <span><strong>Turnaround:</strong> &lt; 45-minute charge cycle (10% to 90% SOC) at target payload.</span>
+                        </li>
+                    </ul>
                 </div>
 
             </div>
@@ -597,15 +641,7 @@
             }
         }
 
-        // 2. Email Obfuscation Handler
-        function sendInquiry(subjectContext) {
-            const u = 'johntjz';
-            const d = 'gmail.com';
-            const subject = encodeURIComponent('Baywing EF-150: ' + subjectContext);
-            window.location.href = `mailto:${u}@${d}?subject=${subject}`;
-        }
-
-        // 3. Dynamic Route & Financial Calculator Engine
+        // 2. Dynamic Route & Financial Calculator Engine
         // Extended route data per prompt specifications
         const routeProfiles = {
             'hk-macau': {
@@ -632,6 +668,14 @@
                 dieselFuelPerNM: 17.5,
                 electricKwhPerNM: 10.8
             },
+            'hk-zhuhai': {
+                name: 'HK Central ⟷ Zhuhai Jiuzhou',
+                distanceNM: 35,
+                dieselTimeMins: 55,
+                ef150TimeMins: 42,
+                dieselFuelPerNM: 18.2,
+                electricKwhPerNM: 11.0
+            },
             'hk-nansha': {
                 name: 'HK Central ⟷ Nansha',
                 distanceNM: 40,
@@ -648,6 +692,22 @@
                 dieselFuelPerNM: 18.4,
                 electricKwhPerNM: 11.3
             },
+            'hkg-macau': {
+                name: 'HKG SkyPier ⟷ Macau Taipa',
+                distanceNM: 30,
+                dieselTimeMins: 52,
+                ef150TimeMins: 38,
+                dieselFuelPerNM: 18.0,
+                electricKwhPerNM: 10.9
+            },
+            'hkg-szx': {
+                name: 'HKG SkyPier ⟷ Shenzhen Airport',
+                distanceNM: 25,
+                dieselTimeMins: 45,
+                ef150TimeMins: 30,
+                dieselFuelPerNM: 17.8,
+                electricKwhPerNM: 10.8
+            },
             'tm-macau': {
                 name: 'Tuen Mun ⟷ Macau',
                 distanceNM: 30,
@@ -655,14 +715,6 @@
                 ef150TimeMins: 35,
                 dieselFuelPerNM: 18.0,
                 electricKwhPerNM: 10.9
-            },
-            'hkg-szx': {
-                name: 'HK Airport ⟷ Shenzhen Airport',
-                distanceNM: 25,
-                dieselTimeMins: 45,
-                ef150TimeMins: 30,
-                dieselFuelPerNM: 17.8,
-                electricKwhPerNM: 10.8
             }
         };
 
