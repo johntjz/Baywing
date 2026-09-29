@@ -469,241 +469,94 @@
 
             <!-- TAB 2: Floating BESS Infrastructure -->
             <div id="tab-bess" class="tech-tab-content hidden space-y-6">
-                
                 <div class="bg-zinc-900/50 border border-zinc-800 p-5 rounded-lg flex gap-4 items-start">
-                    <div class="bg-zinc-800 p-2 rounded text-zinc-300">
-                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>
-                    </div>
                     <div>
-                        <h4 class="text-sm font-mono font-bold text-white uppercase mb-1">Solving the "Peak Power" Bottleneck</h4>
-                        <p class="text-xs text-zinc-400 font-sans leading-relaxed">
-                            Megawatt-class charging normally requires multi-million-dollar shore substation upgrades. The EF-150 architecture deploys a Floating Battery Energy Storage System (BESS) pontoon at the dock. It draws a continuous, low-impact <strong class="text-zinc-300">300 kW from the local grid</strong> to charge a massive <strong class="text-zinc-300">1.6 MWh LFP Buffer</strong>. During a 45-minute turnaround, the BESS discharges into the vessel at <strong class="text-zinc-300">1.5 MW DC</strong> via an automated MCS interface.
+                        <h4 class="text-xs font-mono font-bold text-white uppercase mb-1">Grid-Independent Shore Power Solution</h4>
+                        <p class="text-xs text-zinc-400 font-sans">
+                            Floating Battery Energy Storage System (BESS) barges act as buffer reservoirs, mitigating high grid connection demand charges and enabling rapid Megawatt Charging System (MCS) throughput during turnarounds.
                         </p>
                     </div>
                 </div>
-
-                <!-- System Flow Diagram UI -->
-                <div class="flex flex-col md:flex-row items-center justify-between bg-zinc-950 p-6 sm:p-10 rounded-lg border border-zinc-800 gap-4">
-                    
-                    <!-- Node 1: Grid -->
-                    <div class="flex flex-col items-center text-center w-full md:w-1/3">
-                        <div class="w-16 h-16 rounded-full border-2 border-zinc-700 bg-zinc-900 flex items-center justify-center mb-3">
-                            <svg class="w-6 h-6 text-zinc-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" /></svg>
-                        </div>
-                        <span class="text-[10px] font-mono text-zinc-500 uppercase tracking-widest mb-1">Source</span>
-                        <h5 class="text-sm font-mono font-bold text-white mb-1">HKE Shore Grid</h5>
-                        <p class="text-[10px] font-mono text-zinc-400">300 kW AC Continuous</p>
-                        <p class="text-[9px] font-mono text-zinc-600">380V / 415V Input</p>
-                    </div>
-
-                    <!-- Arrow 1 -->
-                    <div class="flex flex-col items-center justify-center text-zinc-600 hidden md:flex">
-                        <span class="text-[9px] font-mono mb-1 uppercase">AFE Rectifier</span>
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
-                    </div>
-
-                    <!-- Node 2: BESS -->
-                    <div class="flex flex-col items-center text-center w-full md:w-1/3">
-                        <div class="w-16 h-16 rounded-full border-2 border-tech-emerald bg-tech-emerald/10 flex items-center justify-center mb-3 shadow-[0_0_15px_rgba(16,185,129,0.15)]">
-                            <svg class="w-6 h-6 text-tech-emerald" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4" /></svg>
-                        </div>
-                        <span class="text-[10px] font-mono text-tech-emerald uppercase tracking-widest mb-1">Buffer</span>
-                        <h5 class="text-sm font-mono font-bold text-white mb-1">Floating BESS Pontoon</h5>
-                        <p class="text-[10px] font-mono text-zinc-400">1.6 MWh LFP Battery</p>
-                        <p class="text-[9px] font-mono text-zinc-600">Liquid Cooled / 800V Bus</p>
-                    </div>
-
-                    <!-- Arrow 2 -->
-                    <div class="flex flex-col items-center justify-center text-zinc-600 hidden md:flex">
-                        <span class="text-[9px] font-mono mb-1 uppercase text-white font-bold">1.5 MW DC</span>
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
-                    </div>
-
-                    <!-- Node 3: Vessel -->
-                    <div class="flex flex-col items-center text-center w-full md:w-1/3">
-                        <div class="w-16 h-16 rounded-full border-2 border-zinc-700 bg-zinc-900 flex items-center justify-center mb-3">
-                            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" /></svg>
-                        </div>
-                        <span class="text-[10px] font-mono text-zinc-500 uppercase tracking-widest mb-1">Destination</span>
-                        <h5 class="text-sm font-mono font-bold text-white mb-1">Baywing EF-150</h5>
-                        <p class="text-[10px] font-mono text-zinc-400">MCS Pantograph Interface</p>
-                        <p class="text-[9px] font-mono text-zinc-600">45 Min Full Replenishment</p>
-                    </div>
-                </div>
-
-                <!-- Deep Specs Grid -->
-                <div class="grid md:grid-cols-2 gap-4">
-                    <div class="data-card p-4 rounded-lg">
-                        <h5 class="text-xs font-mono font-bold text-zinc-300 uppercase mb-2 border-b border-zinc-800 pb-2">Duty Cycle & Power Economics</h5>
-                        <p class="text-[11px] font-sans text-zinc-400 leading-relaxed">
-                            The 300 kW continuous input covers roughly 70%+ of the vessel's flight discharge over a standard 2-hour route loop. This continuous low-power trickle completely negates grid peak-demand tariffs while reliably supporting 8 daily round trips per vessel.
-                        </p>
-                    </div>
-                    <div class="data-card p-4 rounded-lg">
-                        <h5 class="text-xs font-mono font-bold text-zinc-300 uppercase mb-2 border-b border-zinc-800 pb-2">Safety & Marine Readiness</h5>
-                        <p class="text-[11px] font-sans text-zinc-400 leading-relaxed">
-                            The pontoon features IP67 sealed enclosures with C5-M marine-grade anti-corrosion coatings. Battery compartments utilize dedicated liquid thermal management and integrated Novec 1230 gas fire suppression systems for maximum port safety.
-                        </p>
-                    </div>
-                </div>
-
             </div>
+
         </div>
     </section>
 
-    <!-- SECTION 5: STAKEHOLDER PORTAL (#portal) -->
-    <section id="portal" class="py-16 md:py-24 bg-zinc-900 border-b border-zinc-800 cad-grid-bg">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            
-            <div class="max-w-3xl mb-12">
-                <div class="text-xs font-mono text-zinc-500 uppercase tracking-widest mb-2">5. Data Room</div>
-                <h2 class="text-2xl sm:text-3xl font-mono font-bold text-white uppercase">
-                    Institutional Feasibility Documents
-                </h2>
-                <p class="text-sm text-zinc-400 mt-2 font-sans">
-                    Detailed modeling and feasibility projections are summarized below for institutional review.
-                </p>
+    <!-- SECTION 5: DATA ROOM & FOOTER (#portal) -->
+    <footer id="portal" class="bg-zinc-950 border-t border-zinc-800 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center sm:text-left flex flex-col sm:flex-row justify-between items-center gap-6">
+            <div class="space-y-1">
+                <div class="text-xs font-mono font-bold text-white uppercase">Aero-Marine Systems Limited (In Formation)</div>
+                <p class="text-[11px] font-mono text-zinc-500">Autonomous Marine Mobility & Energy Systems Architecture</p>
             </div>
-
-            <div class="grid lg:grid-cols-2 gap-6">
-                <!-- Document Item 1 -->
-                <div class="data-card p-6 rounded-lg">
-                    <div class="text-sm font-mono font-bold text-white mb-4 border-b border-zinc-800 pb-2">GBA Route Yield & Feasibility Model</div>
-                    <table class="w-full text-left text-[11px] font-mono">
-                        <thead class="text-zinc-500">
-                            <tr>
-                                <th class="pb-2 font-normal">OPEX Category</th>
-                                <th class="pb-2 font-normal">Legacy Diesel</th>
-                                <th class="pb-2 font-normal">EF-150</th>
-                            </tr>
-                        </thead>
-                        <tbody class="text-zinc-300 divide-y divide-zinc-800/50">
-                            <tr>
-                                <td class="py-2 text-zinc-400">Energy/Fuel</td>
-                                <td class="py-2">$2.20 / L</td>
-                                <td class="py-2">$0.18 / kWh</td>
-                            </tr>
-                            <tr>
-                                <td class="py-2 text-zinc-400">Engine Maint.</td>
-                                <td class="py-2">High ($$$)</td>
-                                <td class="py-2">Low ($)</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-
-                <!-- Document Item 2 -->
-                <div class="data-card p-6 rounded-lg">
-                    <div class="text-sm font-mono font-bold text-white mb-4 border-b border-zinc-800 pb-2">Environmental Impact Assessment</div>
-                    <p class="text-[11px] font-mono text-zinc-400 leading-relaxed">
-                        Complete elimination of Scope 1 emissions across all targeted routes. Optimized wake profile heavily reduces coastal erosion risks in restricted harbor zones. Meets emerging 2030 zero-emission marine legislation standards.
-                    </p>
-                </div>
+            <div class="text-xs font-mono text-zinc-500">
+                &copy; 2026 Aero-Marine Systems Limited (In Formation). All rights reserved.
             </div>
         </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="py-8 bg-zinc-950 text-center border-t border-zinc-800">
-        <p class="text-[10px] font-mono text-zinc-500 uppercase tracking-widest">
-            &copy; 2026 BAYWING Marine Technologies. Concept Proposal.
-        </p>
     </footer>
 
     <!-- Interactive Scripts -->
     <script>
-        // Tech Data Tab Switcher Logic
-        function switchTab(tabId) {
-            // Hide all tab contents
-            document.querySelectorAll('.tech-tab-content').forEach(el => {
-                el.classList.add('hidden');
-            });
-            
-            // Reset all tab buttons to inactive state
-            document.querySelectorAll('.tech-tab-btn').forEach(el => {
-                el.classList.remove('bg-zinc-900', 'text-white', 'border-zinc-800');
-                el.classList.add('text-zinc-500', 'border-transparent');
-            });
-            
-            // Show active tab content
-            document.getElementById(tabId).classList.remove('hidden');
-            
-            // Set active button state
-            const activeBtn = document.getElementById(tabId + '-btn');
-            activeBtn.classList.remove('text-zinc-500', 'border-transparent');
-            activeBtn.classList.add('bg-zinc-900', 'text-white', 'border-zinc-800');
-        }
-
-        // Mobile Menu Toggle Logic
         function toggleMobileMenu() {
             const menu = document.getElementById('mobile-menu');
-            const iconOpen = document.getElementById('menu-icon-open');
-            const iconClose = document.getElementById('menu-icon-close');
-            
-            if (menu.classList.contains('hidden')) {
-                menu.classList.remove('hidden');
-                iconOpen.classList.add('hidden');
-                iconClose.classList.remove('hidden');
-            } else {
-                menu.classList.add('hidden');
-                iconOpen.classList.remove('hidden');
-                iconClose.classList.add('hidden');
-            }
+            const openIcon = document.getElementById('menu-icon-open');
+            const closeIcon = document.getElementById('menu-icon-close');
+            menu.classList.toggle('hidden');
+            openIcon.classList.toggle('hidden');
+            closeIcon.classList.toggle('hidden');
         }
 
-        // Route OPEX Simulation Engine
-        function runRouteCalculator() {
-            const routeSelect = document.getElementById('calc-route');
-            const fleetSlider = document.getElementById('calc-fleet');
-            const tripsSlider = document.getElementById('calc-trips');
-            
-            const fleetCount = parseInt(fleetSlider.value);
-            const trips = parseInt(tripsSlider.value);
-            
-            // Update UI Labels
-            document.getElementById('calc-fleet-val').innerText = fleetCount + (fleetCount === 1 ? ' VESSEL' : ' VESSELS');
-            document.getElementById('calc-trips-val').innerText = trips + ' TRIPS';
-            
-            // Distance Map for GBA Express Routes (NM)
-            const routeDistances = {
-                'hk-macau': 36,
-                'hk-airport': 17,
-                'hk-shenzhen': 22,
-                'hk-zhuhai': 35,
-                'hk-nansha': 40,
-                'hk-zhongshan': 45
-            };
-            
-            const distance = routeDistances[routeSelect.value] || 36;
-            const dailyMiles = distance * 2 * trips * fleetCount; // Total round trip miles per day
-            const annualMiles = dailyMiles * 350; // Assuming 350 operational days per year
-            
-            // Financial & Emission Constants
-            const dieselCostPerNm = 22.50;
-            const electricCostPerNm = 4.90;
-            
-            const dieselAnnualOPEX = (annualMiles * dieselCostPerNm) / 1000000;
-            const electricAnnualOPEX = (annualMiles * electricCostPerNm) / 1000000;
-            const annualSavings = dieselAnnualOPEX - electricAnnualOPEX;
-            
-            const dieselCO2PerNm = 0.0485; // Tons
-            const annualCO2 = annualMiles * dieselCO2PerNm;
-            
-            // Inject values into DOM
-            document.getElementById('calc-out-savings').innerText = '$' + annualSavings.toFixed(2) + ' M';
-            document.getElementById('calc-out-co2').innerText = Math.round(annualCO2).toLocaleString() + ' T';
-            
-            document.getElementById('calc-bar-diesel-text').innerText = '$' + dieselAnnualOPEX.toFixed(2) + 'M';
-            document.getElementById('calc-bar-ef150-text').innerText = '$' + electricAnnualOPEX.toFixed(2) + 'M';
-            
-            // Normalize graph widths
-            const maxOpex = Math.max(dieselAnnualOPEX, 0.01);
-            const electricWidth = (electricAnnualOPEX / maxOpex) * 100;
-            document.getElementById('calc-bar-ef150').style.width = electricWidth + '%';
+        function switchTab(tabId) {
+            document.querySelectorAll('.tech-tab-content').forEach(el => el.classList.add('hidden'));
+            document.querySelectorAll('.tech-tab-btn').forEach(btn => {
+                btn.classList.remove('bg-zinc-900', 'text-white', 'border-zinc-800');
+                btn.classList.add('border-transparent', 'text-zinc-500');
+            });
+
+            document.getElementById(tabId).classList.remove('hidden');
+            const activeBtn = document.getElementById(tabId + '-btn');
+            activeBtn.classList.add('bg-zinc-900', 'text-white', 'border-zinc-800');
+            activeBtn.classList.remove('border-transparent', 'text-zinc-500');
         }
-        
-        // Initialize simulator variables on page load
-        window.onload = runRouteCalculator;
+
+        const routeData = {
+            'hk-macau': { nm: 36, speed: 38, dieselCostNM: 22.50, ef150CostNM: 4.90, capexPerVessel: 8.5 },
+            'hk-airport': { nm: 17, speed: 38, dieselCostNM: 22.50, ef150CostNM: 4.90, capexPerVessel: 8.5 },
+            'hk-shenzhen': { nm: 22, speed: 38, dieselCostNM: 22.50, ef150CostNM: 4.90, capexPerVessel: 8.5 },
+            'hk-zhuhai': { nm: 35, speed: 38, dieselCostNM: 22.50, ef150CostNM: 4.90, capexPerVessel: 8.5 },
+            'hk-nansha': { nm: 40, speed: 38, dieselCostNM: 22.50, ef150CostNM: 4.90, capexPerVessel: 8.5 },
+            'hk-zhongshan': { nm: 45, speed: 38, dieselCostNM: 22.50, ef150CostNM: 4.90, capexPerVessel: 8.5 }
+        };
+
+        function runRouteCalculator() {
+            const routeKey = document.getElementById('calc-route').value;
+            const fleetSize = parseInt(document.getElementById('calc-fleet').value);
+            const dailyTrips = parseInt(document.getElementById('calc-trips').value);
+
+            document.getElementById('calc-fleet-val').innerText = fleetSize + (fleetSize === 1 ? ' VESSEL' : ' VESSELS');
+            document.getElementById('calc-trips-val').innerText = dailyTrips + (dailyTrips === 1 ? ' TRIP' : ' TRIPS');
+
+            const route = routeData[routeKey];
+            const annualNM = route.nm * 2 * dailyTrips * fleetSize * 350;
+
+            const legacyDieselCost = annualNM * route.dieselCostNM;
+            const ef150Cost = annualNM * route.ef150CostNM;
+            const annualSavings = legacyDieselCost - ef150Cost;
+
+            const totalCapex = fleetSize * route.capexPerVessel * 1000000;
+            const paybackYears = (totalCapex / annualSavings).toFixed(1);
+            const co2Avoided = Math.round((annualNM * 48.5) / 1000);
+            const transitMins = Math.round((route.nm / route.speed) * 60);
+
+            document.getElementById('calc-out-savings').innerText = '$' + (annualSavings / 1000000).toFixed(2) + ' M';
+            document.getElementById('calc-out-payback').innerText = paybackYears + ' YRS';
+            document.getElementById('calc-out-co2').innerText = co2Avoided.toLocaleString() + ' T';
+            document.getElementById('calc-out-time').innerText = transitMins + ' MINS';
+
+            document.getElementById('calc-bar-diesel-text').innerText = '$' + (legacyDieselCost / 1000000).toFixed(2) + 'M';
+            document.getElementById('calc-bar-ef150-text').innerText = '$' + (ef150Cost / 1000000).toFixed(2) + 'M';
+            document.getElementById('calc-bar-ef150').style.width = Math.round((ef150Cost / legacyDieselCost) * 100) + '%';
+        }
     </script>
 </body>
 </html>
