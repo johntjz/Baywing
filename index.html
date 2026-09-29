@@ -118,8 +118,8 @@
                 <!-- Aligned Header Nav Menu -->
                 <nav class="hidden lg:flex items-center space-x-7 text-[11px] font-mono tracking-wider uppercase text-zinc-400">
                     <a href="#vessel" class="hover:text-white transition-colors">1. Platform</a>
-                    <a href="#moat" class="hover:text-white transition-colors">2. Economics</a>
-                    <a href="#routes" class="hover:text-white transition-colors">3. Analytics</a>
+                    <a href="#moat" class="hover:text-white transition-colors">2. Moat & Economics</a>
+                    <a href="#routes" class="hover:text-white transition-colors">3. Route Analytics</a>
                     <a href="#specs" class="hover:text-white transition-colors">4. Tech Data</a>
                     <a href="#portal" class="hover:text-white transition-colors">5. Data Room</a>
                 </nav>
@@ -149,6 +149,7 @@
     <section id="vessel" class="relative pt-28 pb-16 md:pt-36 md:pb-24 border-b border-zinc-800 cad-grid-bg overflow-hidden">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             
+            <!-- Top Alert Badge -->
             <div class="flex flex-wrap items-center justify-between gap-4 mb-8">
                 <div class="inline-flex items-center space-x-2 text-[11px] font-mono text-zinc-300 bg-zinc-800/50 border border-zinc-700 px-3 py-1 rounded">
                     <span class="w-2 h-2 bg-zinc-400 rounded-full"></span>
@@ -159,6 +160,7 @@
                 </div>
             </div>
 
+            <!-- Main Heading Grid -->
             <div class="grid lg:grid-cols-12 gap-8 items-start">
                 <div class="lg:col-span-7 space-y-5">
                     <h1 class="text-3xl sm:text-4xl lg:text-5xl font-mono font-bold text-white tracking-tight leading-tight uppercase">
@@ -170,6 +172,7 @@
                     </p>
                 </div>
 
+                <!-- Primary Vessel Spec Snapshot Table -->
                 <div class="lg:col-span-5 data-card p-5 rounded-lg">
                     <div class="flex items-center justify-between border-b border-zinc-800 pb-3 mb-4">
                         <span class="text-xs font-mono font-bold text-white uppercase tracking-wider">Target Operational Envelope</span>
@@ -178,7 +181,7 @@
                     <div class="grid grid-cols-2 gap-4">
                         <div class="p-3 bg-zinc-900 rounded border border-zinc-800">
                             <div class="text-[10px] font-mono text-zinc-500 uppercase">Target Cruise Speed</div>
-                            <div class="text-2xl font-mono font-bold text-white mt-1">38.0 <span class="text-xs text-zinc-400">KTS</span></div>
+                            <div class="text-2xl font-mono font-bold text-white mt-1">38.0 <span class="text-xs text-zinc-400">KNOTS</span></div>
                             <div class="text-[9px] font-mono text-zinc-600 mt-1">(70.3 km/h Foil-borne)</div>
                         </div>
                         <div class="p-3 bg-zinc-900 rounded border border-zinc-800">
@@ -187,9 +190,9 @@
                             <div class="text-[9px] font-mono text-zinc-600 mt-1">(148 km @ Cruise Load)</div>
                         </div>
                         <div class="p-3 bg-zinc-900 rounded border border-zinc-800">
-                            <div class="text-[10px] font-mono text-zinc-500 uppercase">Battery Capacity</div>
+                            <div class="text-[10px] font-mono text-zinc-500 uppercase">Est. Battery Capacity</div>
                             <div class="text-2xl font-mono font-bold text-white mt-1">1.2 <span class="text-xs text-zinc-400">MWh</span></div>
-                            <div class="text-[9px] font-mono text-zinc-600 mt-1">800V DC Architecture</div>
+                            <div class="text-[9px] font-mono text-zinc-600 mt-1">800V Architecture</div>
                         </div>
                         <div class="p-3 bg-zinc-900 rounded border border-zinc-800">
                             <div class="text-[10px] font-mono text-zinc-500 uppercase">Turnaround Target</div>
@@ -217,57 +220,65 @@
                 </p>
             </div>
 
-            <div class="grid md:grid-cols-3 gap-6">
-                <!-- Pillar 1 -->
+            <!-- 4 Pillar Grid Integration -->
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                
+                <!-- Pillar 01: Carbon Hull -->
                 <div class="data-card p-6 rounded-lg relative overflow-hidden">
+                    <div class="text-xs font-mono text-zinc-500 uppercase mb-1">01. Platform</div>
                     <div class="text-3xl font-mono font-bold text-white mb-2">80%</div>
                     <h3 class="text-sm font-mono font-bold text-zinc-300 mb-2 uppercase">Drag Reduction</h3>
                     <p class="text-xs text-zinc-400 leading-relaxed font-sans">
-                        At speeds above 18 knots, the hull lifts completely out of the water. Drag drops by 80% compared to high-speed catamaran hulls, allowing 38-knot flight using a fraction of the power.
+                        Fully submerged T-foils lift hull above waves at 18+ knots, cutting hydrodynamic drag by 80% vs displacement catamarans.
                     </p>
                     <div class="mt-4 pt-3 border-t border-zinc-800 text-[11px] font-mono text-zinc-500 flex justify-between">
-                        <span>Catamaran Power:</span>
-                        <span class="text-zinc-300 font-bold">~4,800 kW</span>
-                    </div>
-                    <div class="mt-1 text-[11px] font-mono text-zinc-500 flex justify-between">
                         <span>Hydrofoil Power:</span>
                         <span class="text-white font-bold">~1,050 kW</span>
                     </div>
                 </div>
 
-                <!-- Pillar 2 -->
+                <!-- Pillar 02: FCS -->
                 <div class="data-card p-6 rounded-lg relative overflow-hidden">
-                    <div class="text-3xl font-mono font-bold text-white mb-2">78%</div>
-                    <h3 class="text-sm font-mono font-bold text-zinc-300 mb-2 uppercase">Energy OPEX Savings</h3>
+                    <div class="text-xs font-mono text-zinc-500 uppercase mb-1">02. Flight Autonomy</div>
+                    <div class="text-3xl font-mono font-bold text-white mb-2">100<span class="text-lg">Hz</span></div>
+                    <h3 class="text-sm font-mono font-bold text-zinc-300 mb-2 uppercase">Autonomous FCS</h3>
                     <p class="text-xs text-zinc-400 leading-relaxed font-sans">
-                        Electricity costs per passenger-mile are projected to be up to 78% lower than marine gas oil (MGO). Electric drives also bypass complex marine turbine maintenance cycles.
+                        Triple-redundant Fly-by-Foil stabilization adjusts submerged flaps 100x/sec to neutralize wave pitch/roll and keep wake wash &lt;0.15m.
                     </p>
                     <div class="mt-4 pt-3 border-t border-zinc-800 text-[11px] font-mono text-zinc-500 flex justify-between">
-                        <span>Legacy MGO Diesel:</span>
-                        <span class="text-zinc-300 font-bold">~$22.50 / NM</span>
+                        <span>Crew Needed:</span>
+                        <span class="text-white font-bold">4 (Reduced)</span>
                     </div>
-                    <div class="mt-1 text-[11px] font-mono text-zinc-500 flex justify-between">
-                        <span>Electric Power OPEX:</span>
+                </div>
+
+                <!-- Pillar 03: BESS & MCS -->
+                <div class="data-card p-6 rounded-lg relative overflow-hidden">
+                    <div class="text-xs font-mono text-zinc-500 uppercase mb-1">03. Grid Infrastructure</div>
+                    <div class="text-3xl font-mono font-bold text-white mb-2">2.0<span class="text-lg">MW</span></div>
+                    <h3 class="text-sm font-mono font-bold text-zinc-300 mb-2 uppercase">Shore BESS & MCS</h3>
+                    <p class="text-xs text-zinc-400 leading-relaxed font-sans">
+                        Dockside 2.0 MWh BESS container buffers high-power fast charging, enabling 45-min turnarounds without municipal grid spikes.
+                    </p>
+                    <div class="mt-4 pt-3 border-t border-zinc-800 text-[11px] font-mono text-zinc-500 flex justify-between">
+                        <span>Charge Cycle:</span>
+                        <span class="text-white font-bold">&lt;45 Mins</span>
+                    </div>
+                </div>
+
+                <!-- Pillar 04: Disruption Economics -->
+                <div class="data-card p-6 rounded-lg relative overflow-hidden">
+                    <div class="text-xs font-mono text-zinc-500 uppercase mb-1">04. Route Yield</div>
+                    <div class="text-3xl font-mono font-bold text-white mb-2">78%</div>
+                    <h3 class="text-sm font-mono font-bold text-zinc-300 mb-2 uppercase">OPEX Savings</h3>
+                    <p class="text-xs text-zinc-400 leading-relaxed font-sans">
+                        Direct electric drive and reduced drag yield ~$4.90/NM energy cost vs ~$22.50/NM for legacy marine gas oil turbines.
+                    </p>
+                    <div class="mt-4 pt-3 border-t border-zinc-800 text-[11px] font-mono text-zinc-500 flex justify-between">
+                        <span>Energy OPEX:</span>
                         <span class="text-white font-bold">~$4.90 / NM</span>
                     </div>
                 </div>
 
-                <!-- Pillar 3 -->
-                <div class="data-card p-6 rounded-lg relative overflow-hidden">
-                    <div class="text-3xl font-mono font-bold text-white mb-2">0<span class="text-xl">kg</span></div>
-                    <h3 class="text-sm font-mono font-bold text-zinc-300 mb-2 uppercase">Zero Emission & Wake</h3>
-                    <p class="text-xs text-zinc-400 leading-relaxed font-sans">
-                        Total elimination of Scope 1 emissions (NOx, SOx, PM). Advanced hydrodynamics result in near-zero wake wash, potentially allowing higher speeds in restricted harbor zones.
-                    </p>
-                    <div class="mt-4 pt-3 border-t border-zinc-800 text-[11px] font-mono text-zinc-500 flex justify-between">
-                        <span>Legacy MGO CO2/NM:</span>
-                        <span class="text-zinc-300 font-bold">~48.5 kg</span>
-                    </div>
-                    <div class="mt-1 text-[11px] font-mono text-zinc-500 flex justify-between">
-                        <span>EF-150 Direct Emissions:</span>
-                        <span class="text-white font-bold">0.0 kg</span>
-                    </div>
-                </div>
             </div>
         </div>
     </section>
@@ -286,6 +297,7 @@
                 </p>
             </div>
 
+            <!-- INTERACTIVE ROUTE & DISRUPTION CALCULATOR -->
             <div class="data-card p-6 sm:p-8 rounded-xl bg-zinc-950">
                 <div class="flex flex-wrap items-center justify-between gap-4 border-b border-zinc-800 pb-4 mb-6">
                     <div>
@@ -298,8 +310,11 @@
                 </div>
 
                 <div class="grid lg:grid-cols-12 gap-8 items-center">
-                    <!-- Controls -->
+                    
+                    <!-- Controls Column -->
                     <div class="lg:col-span-5 space-y-6">
+                        
+                        <!-- Route Selection -->
                         <div>
                             <label class="block text-xs font-mono text-zinc-400 uppercase mb-2">1. Select GBA Express Route</label>
                             <select id="calc-route" onchange="runRouteCalculator()" class="w-full bg-zinc-900 border border-zinc-700 rounded p-2.5 text-xs font-mono text-white focus:border-zinc-500 outline-none">
@@ -309,45 +324,70 @@
                                 <option value="hk-zhuhai">HK Central ⟷ Zhuhai Jiuzhou (35 NM)</option>
                                 <option value="hk-nansha">HK Central ⟷ Nansha (40 NM)</option>
                                 <option value="hk-zhongshan">HK Central ⟷ Zhongshan (45 NM)</option>
+                                <option value="hkg-macau">HKG SkyPier ⟷ Macau Taipa (30 NM)</option>
+                                <option value="hkg-szx">HKG SkyPier ⟷ Shenzhen Airport (25 NM)</option>
+                                <option value="tm-macau">Tuen Mun ⟷ Macau (30 NM)</option>
                             </select>
                         </div>
+
+                        <!-- Fleet Count Slider -->
                         <div>
                             <div class="flex justify-between text-xs font-mono mb-2">
                                 <span class="text-zinc-400 uppercase">2. Active Fleet Size</span>
                                 <span id="calc-fleet-val" class="text-white font-bold">4 VESSELS</span>
                             </div>
                             <input id="calc-fleet" type="range" min="1" max="12" value="4" step="1" oninput="runRouteCalculator()">
+                            <div class="flex justify-between text-[9px] font-mono text-zinc-600 mt-1"><span>1 Unit</span><span>6 Units</span><span>12 Units</span></div>
                         </div>
+
+                        <!-- Daily Round Trips Slider -->
                         <div>
                             <div class="flex justify-between text-xs font-mono mb-2">
                                 <span class="text-zinc-400 uppercase">3. Daily Round Trips / Vessel</span>
                                 <span id="calc-trips-val" class="text-white font-bold">8 TRIPS</span>
                             </div>
                             <input id="calc-trips" type="range" min="2" max="16" value="8" step="1" oninput="runRouteCalculator()">
+                            <div class="flex justify-between text-[9px] font-mono text-zinc-600 mt-1"><span>2 Trips</span><span>8 Trips</span><span>16 Trips</span></div>
                         </div>
+
                     </div>
 
-                    <!-- Calculated Outputs -->
+                    <!-- Calculated Outputs Column -->
                     <div class="lg:col-span-7 bg-zinc-900 border border-zinc-800 rounded-lg p-6">
+                        
                         <div class="grid grid-cols-2 gap-4 mb-6">
+                            
+                            <!-- Metric 1: Annual Energy Savings -->
                             <div class="p-4 bg-zinc-950 rounded border border-zinc-800">
                                 <div class="text-[10px] font-mono text-zinc-500 uppercase">Annual OPEX Savings</div>
                                 <div id="calc-out-savings" class="text-2xl sm:text-3xl font-mono font-bold text-white mt-1">$4.18 M</div>
+                                <div class="text-[9px] font-mono text-zinc-500 mt-1">VS Legacy Diesel Catamaran</div>
                             </div>
+
+                            <!-- Metric 2: Payback Period -->
                             <div class="p-4 bg-zinc-950 rounded border border-zinc-800">
-                                <div class="text-[10px] font-mono text-zinc-500 uppercase">Est. Capex Payback</div>
+                                <div class="text-[10px] font-mono text-zinc-500 uppercase">Estimated Capex Payback</div>
                                 <div id="calc-out-payback" class="text-2xl sm:text-3xl font-mono font-bold text-white mt-1">2.4 YRS</div>
+                                <div class="text-[9px] font-mono text-zinc-500 mt-1">Based on EF-150 Fleet Unit Cost</div>
                             </div>
+
+                            <!-- Metric 3: Carbon Avoidance -->
                             <div class="p-4 bg-zinc-950 rounded border border-zinc-800">
                                 <div class="text-[10px] font-mono text-zinc-500 uppercase">Annual CO2 Avoided</div>
                                 <div id="calc-out-co2" class="text-xl sm:text-2xl font-mono font-bold text-zinc-300 mt-1">11,480 T</div>
+                                <div class="text-[9px] font-mono text-zinc-500 mt-1">Metric Tons GHG / Year</div>
                             </div>
+
+                            <!-- Metric 4: Transit Advantage -->
                             <div class="p-4 bg-zinc-950 rounded border border-zinc-800">
-                                <div class="text-[10px] font-mono text-zinc-500 uppercase">Est. Transit Time</div>
+                                <div class="text-[10px] font-mono text-zinc-500 uppercase">Est. EF-150 Transit Time</div>
                                 <div id="calc-out-time" class="text-xl sm:text-2xl font-mono font-bold text-zinc-300 mt-1">44 MINS</div>
+                                <div id="calc-out-time-diff" class="text-[9px] font-mono text-zinc-500 mt-1">14 Mins Faster than Diesel</div>
                             </div>
+
                         </div>
 
+                        <!-- Mini Comparison Bar Graph -->
                         <div class="space-y-3 font-mono text-[10px]">
                             <div>
                                 <div class="flex justify-between text-zinc-400 mb-1">
@@ -358,6 +398,7 @@
                                     <div id="calc-bar-diesel" class="bg-zinc-600 h-full rounded" style="width: 100%;"></div>
                                 </div>
                             </div>
+
                             <div>
                                 <div class="flex justify-between text-zinc-400 mb-1">
                                     <span>Annual Energy Cost (EF-150 Electric Fleet)</span>
@@ -368,9 +409,12 @@
                                 </div>
                             </div>
                         </div>
+
                     </div>
+
                 </div>
             </div>
+
         </div>
     </section>
 
@@ -378,185 +422,395 @@
     <section id="specs" class="py-16 md:py-24 bg-zinc-950 border-b border-zinc-800">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             
-            <div class="max-w-3xl mb-8">
+            <div class="max-w-3xl mb-10">
                 <div class="text-xs font-mono text-zinc-500 uppercase tracking-widest mb-2">4. Technical Data Bank</div>
                 <h2 class="text-2xl sm:text-3xl font-mono font-bold text-white uppercase">
-                    Proposed Engineering Architecture
+                    Proposed Engineering Matrix
                 </h2>
                 <p class="text-sm text-zinc-400 mt-2 font-sans">
-                    Detailed structural, software, and shore-power charging infrastructure parameters designed for high-frequency operations.
+                    Baseline structural and operational parameters proposed for the EF-150 platform architecture.
                 </p>
             </div>
 
-            <!-- Tab Navigation -->
-            <div class="flex space-x-2 mb-6 border-b border-zinc-800 pb-px overflow-x-auto">
-                <button id="tab-vessel-btn" onclick="switchTab('tab-vessel')" class="tech-tab-btn px-5 py-2.5 text-xs font-mono font-bold uppercase rounded-t-lg border-t border-x transition-colors bg-zinc-900 text-white border-zinc-800 whitespace-nowrap">Platform & FCS Systems</button>
-                <button id="tab-bess-btn" onclick="switchTab('tab-bess')" class="tech-tab-btn px-5 py-2.5 text-xs font-mono font-bold uppercase rounded-t-lg border-t border-x border-transparent text-zinc-500 hover:text-zinc-300 hover:bg-zinc-900 transition-colors whitespace-nowrap">Floating BESS Infrastructure</button>
-            </div>
-
-            <!-- TAB 1: Vessel Architecture & FCS -->
-            <div id="tab-vessel" class="tech-tab-content space-y-6">
-                <!-- Mechanical Specs Table -->
-                <div class="data-card rounded-xl overflow-hidden">
-                    <div class="p-4 bg-zinc-900 border-b border-zinc-800 flex justify-between items-center text-xs font-mono">
-                        <span class="text-white font-bold">PLATFORM ARCHITECTURE: BAYWING EF-150</span>
-                        <span class="text-zinc-500">FEASIBILITY DRAFT v1.2</span>
-                    </div>
-                    <div class="overflow-x-auto">
-                        <table class="w-full text-left text-xs font-mono">
-                            <tbody class="divide-y divide-zinc-800">
-                                <tr class="bg-zinc-950/60">
-                                    <th colspan="2" class="py-2.5 px-4 text-zinc-400 uppercase font-bold text-[11px] tracking-wider">1. Vessel Dimensions & Capacity</th>
-                                </tr>
-                                <tr>
-                                    <td class="py-2.5 px-4 text-zinc-500 w-1/3">Length / Beam Overall</td>
-                                    <td class="py-2.5 px-4 text-zinc-300">28.50m (93.5 ft) / 8.20m (Foil Span 9.80m)</td>
-                                </tr>
-                                <tr>
-                                    <td class="py-2.5 px-4 text-zinc-500">Passenger Capacity</td>
-                                    <td class="py-2.5 px-4 text-zinc-300">150 Passengers + 4 Crew</td>
-                                </tr>
-                                <tr class="bg-zinc-950/60">
-                                    <th colspan="2" class="py-2.5 px-4 text-zinc-400 uppercase font-bold text-[11px] tracking-wider">2. Hydrodynamics & Efficiency</th>
-                                </tr>
-                                <tr>
-                                    <td class="py-2.5 px-4 text-zinc-500">Foil Configuration</td>
-                                    <td class="py-2.5 px-4 text-zinc-300">Fully Submerged T-Foil (Forward) & Inverted V-Foil (Aft)</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
+            <div class="data-card rounded-xl overflow-hidden">
+                <div class="p-4 bg-zinc-900 border-b border-zinc-800 flex justify-between items-center text-xs font-mono">
+                    <span class="text-white font-bold">PLATFORM ARCHITECTURE: BAYWING EF-150</span>
+                    <span class="text-zinc-500">FEASIBILITY DRAFT v1.2</span>
                 </div>
 
-                <!-- Flight Control System (FCS) Blocks -->
-                <div>
-                    <h3 class="text-sm font-mono font-bold text-white uppercase mt-8 mb-4 flex items-center space-x-2">
-                        <svg class="w-4 h-4 text-zinc-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z" /></svg>
-                        <span>Flight Control System (FCS) Architecture</span>
-                    </h3>
-                    <p class="text-xs text-zinc-400 font-sans mb-6 max-w-3xl leading-relaxed">
-                        The Baywing EF-150 utilizes a closed-loop, fly-by-wire Flight Control System (FCS) running at 100 Hz. The architecture integrates multi-sensor fusion with active T-foil flap actuation to maintain altitude, roll, pitch, and yaw stabilization across sea state variations without pilot fatigue.
-                    </p>
-                    
-                    <div class="grid md:grid-cols-3 gap-4">
-                        <div class="bg-zinc-900 border border-zinc-800 p-5 rounded-lg">
-                            <h4 class="text-xs font-mono font-bold text-zinc-300 uppercase mb-3 border-b border-zinc-800 pb-2">1. Sensor Payload & Perception</h4>
-                            <ul class="space-y-3 text-[11px] font-sans text-zinc-400">
-                                <li><strong class="text-zinc-300">Optical & LiDAR Profilers:</strong> Dual forward-looking LiDAR and ultrasonic sensors measuring incoming wave height at 200 Hz to pre-adjust foil angles.</li>
-                                <li><strong class="text-zinc-300">Triple-Redundant IMU:</strong> Aviation-grade MEMS IMUs providing real-time 6-DOF pitch, roll, heave, and yaw data.</li>
-                                <li><strong class="text-zinc-300">Hydro-Speed Tracking:</strong> Dual Pitot-static and Doppler Velocity Log (DVL) for precise speed and drift monitoring.</li>
-                            </ul>
-                        </div>
-                        <div class="bg-zinc-900 border border-zinc-800 p-5 rounded-lg">
-                            <h4 class="text-xs font-mono font-bold text-zinc-300 uppercase mb-3 border-b border-zinc-800 pb-2">2. Control Loops & Modes</h4>
-                            <ul class="space-y-3 text-[11px] font-sans text-zinc-400">
-                                <li><strong class="text-zinc-300">Active Ride Control (ARC):</strong> PID + Model Predictive Control (MPC) algorithms dynamically adjust foil deflections 100 times per second.</li>
-                                <li><strong class="text-zinc-300">Wake Suppression Mode:</strong> Automated envelope restriction in harbors, locking wake wash profile below 0.15 meters.</li>
-                                <li><strong class="text-zinc-300">Autonomous Transitions:</strong> Automated foil-borne takeoff and landing sequences between 16 and 22 knots.</li>
-                            </ul>
-                        </div>
-                        <div class="bg-zinc-900 border border-zinc-800 p-5 rounded-lg">
-                            <h4 class="text-xs font-mono font-bold text-zinc-300 uppercase mb-3 border-b border-zinc-800 pb-2">3. Safety & Redundancy</h4>
-                            <ul class="space-y-3 text-[11px] font-sans text-zinc-400">
-                                <li><strong class="text-zinc-300">Flight Computers:</strong> 2 Active / 1 Hot-Standby computer architecture with voter logic ensures zero single-point failure.</li>
-                                <li><strong class="text-zinc-300">Fail-Passive Actuation:</strong> Servo actuators feature mechanical return springs to feather flaps to neutral lift upon pressure loss.</li>
-                                <li><strong class="text-zinc-300">Classification:</strong> Designed to DNV High Speed Light Craft (HSLC) rules and ISO 26262 functional safety standards (HKMD conformant).</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
+                <div class="overflow-x-auto">
+                    <table class="w-full text-left text-xs font-mono">
+                        <tbody class="divide-y divide-zinc-800">
+                            
+                            <!-- Category 1 -->
+                            <tr class="bg-zinc-950/60">
+                                <th colspan="2" class="py-2.5 px-4 text-zinc-400 uppercase font-bold text-[11px] tracking-wider">1. Vessel Dimensions & Capacity</th>
+                            </tr>
+                            <tr>
+                                <td class="py-2.5 px-4 text-zinc-500 w-1/3">Length Overall (LOA)</td>
+                                <td class="py-2.5 px-4 text-zinc-300">28.50 Meters (93.5 ft)</td>
+                            </tr>
+                            <tr>
+                                <td class="py-2.5 px-4 text-zinc-500">Beam Overall (BoA)</td>
+                                <td class="py-2.5 px-4 text-zinc-300">8.20 Meters (Foil Span 9.80m)</td>
+                            </tr>
+                            <tr>
+                                <td class="py-2.5 px-4 text-zinc-500">Passenger Capacity</td>
+                                <td class="py-2.5 px-4 text-zinc-300">150 Passengers + 4 Crew</td>
+                            </tr>
 
-            <!-- TAB 2: Floating BESS Infrastructure -->
-            <div id="tab-bess" class="tech-tab-content hidden space-y-6">
-                <div class="bg-zinc-900/50 border border-zinc-800 p-5 rounded-lg flex gap-4 items-start">
-                    <div>
-                        <h4 class="text-xs font-mono font-bold text-white uppercase mb-1">Grid-Independent Shore Power Solution</h4>
-                        <p class="text-xs text-zinc-400 font-sans">
-                            Floating Battery Energy Storage System (BESS) barges act as buffer reservoirs, mitigating high grid connection demand charges and enabling rapid Megawatt Charging System (MCS) throughput during turnarounds.
-                        </p>
-                    </div>
+                            <!-- Category 2 -->
+                            <tr class="bg-zinc-950/60">
+                                <th colspan="2" class="py-2.5 px-4 text-zinc-400 uppercase font-bold text-[11px] tracking-wider">2. Hydrodynamics & Efficiency</th>
+                            </tr>
+                            <tr>
+                                <td class="py-2.5 px-4 text-zinc-500">Foil Configuration</td>
+                                <td class="py-2.5 px-4 text-zinc-300">Fully Submerged T-Foil (Forward) & Inverted V-Foil (Aft)</td>
+                            </tr>
+                            <tr>
+                                <td class="py-2.5 px-4 text-zinc-500">Target Drag Reduction</td>
+                                <td class="py-2.5 px-4 text-zinc-300 font-bold">80% vs Equivalent Catamaran</td>
+                            </tr>
+                            <tr>
+                                <td class="py-2.5 px-4 text-zinc-500">Harbor Wake Wash</td>
+                                <td class="py-2.5 px-4 text-zinc-300">&lt; 0.15m at Cruise Speed</td>
+                            </tr>
+
+                            <!-- Category 3 -->
+                            <tr class="bg-zinc-950/60">
+                                <th colspan="2" class="py-2.5 px-4 text-zinc-400 uppercase font-bold text-[11px] tracking-wider">3. Power & Infrastructure Target</th>
+                            </tr>
+                            <tr>
+                                <td class="py-2.5 px-4 text-zinc-500">Storage Architecture</td>
+                                <td class="py-2.5 px-4 text-zinc-300">1,200 kWh, 800V DC Nominal</td>
+                            </tr>
+                            <tr>
+                                <td class="py-2.5 px-4 text-zinc-500">Shore Charging</td>
+                                <td class="py-2.5 px-4 text-zinc-300">MCS Compatible (Megawatt Charging System)</td>
+                            </tr>
+
+                            <!-- Category 4: Flight Control System -->
+                            <tr class="bg-zinc-950/60">
+                                <th colspan="2" class="py-2.5 px-4 text-zinc-400 uppercase font-bold text-[11px] tracking-wider">4. Flight Control System (FCS)</th>
+                            </tr>
+                            <tr>
+                                <td class="py-2.5 px-4 text-zinc-500">Flight Controller</td>
+                                <td class="py-2.5 px-4 text-zinc-300">Triple-Redundant Active Fly-by-Foil Flight Management Unit</td>
+                            </tr>
+                            <tr>
+                                <td class="py-2.5 px-4 text-zinc-500">Control Loop Rate</td>
+                                <td class="py-2.5 px-4 text-zinc-300">100 Hz Dynamic Flap & Trim Actuation Loop</td>
+                            </tr>
+                            <tr>
+                                <td class="py-2.5 px-4 text-zinc-500">Wake Management</td>
+                                <td class="py-2.5 px-4 text-zinc-300">Active Hull Elevation Control (&lt;0.15m Wake Profile)</td>
+                            </tr>
+
+                            <!-- Category 5: Dockside Infrastructure -->
+                            <tr class="bg-zinc-950/60">
+                                <th colspan="2" class="py-2.5 px-4 text-zinc-400 uppercase font-bold text-[11px] tracking-wider">5. Shore Charging & Energy Buffer</th>
+                            </tr>
+                            <tr>
+                                <td class="py-2.5 px-4 text-zinc-500">Stationary BESS Buffer</td>
+                                <td class="py-2.5 px-4 text-zinc-300">2.0 MWh Containerized Battery Buffer (Dockside Peak Shaving)</td>
+                            </tr>
+                            <tr>
+                                <td class="py-2.5 px-4 text-zinc-500">Charging Standard</td>
+                                <td class="py-2.5 px-4 text-zinc-300">1.5 MW to 2.0 MW MCS (Megawatt Charging System) DC Output</td>
+                            </tr>
+
+                        </tbody>
+                    </table>
                 </div>
             </div>
 
         </div>
     </section>
 
-    <!-- SECTION 5: DATA ROOM & FOOTER (#portal) -->
-    <footer id="portal" class="bg-zinc-950 border-t border-zinc-800 py-12">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center sm:text-left flex flex-col sm:flex-row justify-between items-center gap-6">
-            <div class="space-y-1">
-                <div class="text-xs font-mono font-bold text-white uppercase">Aero-Marine Systems Limited (In Formation)</div>
-                <p class="text-[11px] font-mono text-zinc-500">Autonomous Marine Mobility & Energy Systems Architecture</p>
+    <!-- SECTION 5: STAKEHOLDER PORTAL (#portal) -->
+    <section id="portal" class="py-16 md:py-24 bg-zinc-900 border-b border-zinc-800 cad-grid-bg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="max-w-3xl mb-12">
+                <div class="text-xs font-mono text-zinc-500 uppercase tracking-widest mb-2">5. Data Room</div>
+                <h2 class="text-2xl sm:text-3xl font-mono font-bold text-white uppercase">
+                    Institutional Feasibility Documents
+                </h2>
+                <p class="text-sm text-zinc-400 mt-2 font-sans">
+                    Detailed modeling and feasibility projections are summarized below for institutional review.
+                </p>
             </div>
-            <div class="text-xs font-mono text-zinc-500">
-                &copy; 2026 Aero-Marine Systems Limited (In Formation). All rights reserved.
+
+            <div class="grid lg:grid-cols-2 gap-6">
+                
+                <!-- Document Item 1 -->
+                <div class="data-card p-6 rounded-lg">
+                    <div class="text-sm font-mono font-bold text-white mb-4 border-b border-zinc-800 pb-2">GBA Route Yield & Feasibility Model</div>
+                    <table class="w-full text-left text-[11px] font-mono">
+                        <thead class="text-zinc-500">
+                            <tr>
+                                <th class="pb-2 font-normal">OPEX Category</th>
+                                <th class="pb-2 font-normal">Legacy Diesel</th>
+                                <th class="pb-2 font-normal">EF-150</th>
+                            </tr>
+                        </thead>
+                        <tbody class="text-zinc-300 divide-y divide-zinc-800/50">
+                            <tr>
+                                <td class="py-2 text-zinc-400">Energy/Fuel</td>
+                                <td class="py-2">~$22.50 / NM</td>
+                                <td class="py-2 text-tech-emerald">~$4.90 / NM</td>
+                            </tr>
+                            <tr>
+                                <td class="py-2 text-zinc-400">Maintenance</td>
+                                <td class="py-2">High (Turbines)</td>
+                                <td class="py-2 text-tech-emerald">Low (Direct Drive)</td>
+                            </tr>
+                            <tr>
+                                <td class="py-2 text-zinc-400">Crew Needed</td>
+                                <td class="py-2">Standard (8-10)</td>
+                                <td class="py-2 text-tech-emerald">Reduced (4)</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Document Item 2 -->
+                <div class="data-card p-6 rounded-lg">
+                    <div class="text-sm font-mono font-bold text-white mb-4 border-b border-zinc-800 pb-2">Regulatory & Classification Path</div>
+                    <ul class="space-y-3 text-[11px] font-mono text-zinc-300">
+                        <li class="flex items-start gap-2">
+                            <span class="text-tech-cyan">▸</span>
+                            <span><strong>DNV Classification:</strong> Adherence to High Speed Light Craft (HSLC) rules for novel composite structures.</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <span class="text-tech-cyan">▸</span>
+                            <span><strong>HKMD Certification:</strong> Pathway defined for Local Vessel operation within Hong Kong waters.</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <span class="text-tech-cyan">▸</span>
+                            <span><strong>Wake Exemption:</strong> Seeking clearance for elevated speeds in inner harbor limits due to &lt; 0.15m wake wash profile.</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Document Item 3 -->
+                <div class="data-card p-6 rounded-lg">
+                    <div class="text-sm font-mono font-bold text-white mb-4 border-b border-zinc-800 pb-2">EF-150 Fleet Concept Term Sheet</div>
+                    <div class="grid grid-cols-2 gap-4 text-[11px] font-mono">
+                        <div>
+                            <div class="text-zinc-500 mb-1">Est. Unit Cost</div>
+                            <div class="text-zinc-200 font-bold">$8.5M - $9.2M USD</div>
+                        </div>
+                        <div>
+                            <div class="text-zinc-500 mb-1">Passenger Cap.</div>
+                            <div class="text-zinc-200 font-bold">150 PAX</div>
+                        </div>
+                        <div>
+                            <div class="text-zinc-500 mb-1">Hull Lifespan</div>
+                            <div class="text-zinc-200 font-bold">20+ Years</div>
+                        </div>
+                        <div>
+                            <div class="text-zinc-500 mb-1">Battery Cycle</div>
+                            <div class="text-zinc-200 font-bold">~5 Years (to 80% SOH)</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Document Item 4 (Updated for BESS & MCS) -->
+                <div class="data-card p-6 rounded-lg">
+                    <div class="text-sm font-mono font-bold text-white mb-4 border-b border-zinc-800 pb-2">MCS Terminal & BESS Integration Specs</div>
+                    <ul class="space-y-3 text-[11px] font-mono text-zinc-300">
+                        <li class="flex items-start gap-2">
+                            <span class="text-tech-amber">⚡</span>
+                            <span><strong>Dockside Buffer:</strong> Onshore 2.0 MWh BESS eliminates high-voltage grid upgrades at public ferry piers.</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <span class="text-tech-amber">⚡</span>
+                            <span><strong>Megawatt Charge Rate:</strong> 1.5 MW to 2.0 MW DC output compatible with marine MCS / CCS3 standards.</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <span class="text-tech-amber">⚡</span>
+                            <span><strong>Turnaround Window:</strong> &lt; 45-minute charge cycle (10% to 90% SOC) during passenger disembarkation.</span>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-zinc-950 py-10 border-t border-zinc-800 text-zinc-500 text-[10px] font-mono uppercase tracking-wider">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-6">
+            <div class="flex items-center space-x-3">
+                <div class="w-6 h-6 bg-zinc-900 border border-zinc-700 rounded flex items-center justify-center text-white font-bold">
+                    A
+                </div>
+                <span>AERO-MARINE SYSTEMS CONCEPT © 2026.</span>
+            </div>
+            
+            <div class="flex flex-wrap items-center space-x-6 text-zinc-600">
+                <span>HONG KONG</span>
+                <span>FEASIBILITY STUDY</span>
             </div>
         </div>
     </footer>
 
-    <!-- Interactive Scripts -->
+    <!-- INTERACTIVE JAVASCRIPT ENGINES -->
     <script>
+        
+        // 1. Mobile Navigation Toggle
         function toggleMobileMenu() {
             const menu = document.getElementById('mobile-menu');
-            const openIcon = document.getElementById('menu-icon-open');
-            const closeIcon = document.getElementById('menu-icon-close');
-            menu.classList.toggle('hidden');
-            openIcon.classList.toggle('hidden');
-            closeIcon.classList.toggle('hidden');
+            const iconOpen = document.getElementById('menu-icon-open');
+            const iconClose = document.getElementById('menu-icon-close');
+
+            if (menu.classList.contains('hidden')) {
+                menu.classList.remove('hidden');
+                iconOpen.classList.add('hidden');
+                iconClose.classList.remove('hidden');
+            } else {
+                menu.classList.add('hidden');
+                iconOpen.classList.remove('hidden');
+                iconClose.classList.add('hidden');
+            }
         }
 
-        function switchTab(tabId) {
-            document.querySelectorAll('.tech-tab-content').forEach(el => el.classList.add('hidden'));
-            document.querySelectorAll('.tech-tab-btn').forEach(btn => {
-                btn.classList.remove('bg-zinc-900', 'text-white', 'border-zinc-800');
-                btn.classList.add('border-transparent', 'text-zinc-500');
-            });
-
-            document.getElementById(tabId).classList.remove('hidden');
-            const activeBtn = document.getElementById(tabId + '-btn');
-            activeBtn.classList.add('bg-zinc-900', 'text-white', 'border-zinc-800');
-            activeBtn.classList.remove('border-transparent', 'text-zinc-500');
-        }
-
-        const routeData = {
-            'hk-macau': { nm: 36, speed: 38, dieselCostNM: 22.50, ef150CostNM: 4.90, capexPerVessel: 8.5 },
-            'hk-airport': { nm: 17, speed: 38, dieselCostNM: 22.50, ef150CostNM: 4.90, capexPerVessel: 8.5 },
-            'hk-shenzhen': { nm: 22, speed: 38, dieselCostNM: 22.50, ef150CostNM: 4.90, capexPerVessel: 8.5 },
-            'hk-zhuhai': { nm: 35, speed: 38, dieselCostNM: 22.50, ef150CostNM: 4.90, capexPerVessel: 8.5 },
-            'hk-nansha': { nm: 40, speed: 38, dieselCostNM: 22.50, ef150CostNM: 4.90, capexPerVessel: 8.5 },
-            'hk-zhongshan': { nm: 45, speed: 38, dieselCostNM: 22.50, ef150CostNM: 4.90, capexPerVessel: 8.5 }
+        // 2. Dynamic Route & Financial Calculator Engine
+        const routeProfiles = {
+            'hk-macau': {
+                name: 'HK Central ⟷ Macau Taipa',
+                distanceNM: 36,
+                dieselTimeMins: 58,
+                ef150TimeMins: 44,
+                dieselFuelPerNM: 18.5,
+                electricKwhPerNM: 11.2
+            },
+            'hk-airport': {
+                name: 'HK Central ⟷ HKG SkyPier Airport',
+                distanceNM: 17,
+                dieselTimeMins: 42,
+                ef150TimeMins: 18,
+                dieselFuelPerNM: 17.0,
+                electricKwhPerNM: 10.5
+            },
+            'hk-shenzhen': {
+                name: 'HK Central ⟷ Shenzhen Shekou',
+                distanceNM: 22,
+                dieselTimeMins: 48,
+                ef150TimeMins: 28,
+                dieselFuelPerNM: 17.5,
+                electricKwhPerNM: 10.8
+            },
+            'hk-zhuhai': {
+                name: 'HK Central ⟷ Zhuhai Jiuzhou',
+                distanceNM: 35,
+                dieselTimeMins: 55,
+                ef150TimeMins: 42,
+                dieselFuelPerNM: 18.2,
+                electricKwhPerNM: 11.0
+            },
+            'hk-nansha': {
+                name: 'HK Central ⟷ Nansha',
+                distanceNM: 40,
+                dieselTimeMins: 75,
+                ef150TimeMins: 50,
+                dieselFuelPerNM: 18.0,
+                electricKwhPerNM: 11.1
+            },
+            'hk-zhongshan': {
+                name: 'HK Central ⟷ Zhongshan',
+                distanceNM: 45,
+                dieselTimeMins: 85,
+                ef150TimeMins: 55,
+                dieselFuelPerNM: 18.4,
+                electricKwhPerNM: 11.3
+            },
+            'hkg-macau': {
+                name: 'HKG SkyPier ⟷ Macau Taipa',
+                distanceNM: 30,
+                dieselTimeMins: 52,
+                ef150TimeMins: 38,
+                dieselFuelPerNM: 18.0,
+                electricKwhPerNM: 10.9
+            },
+            'hkg-szx': {
+                name: 'HKG SkyPier ⟷ Shenzhen Airport',
+                distanceNM: 25,
+                dieselTimeMins: 45,
+                ef150TimeMins: 30,
+                dieselFuelPerNM: 17.8,
+                electricKwhPerNM: 10.8
+            },
+            'tm-macau': {
+                name: 'Tuen Mun ⟷ Macau',
+                distanceNM: 30,
+                dieselTimeMins: 50,
+                ef150TimeMins: 35,
+                dieselFuelPerNM: 18.0,
+                electricKwhPerNM: 10.9
+            }
         };
 
         function runRouteCalculator() {
             const routeKey = document.getElementById('calc-route').value;
-            const fleetSize = parseInt(document.getElementById('calc-fleet').value);
-            const dailyTrips = parseInt(document.getElementById('calc-trips').value);
+            const fleet = parseInt(document.getElementById('calc-fleet').value);
+            const trips = parseInt(document.getElementById('calc-trips').value);
 
-            document.getElementById('calc-fleet-val').innerText = fleetSize + (fleetSize === 1 ? ' VESSEL' : ' VESSELS');
-            document.getElementById('calc-trips-val').innerText = dailyTrips + (dailyTrips === 1 ? ' TRIP' : ' TRIPS');
+            // Update Slider Labels
+            document.getElementById('calc-fleet-val').innerText = fleet + (fleet === 1 ? ' VESSEL' : ' VESSELS');
+            document.getElementById('calc-trips-val').innerText = trips + ' TRIPS';
 
-            const route = routeData[routeKey];
-            const annualNM = route.nm * 2 * dailyTrips * fleetSize * 350;
+            const r = routeProfiles[routeKey];
+            if (!r) return;
 
-            const legacyDieselCost = annualNM * route.dieselCostNM;
-            const ef150Cost = annualNM * route.ef150CostNM;
-            const annualSavings = legacyDieselCost - ef150Cost;
+            // Operational Variables
+            const dieselPricePerLiter = 2.20; // USD
+            const electricityPricePerKwh = 0.16; // USD
 
-            const totalCapex = fleetSize * route.capexPerVessel * 1000000;
-            const paybackYears = (totalCapex / annualSavings).toFixed(1);
-            const co2Avoided = Math.round((annualNM * 48.5) / 1000);
-            const transitMins = Math.round((route.nm / route.speed) * 60);
+            const annualNMTravelled = fleet * trips * r.distanceNM * 365;
 
+            // Legacy Diesel Calculation
+            const annualDieselLiters = annualNMTravelled * r.dieselFuelPerNM;
+            const annualDieselCost = annualDieselLiters * dieselPricePerLiter;
+
+            // EF-150 Electricity Calculation
+            const annualElectricKwh = annualNMTravelled * r.electricKwhPerNM;
+            const annualElectricCost = annualElectricKwh * electricityPricePerKwh;
+
+            // Net Annual Savings
+            const annualSavings = Math.max(0, annualDieselCost - annualElectricCost);
+
+            // CAPEX Payback Estimate
+            const vesselCapexExtra = fleet * 2200000;
+            const paybackYears = annualSavings > 0 ? (vesselCapexExtra / annualSavings).toFixed(1) : 'N/A';
+
+            // CO2 Avoidance (~2.68 kg CO2 per liter marine diesel)
+            const co2TonsReduced = Math.round((annualDieselLiters * 2.68) / 1000);
+
+            // Transit Time Differential
+            const timeSavedMins = r.dieselTimeMins - r.ef150TimeMins;
+
+            // Push Updates to UI
             document.getElementById('calc-out-savings').innerText = '$' + (annualSavings / 1000000).toFixed(2) + ' M';
             document.getElementById('calc-out-payback').innerText = paybackYears + ' YRS';
-            document.getElementById('calc-out-co2').innerText = co2Avoided.toLocaleString() + ' T';
-            document.getElementById('calc-out-time').innerText = transitMins + ' MINS';
+            document.getElementById('calc-out-co2').innerText = co2TonsReduced.toLocaleString() + ' T';
+            document.getElementById('calc-out-time').innerText = r.ef150TimeMins + ' MINS';
+            document.getElementById('calc-out-time-diff').innerText = timeSavedMins + ' Mins Faster than Diesel';
 
-            document.getElementById('calc-bar-diesel-text').innerText = '$' + (legacyDieselCost / 1000000).toFixed(2) + 'M';
-            document.getElementById('calc-bar-ef150-text').innerText = '$' + (ef150Cost / 1000000).toFixed(2) + 'M';
-            document.getElementById('calc-bar-ef150').style.width = Math.round((ef150Cost / legacyDieselCost) * 100) + '%';
+            // Push Updates to Bar Chart Representation
+            document.getElementById('calc-bar-diesel-text').innerText = '$' + (annualDieselCost / 1000000).toFixed(2) + 'M';
+            document.getElementById('calc-bar-ef150-text').innerText = '$' + (annualElectricCost / 1000000).toFixed(2) + 'M';
+
+            const efPercent = Math.round((annualElectricCost / annualDieselCost) * 100);
+            document.getElementById('calc-bar-ef150').style.width = Math.max(8, efPercent) + '%';
         }
+
+        // Initialize Calculator state on load
+        window.addEventListener('DOMContentLoaded', () => {
+            runRouteCalculator();
+        });
     </script>
 </body>
 </html>
