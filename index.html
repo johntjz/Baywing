@@ -1,244 +1,124 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Math-Verified Feasibility Model - Electric Marine Platform</title>
-    <style>
-        :root {
-            --primary: #003b73;
-            --secondary: #0074b7;
-            --success: #28a745;
-            --background: #f8f9fa;
-            --text: #333333;
-        }
-        body { 
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; 
-            line-height: 1.6; 
-            color: var(--text); 
-            max-width: 1200px; 
-            margin: 0 auto; 
-            padding: 30px; 
-            background-color: #ffffff;
-        }
-        header { 
-            text-align: center; 
-            margin-bottom: 50px; 
-            padding-bottom: 20px;
-            border-bottom: 2px solid var(--primary);
-        }
-        h1 { color: var(--primary); font-size: 2.5em; margin-bottom: 10px; }
-        h2 { color: var(--secondary); font-size: 1.5em; margin-top: 0; }
-        h3 { color: var(--primary); border-bottom: 1px solid #ddd; padding-bottom: 10px; }
-        
-        .grid-container {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 30px;
-        }
-        .card { 
-            border: 1px solid #eaeaea; 
-            border-radius: 10px; 
-            padding: 25px; 
-            background: var(--background);
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-        }
-        .metrics-grid { 
-            display: grid; 
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); 
-            gap: 15px; 
-            margin-top: 15px;
-        }
-        .metric-box { 
-            background: #fff; 
-            padding: 20px; 
-            border-radius: 8px; 
-            border: 1px solid #e0e0e0;
-            text-align: center; 
-        }
-        .metric-value { 
-            font-size: 1.8em; 
-            font-weight: 800; 
-            color: var(--primary); 
-        }
-        .metric-value.highlight { color: var(--success); }
-        .metric-label {
-            font-size: 0.9em;
-            color: #666;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            margin-top: 5px;
-        }
-
-        table { width: 100%; border-collapse: collapse; margin-top: 15px; background: #fff; }
-        th, td { padding: 15px; border-bottom: 1px solid #ddd; text-align: left; }
-        th { background-color: var(--primary); color: white; }
-        tr:hover { background-color: #f5f5f5; }
-
-        .simulator-panel { 
-            background: #fff; 
-            padding: 25px; 
-            border-radius: 10px; 
-            border: 1px solid #ddd;
-        }
-        .input-group { margin-bottom: 15px; }
-        label { display: block; margin-bottom: 5px; font-weight: bold; }
-        input { 
-            padding: 10px; 
-            width: 100%; 
-            box-sizing: border-box; 
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            font-size: 1em;
-        }
-        button { 
-            background: var(--success); 
-            color: white; 
-            border: none; 
-            padding: 12px 25px; 
-            border-radius: 5px; 
-            cursor: pointer; 
-            font-size: 1.1em; 
-            font-weight: bold;
-            width: 100%;
-            transition: background 0.3s;
-        }
-        button:hover { background: #218838; }
-        
-        #simResult {
-            margin-top: 20px;
-            padding: 15px;
-            background: var(--background);
-            border-radius: 5px;
-            border-left: 5px solid var(--success);
-            font-size: 1.2em;
-            line-height: 1.8;
-        }
-
-        @media (max-width: 768px) {
-            .grid-container { grid-template-columns: 1fr; }
-        }
-    </style>
-</head>
-<body>
-
-    <header>
-        <h1>Math-Verified Feasibility Model</h1>
-        <h2>Electric Marine Platform Pitch Deck</h2>
-    </header>
-
-    <div class="grid-container">
-        <!-- Sections 1 & 4: Platform Envelope -->
-        <section id="platform-envelope" class="card">
-            <h3>Platform Envelope</h3>
-            <p>Audited baseline for <strong>Option A (Express Shuttle)</strong> configuration.</p>
-            <div class="metrics-grid">
-                <div class="metric-box">
-                    <div class="metric-value">40.0 NM</div>
-                    <div class="metric-label">Target Range</div>
+<!-- 4. Technical Data Bank -->
+            <div id="tech" class="mt-24 sm:mt-32">
+                <div class="mb-10">
+                    <h2 class="text-2xl sm:text-3xl font-mono font-bold text-white uppercase">
+                        4. Technical Data Bank
+                    </h2>
+                    <p class="text-sm text-zinc-400 mt-2 font-sans">
+                        Core proprietary technology stack encompassing vessel hydrodynamics, shore power infrastructure, and autonomous flight control algorithms.
+                    </p>
                 </div>
-                <div class="metric-box">
-                    <div class="metric-value">1.56 MWh</div>
-                    <div class="metric-label">Battery Capacity</div>
+
+                <!-- 3-Pillar Tech Stack Overview -->
+                <div class="grid lg:grid-cols-3 gap-6 mb-6">
+                    
+                    <!-- Vessel Architecture -->
+                    <div class="data-card p-6 rounded-lg">
+                        <div class="text-sm font-mono font-bold text-white mb-4 border-b border-zinc-800 pb-2">Vessel Architecture</div>
+                        <ul class="space-y-3 text-[11px] font-mono text-zinc-300">
+                            <li class="flex justify-between">
+                                <span class="text-zinc-500">Hull Material</span>
+                                <span class="font-bold text-white">Carbon Composite</span>
+                            </li>
+                            <li class="flex justify-between">
+                                <span class="text-zinc-500">Cruising Speed</span>
+                                <span class="font-bold text-white">38 Knots</span>
+                            </li>
+                            <li class="flex justify-between">
+                                <span class="text-zinc-500">Passenger Cap.</span>
+                                <span class="font-bold text-white">150 PAX</span>
+                            </li>
+                            <li class="flex justify-between">
+                                <span class="text-zinc-500">Wake Profile</span>
+                                <span class="font-bold text-tech-emerald">&lt; 0.15m</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- BESS Infrastructure -->
+                    <div class="data-card p-6 rounded-lg">
+                        <div class="text-sm font-mono font-bold text-white mb-4 border-b border-zinc-800 pb-2">Floating BESS (Shore)</div>
+                        <ul class="space-y-3 text-[11px] font-mono text-zinc-300">
+                            <li class="flex justify-between">
+                                <span class="text-zinc-500">Shore Grid Draw</span>
+                                <span class="font-bold text-tech-amber">300 kW (Cont.)</span>
+                            </li>
+                            <li class="flex justify-between">
+                                <span class="text-zinc-500">Buffer Capacity</span>
+                                <span class="font-bold text-white">1.6 MWh LFP</span>
+                            </li>
+                            <li class="flex justify-between">
+                                <span class="text-zinc-500">Vessel Output</span>
+                                <span class="font-bold text-tech-amber">1.5 MW (Peak DC)</span>
+                            </li>
+                            <li class="flex justify-between">
+                                <span class="text-zinc-500">Turnaround</span>
+                                <span class="font-bold text-white">45 Minutes</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Flight Control System -->
+                    <div class="data-card p-6 rounded-lg">
+                        <div class="text-sm font-mono font-bold text-white mb-4 border-b border-zinc-800 pb-2">Flight Control (FCS)</div>
+                        <ul class="space-y-3 text-[11px] font-mono text-zinc-300">
+                            <li class="flex justify-between">
+                                <span class="text-zinc-500">Control Loop</span>
+                                <span class="font-bold text-tech-cyan">100 Hz</span>
+                            </li>
+                            <li class="flex justify-between">
+                                <span class="text-zinc-500">Sensor Payload</span>
+                                <span class="font-bold text-white">LiDAR + Triple IMU</span>
+                            </li>
+                            <li class="flex justify-between">
+                                <span class="text-zinc-500">Architecture</span>
+                                <span class="font-bold text-white">Fly-by-Wire</span>
+                            </li>
+                            <li class="flex justify-between">
+                                <span class="text-zinc-500">Redundancy</span>
+                                <span class="font-bold text-white">Fail-Passive</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Deep Dive: Software & Flight Control -->
+                <div class="data-card p-6 rounded-lg mb-6">
+                    <h3 class="text-sm font-mono font-bold text-white mb-3 uppercase flex items-center gap-2">
+                        <span class="text-tech-cyan">▸</span> Software & Flight Control Architecture (FCS)
+                    </h3>
+                    <p class="text-xs text-zinc-400 font-sans leading-relaxed mb-4">
+                        The Baywing EF-150 utilizes a proprietary closed-loop, fly-by-wire Flight Control System running at 100 Hz. Designed in accordance with DNV High Speed Light Craft (HSLC) software safety rules, it operates on a triple-redundant logic structure.
+                    </p>
+                    <div class="grid sm:grid-cols-2 gap-4 text-[11px] font-mono text-zinc-300 border-t border-zinc-800 pt-4">
+                        <div>
+                            <strong class="text-white block mb-1">Sensor & Perception Stack</strong>
+                            <span class="text-zinc-500">Dual forward-looking LiDAR wave profilers map incoming wave heights at 200 Hz. Triple-redundant aviation-grade IMUs provide real-time 6-DOF (Degrees of Freedom) data to preemptively adjust foil angles before wave contact.</span>
+                        </div>
+                        <div>
+                            <strong class="text-white block mb-1">Active Ride Control (ARC)</strong>
+                            <span class="text-zinc-500">PID + Model Predictive Control (MPC) algorithms dynamically actuate T-foil flaps 100 times per second, ensuring zero motion sickness and maintaining a strict &lt;0.15m wake wash profile for harbor exemptions.</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Deep Dive: Floating BESS -->
+                <div class="data-card p-6 rounded-lg">
+                    <h3 class="text-sm font-mono font-bold text-white mb-3 uppercase flex items-center gap-2">
+                        <span class="text-tech-amber">⚡</span> Floating BESS Buffer Architecture
+                    </h3>
+                    <p class="text-xs text-zinc-400 font-sans leading-relaxed mb-4">
+                        Solves the peak-power bottleneck at public piers without requiring multi-million-dollar shore grid upgrades. A self-contained, liquid-cooled battery energy storage pontoon buffers the high-power demands of rapid vessel turnaround.
+                    </p>
+                    <div class="grid sm:grid-cols-2 gap-4 text-[11px] font-mono text-zinc-300 border-t border-zinc-800 pt-4">
+                        <div>
+                            <strong class="text-white block mb-1">Grid & Power Balance</strong>
+                            <span class="text-zinc-500">Draws a highly stable, continuous 300 kW load from the local HK Electric grid over a 2-hour loop. This energy is buffered into a 1.6 MWh LFP battery bank to seamlessly deliver a massive 1.5 MW DC peak charge to the vessel.</span>
+                        </div>
+                        <div>
+                            <strong class="text-white block mb-1">MCS Automated Interface</strong>
+                            <span class="text-zinc-500">Features an automated Megawatt Charging System (MCS) pantograph that connects to the vessel upon docking, achieving a 10% to 90% SOC charge in under 45 minutes to support 8 daily round trips.</span>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </section>
-
-        <!-- Sections 2 & 5: Economic Moat & Data Room -->
-        <section id="economic-moat" class="card">
-            <h3>Economic Moat & Payback Schedule</h3>
-            <p>Audited models confirm a rapid return on CAPEX through extreme energy OPEX savings.</p>
-            <div class="metrics-grid">
-                <div class="metric-box">
-                    <div class="metric-value highlight">0.85 - 1.67</div>
-                    <div class="metric-label">Years CAPEX Payback</div>
-                </div>
-            </div>
-            <table>
-                <tr>
-                    <th>Energy Source</th>
-                    <th>OPEX Range (per NM)</th>
-                </tr>
-                <tr>
-                    <td>Legacy MGO Diesel</td>
-                    <td>$35.27 – $68.66</td>
-                </tr>
-                <tr>
-                    <td>Electric Platform</td>
-                    <td>$4.60 (Est. Grid Rate)</td>
-                </tr>
-            </table>
-        </section>
-    </div>
-
-    <!-- Section 3: Interactive Route Simulator -->
-    <section id="simulator" class="card" style="margin-top: 30px;">
-        <h3>Interactive Route Simulator</h3>
-        <p>This calculator relies on independently audited physics formulas, using verified fuel burn and energy consumption constants rather than generic estimates.</p>
-        
-        <div class="grid-container">
-            <div class="simulator-panel">
-                <div class="input-group">
-                    <label for="routeDistance">One-Way Route Distance (NM):</label>
-                    <input type="number" id="routeDistance" value="40" min="1" step="0.5">
-                </div>
-                <div class="input-group">
-                    <label for="electricRate">Local Grid Rate ($ / kWh):</label>
-                    <input type="number" id="electricRate" value="0.15" min="0.01" step="0.01">
-                </div>
-                <button onclick="calculateOPEX()">Calculate OPEX Savings</button>
-            </div>
-            
-            <div id="simResult">
-                <em>Enter route parameters and calculate to see audited OPEX comparisons.</em>
-            </div>
-        </div>
-    </section>
-
-    <!-- Recalibrated JavaScript -->
-    <script>
-        // Audited Constants
-        const routeProfiles = {
-            dieselFuelPerNM: 31.21,   // Mathematically verified Liters per NM
-            electricKwhPerNM: 30.70,  // Mathematically verified kWh per NM
-            dieselCostPerNM_min: 35.27, // Lower bound audited diesel OPEX
-            dieselCostPerNM_max: 68.66  // Upper bound audited diesel OPEX
-        };
-
-        function calculateOPEX() {
-            const distance = parseFloat(document.getElementById('routeDistance').value);
-            const gridRate = parseFloat(document.getElementById('electricRate').value);
-            
-            if (isNaN(distance) || distance <= 0 || isNaN(gridRate) || gridRate <= 0) {
-                document.getElementById('simResult').innerHTML = '<span style="color:red;">Please enter valid numerical values.</span>';
-                return;
-            }
-
-            // Validated Electric Burn
-            const electricKwh = distance * routeProfiles.electricKwhPerNM;
-            const electricCost = electricKwh * gridRate;
-
-            // Validated Diesel Burn (using the conservative lower bound for the comparison)
-            const dieselCostMin = distance * routeProfiles.dieselCostPerNM_min;
-            const dieselCostMax = distance * routeProfiles.dieselCostPerNM_max;
-
-            // Compute conservative savings
-            const savingsMin = dieselCostMin - electricCost;
-            const savingsMax = dieselCostMax - electricCost;
-
-            document.getElementById('simResult').innerHTML = `
-                <strong>Audited Run Costs (${distance} NM Route):</strong><br><br>
-                🔋 <strong>Electric Platform:</strong> $${electricCost.toFixed(2)}<br>
-                🛢️ <strong>Legacy Diesel:</strong> $${dieselCostMin.toFixed(2)} to $${dieselCostMax.toFixed(2)}<br>
-                <hr style="border-top: 1px solid #ccc; margin: 15px 0;">
-                <span style="color:var(--success); font-weight:800; font-size: 1.2em;">
-                    💰 Conservative OPEX Savings: $${savingsMin.toFixed(2)} per trip
-                </span>
-            `;
-        }
-        
-        // Initialize the simulator with default values on load
-        window.onload = calculateOPEX;
-    </script>
-</body>
-</html>
